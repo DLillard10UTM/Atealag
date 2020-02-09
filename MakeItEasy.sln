@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeItEasy", "MakeItEasy\MakeItEasy.csproj", "{D50721E4-28FE-4BA4-87DB-520F6163EDBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D50721E4-28FE-4BA4-87DB-520F6163EDBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D50721E4-28FE-4BA4-87DB-520F6163EDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D50721E4-28FE-4BA4-87DB-520F6163EDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D50721E4-28FE-4BA4-87DB-520F6163EDBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C1334DF-CD12-42C1-AE89-89A52861B07D}
+	EndGlobalSection
+EndGlobal
