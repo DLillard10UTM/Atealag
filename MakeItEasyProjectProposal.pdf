@@ -1,0 +1,380 @@
+
+%% bare_jrnl_compsoc.tex
+%% V1.4a
+%% 2014/09/17
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8a or later) with an IEEE
+%% Computer Society journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_conf_compsoc.tex,
+%%                    bare_jrnl_compsoc.tex, bare_jrnl_transmag.tex
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices and paper sizes can       ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+\documentclass[10pt,conference,onecolumn,compsoc]{IEEEtran}
+
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=3 cm}
+\setlist[enumerate]{leftmargin=3cm}
+
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+ 
+\else
+ 
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/tex-archive/info/epslatex/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
+% Basically, \url{my_url_here}.
+
+
+
+
+\begin{document}
+
+\title{Make It Easy\\ for UTM CSCI 352}
+%
+%
+
+% received ..."  text while in non-compsoc journals this is reversed. Sigh.
+
+\author{Chase Perritt and Danny Lillard\\% <-this % stops a space
+}
+
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+“Make it Easy” is a modular asset management system for tabletop roleplaying games. The targets for “Make it Easy” are those who wish to “make it easy” when working with TTRPG assets: dungeon masters and players alike. The project has only just begun.
+\end{abstract}
+
+}
+
+
+% make the title area
+\maketitle
+
+
+
+\IEEEdisplaynontitleabstractindextext
+
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+
+
+
+“Make it Easy” is a modular asset management system for tabletop roleplaying games built to assist the user in TTRPG character building and upkeep via gathering information from online databases and organizing the information in an accessible and dynamic manner. We expect the target audience to benefit from “Make it Easy” due to its ability to better keep track of TTRPG elements in the heat of a game: initiative scores, health points, spell slots, etc.
+
+
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+
+
+\subsection{Background}
+
+Tabletop RPGs, or role-playing games, are an increasingly common hobby in modern society that involve creating and acting out characters in fictional scenarios. One game is typically called a “session,” and multiple sessions are called a “campaign.” Two such examples of tabletop role-playing games are the widely popular Dungeons and Dragons (5th Edition) and Pathfinder (1st Edition).  D\&D [5e] and Pathfinder [1e] sessions tend to take place in high fantasy, magical settings; however, their rulesets are incredibly different. D\&D [5e] is a simpler model and is thus easier to introduce to new players. Pathfinder [1], however, is better suited to players with some amount of tabletop experience, as there are an abundance of rules, some of which build off of an older model of D\&D, that being D\&D 3.5 edition. Some terms that would be useful to know are as follows:
+
+Sheet: A page in a character’s portfolio, typically used to track their stats, equipment, and/or spells.
+
+
+\subsection{Challenges}
+A particular challenge in mapping out both the rulesets of D\&D 5e and Pathfinder 1e is that, though we have access to source reference documents and particular websites that compile all of the information from several source books and pdfs, there is simply too much information out there (in Pathfinder specifically). In Pathfinder alone we have to compile all of the feats, classes, races, class archetypes, traits, alternate racial abilities, spells, and common equipment. This is a gargantuan undertaking, and a simple solution would simply be to add less content than we hope: to cut out the equipment databases and alternate features in favor of the minimum required amount.
+
+
+
+\section{Scope}
+Completion of the project entails the existence of a D\&D 5e and Pathfinder 1e character maintenance tool that rivals traditional pen and paper sheets in terms of quality of life assurance and ease of access to information. While this software may not render the pen and paper style obsolete, it should prove valuable as a beginner’s introductory tool to tabletop roleplaying or as a reference for rules and monster stats for Dungeon Masters. As for stretch goals we would like to give the user to save their sheet at a .pdf or .txt, and have an automatic initiative roller.
+
+
+\subsection{Requirements}
+Most requirements for “Make It Easy” are derived directly from the standard pen and paper style of managing a character. Each requirement listed below deserves to be here because it makes the player’s life easier, whether that requirement does something better than pen or paper, or adds new functionality.
+
+\subsubsection{Functional}
+\begin{itemize}
+\item User is able to create new characters - From a drop down menu similar to a Microsoft program, the user should be able to create a new character sheet
+\item User is able to load old sheets - using the same drop down menu player should be able to load a sheet file
+\item User is able to delete a sheet - using the same menu user can delete a sheet through the GUI
+\item User can change program theme - using the drop down menu user can change the theme of the program, such as light mode, dark mode, etc 
+\item User needs to have a save file for each character - analogous to a sheet of paper this will keep track of all his or her last saved values for said character
+\item User needs to be able to change the values of a character - through text boxes, he or she will be able to alter the character’s  values 
+\item The software must not allow incorrect input - users should not be able to set their health too high, raise or lower skill levels to strange numbers, etc.
+\item The software must have all the important information found in the user’s handbook - each part of the character should be laid out and described for the player, if so desired
+\item Different tabs for different information - a character is usually complex, having backstory, ability stores/feats, class and level, spells, proficiencies and an inventory. This data should be broken down logically into different tabs
+\item User has the ability to take notes - note taking is an important part of TTRPGs there should be a seperate tab for these notes in the program
+
+\end{itemize}
+
+\subsubsection{Non-Functional}
+\begin{itemize}
+\item Interchangeability - The program is easy for the developers to adapt to new TTRPG frameworks
+\item Speed of loading and saving - previous saves and the act of saving must load quickly for the user, in less than two seconds
+
+\end{itemize}
+
+\subsection{Use Cases}
+This subsection is arguably part of how you define your project scope (why it is in the Scope section...).  In a traditional Waterfall approach, as part of your requirements gathering phase (what does the product actually \emph{need} to do?), you will typically sit down with a user to develop use cases.
+
+You should have a table listing all use cases discussed in the document, the ID is just the order it is listed in, the name should be indicative of what should happen, the primary actor is typically most important in an application where you may have different levels of users (think admin vs normal user), complexity is a best-guess on your part as to how hard it should be.  A lower number in priority indicates that it needs to happen sooner rather than later.  A sample table, or Use Case Index can be seen in Table \ref{tab:useCaseIndex}.
+
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
+\hline \hline
+1 & Add item to cart & Shopper & Med & 1\\
+\hline
+2 & Checkout & Shopper & Med & 1\\
+\hline
+
+\end{tabular}
+\caption{Sample use case table}
+\label{tab:useCaseIndex}
+\end{table}
+
+
+\begin{itemize}
+\item[Use Case Number:] 1
+\item[Use Case Name:] Add item to cart
+\item[Description:] A shopper on our site has identified an item they wish to buy.  They will click on a ``Add to Cart" button.  This will kick off a process to add one instance of the item to their cart.
+\end{itemize}
+
+You will then go on to (minimally) discuss a basic flow for the process:
+
+\begin{enumerate}
+\item User navigates to page listing desired item
+\item User left-clicks on ``Add to Cart" button.
+\item User cart is updated to reflect the new item, this also updates the current total.
+\item[Termination Outcome:] The user now has a single instance of the item in their cart.
+\end{enumerate}
+
+You may need to also add in any alternative flows:
+
+Alternative: Item already exists in the cart
+\begin{enumerate}
+\item User navigates to page listing desired item
+\item User left-clicks on ``Add to Cart" button.
+\item User cart is updated to reflect the new item, showing that one more instance of the existing item has been added.  This also updates the current total.
+\item[Termination Outcome:] The user now has multiple instances of the item in their cart.
+\end{enumerate}
+
+You will often also need to include pictures or diagrams.  It is quite common to see use-case diagrams in such write-ups.  To properly reference an image, you will need to use the \texttt{figure} environment and will need to reference it in your text (via the \texttt{ref} command) (see Figure \ref{cat1}).  NOTE: this is not a use case diagram, but a kitten.
+
+After fully describing a use case, it is time to move on to the next use case:
+
+\begin{itemize}
+\item[Use Case Number:] 2
+\item[Use Case Name:] Checkout
+\item[Description:] A shopper on our site has finished shopping.  They will click on a ``Checkout" button.  This will kick off a process to calculate cart total, any taxes, shipping rates, and collect payment from the shopper.
+
+\end{itemize}
+
+You will then need to continue to flesh out all use cases you have identified for your project.
+
+\begin{figure}[ht!]
+\includegraphics[height=250px, width=350px]{cat1.jpg}
+\caption{First picture, this is a kitten, not a use case diagram}
+\label{cat1}
+\end{figure}
+
+\subsection{Interface Mockups}
+At first, this will largely be completely made up, as you get further along in your project, and closer to a final product, this will typically become simple screenshots of your running application.
+
+In this subsection, you will be showing what the screen should look like as the user moves through various use cases (make sure to tie the interface mockups back to the specific use cases they illustrate).
+
+
+
+\section{Project Timeline}
+\begin{enumerate}
+\item Requirements:
+		\\* We plan to have all of our requirements established by the submission and review of the first project proposal draft on the 10th of February, 				2020.
+\item Design:
+		\\* We plan for our major design decisions to be fleshed out by the end of February or early March.
+\item Implementation:
+		\\* We hope to have finished implementing the primary, promised functionality of “Make it Easy” by the end of March or early April.
+\item Verification:
+		\\* We hope to have fixed all bugs and leaks by the end of April for the timely submission of the project.
+\item Maintenance:
+		\\* After the end of April, any additional functionality and systems could be added at any point in the future.
+\end{enumerate}
+
+\section{Project Structure}
+At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
+
+\subsection{UML Outline}
+\includegraphics[scale = 0.5]{C:/Users/danny/Downloads/ProjectProposalUML.png}
+
+
+
+\begin{figure}[ht!]
+\includegraphics[scale=1.5]{cat2.jpg}
+\caption{Your figures should be in the \emph{figure} environment, and have captions.  Should also be of diagrams pertaining to your project, not random internet kittens}
+\label{cat2}
+\end{figure}
+
+
+\subsection{Design Patterns Used}
+Make sure to actually use at least 2 design patterns from this class.  This is not normally part of such documentation, but largely just specific to this class -- I want to see you use the patterns!
+
+
+\section{Results}
+This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
+
+\subsection{Future Work}
+Where are you going next with your project?
+For early deliverables, what are your next steps?  (HINT: you will typically want to look back at your timeline and evaluate: did you meet your expected goals?  Are you ahead of schedule?  Did you decide to shift gears and implement a new feature?)
+By the end, what do you plan on doing with this project?  Will you try to sell it?  Set it on fire?  Link to it on your resume and forget it exists?
+
+
+
+
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:kopka}
+H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
+
+
+
+\begin{IEEEbiography}{Michael Shell}
+Biography text here.
+\end{IEEEbiography}
+
+% if you will not have a photo at all:
+\begin{IEEEbiographynophoto}{John Doe}
+Biography text here.
+\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+\begin{IEEEbiographynophoto}{Jane Doe}
+Biography text here.
+\end{IEEEbiographynophoto}
+
+
+
+
+
+% that's all folks
+\end{document}
+
+
