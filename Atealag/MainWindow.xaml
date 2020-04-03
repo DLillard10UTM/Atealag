@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid Name ="HPTrackerGrid" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="49,54,0,0"/>
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="662,50,0,0" VerticalAlignment="Top" Width="75">
+            <Button x:Name="HPTrackerAdd" Content="HP Add" Width="75"/>
+        </Button>
+
     </Grid>
 </Window>
