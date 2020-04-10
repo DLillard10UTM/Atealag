@@ -20,9 +20,16 @@ namespace Atealag
     /// </summary>
     public partial class MainWindow : Window
     {
+        AssetManager userAssetManager;
         public MainWindow()
         {
             InitializeComponent();
+            userAssetManager = new AssetManager();
+            DataContext = userAssetManager;
+        }
+        void HPTrackerAdd_Click(Object sender, EventArgs e)
+        {
+            userAssetManager.userHPTrack.AddFromButton();
         }
     }
 }
