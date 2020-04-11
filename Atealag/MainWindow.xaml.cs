@@ -25,11 +25,19 @@ namespace Atealag
         {
             InitializeComponent();
             userAssetManager = new AssetManager();
-            DataContext = userAssetManager;
+            HPTrackerGrid.DataContext = userAssetManager.userHPTrack;
         }
         void HPTrackerAdd_Click(Object sender, EventArgs e)
         {
             userAssetManager.userHPTrack.AddFromButton();
+        }
+
+        private void HPTrackerDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var item = (sender as Button).DataContext;
+            int index = HPList.Items.IndexOf(item);
+            HPList.SelectedItem = HPList.Items[index];
+            userAssetManager.userHPTrack.RemoveFromButton(HPList.SelectedIndex);
         }
     }
 }

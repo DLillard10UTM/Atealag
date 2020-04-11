@@ -19,32 +19,21 @@ namespace Atealag
     {
         private static readonly object ItemsLock = new object();
         public ObservableCollection<HPBar> hpBars { get; set; }
-        private ObservableCollection<HPBar> hpBars1 { get; set; }
 
         public HPTracker()
         {
             hpBars = new ObservableCollection<HPBar>();
-            hpBars.Add(new HPBar(0,0,"test"));
-
-            hpBars1 = new ObservableCollection<HPBar>();
-            hpBars1.Add(new HPBar(0, 0, "bruh"));
-            hpBars1.Add(new HPBar(0, 0, "bruh1"));
-
             BindingOperations.EnableCollectionSynchronization(hpBars, ItemsLock);
+            hpBars.Add(new HPBar(0, 0, "test"));
         }
 
         public void AddFromButton()
         {
-            LoadHPList(hpBars1);
+            hpBars.Add(new HPBar(0, 0, "UNNAMED"));
         }
-
-        private void LoadHPList(IEnumerable<HPBar> newhpBars)
+        public void RemoveFromButton(int toBeDeleted)
         {
-            hpBars.Clear();
-            foreach (var HPBar in newhpBars)
-            {
-                hpBars.Add(HPBar);
-            }
+            hpBars.RemoveAt(toBeDeleted);
         }
     }
     class HPBar : INotifyPropertyChanged
