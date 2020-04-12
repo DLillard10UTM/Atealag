@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -65,6 +66,13 @@ namespace Atealag
         {
             ICollectionView view = CollectionViewSource.GetDefaultView(userAssetManager.userInitTrack.initBubbles);
             view.SortDescriptions.Add(new SortDescription("init", ListSortDirection.Ascending));
+        }
+
+        private void OpenSheetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: Make it such that when the user opens the file it goes near the .exe for atealag.
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+            _ = openFileDialog.ShowDialog() == true;
         }
     }
 }
