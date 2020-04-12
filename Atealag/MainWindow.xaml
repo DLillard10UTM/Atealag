@@ -6,23 +6,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Atealag"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Atealag Tabletop RPG Asset Manager" Height="450" Width="800">
 
+    <Grid>
+        <Button x:Name="NewSheetBtn" Content="New Sheet" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="OpenSheetBtn" Content="Open Sheet" HorizontalAlignment="Left" Margin="127,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="MakeItEasyBtn" Content="Make it Easy" HorizontalAlignment="Left" Margin="247,10,0,0" VerticalAlignment="Top" Width="75"/>
+        
+        <Grid Name ="HPTrackerGrid" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="774" Margin="10,54,0,0">
+            <ListView Name ="HPList" ItemsSource="{Binding hpBars, Mode=OneWay}" IsSynchronizedWithCurrentItem="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Name ="HPListStack">
+                            <TextBox Text="{Binding currHP, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBox Text="{Binding maxHP, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBox Text="{Binding entityName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            <Button x:Name="HPTrackerDelete" Content="Delete" Height ="25" Width="75" Click ="HPTrackerDelete_Click"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="HPTrackerAdd" Content="HP Add" Height ="25" Width="75" Click ="HPTrackerAdd_Click" Margin="699,-30,0,185"/>
+        </Grid>
 
-    <Grid Name ="HPTrackerGrid" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="774" Margin="10,54,0,0">
-        <ListView Name ="HPList" ItemsSource="{Binding hpBars, Mode=OneWay}" IsSynchronizedWithCurrentItem="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Name ="HPListStack">
-                        <TextBox Text="{Binding currHP, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                        <TextBox Text="{Binding maxHP, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                        <TextBox Text="{Binding entityName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                        <Button x:Name="HPTrackerDelete" Content="HP Delete" Height ="25" Width="75" Click ="HPTrackerDelete_Click"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button x:Name="HPTrackerAdd" Content="HP Add" Height ="25" Width="75" Click ="HPTrackerAdd_Click" Margin="699,-30,0,185"/>
+        <Grid Name ="InitTrackerGrid" HorizontalAlignment="Left" Height="147" VerticalAlignment="Bottom" Width="774" Margin="10,0,0,0">
+            <ListView Name ="InitList" ItemsSource="{Binding initBubbles, Mode=OneWay}" IsSynchronizedWithCurrentItem="True" Margin="0,74,0,0">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Text="{Binding init, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBox Text="{Binding entityName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            <Button x:Name="InitTrackerDelete" Content="Delete" Height ="25" Width="75" Click ="InitTrackerDelete_Click"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="InitTrackerAdd" Content="Init Add" Height ="25" Width="75" Click ="InitTrackerAdd_Click" Margin="689,10,10,112"/>
+            <Button x:Name="InitTrackerUpdate" Content="UpdateInitOrder" Height ="25" Width="75" Click ="InitTrackerUpdate_Click" Margin="529,10,10,112"/>
+        </Grid>
     </Grid>
-    
 </Window>

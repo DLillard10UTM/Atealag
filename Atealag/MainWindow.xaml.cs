@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,18 @@ namespace Atealag
             InitializeComponent();
             userAssetManager = new AssetManager();
             HPTrackerGrid.DataContext = userAssetManager.userHPTrack;
+            InitTrackerGrid.DataContext = userAssetManager.userInitTrack;
+
+            updateOrdering();
         }
         void HPTrackerAdd_Click(Object sender, EventArgs e)
         {
             userAssetManager.userHPTrack.AddFromButton();
+        }
+        private void InitTrackerAdd_Click(object sender, RoutedEventArgs e)
+        {
+            userAssetManager.userInitTrack.AddFromButton();
+            updateOrdering();
         }
 
         private void HPTrackerDelete_Click(object sender, RoutedEventArgs e)
@@ -38,6 +47,24 @@ namespace Atealag
             int index = HPList.Items.IndexOf(item);
             HPList.SelectedItem = HPList.Items[index];
             userAssetManager.userHPTrack.RemoveFromButton(HPList.SelectedIndex);
+        }
+        private void InitTrackerDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var item = (sender as Button).DataContext;
+            int index = InitList.Items.IndexOf(item);
+            InitList.SelectedItem = InitList.Items[index];
+            userAssetManager.userInitTrack.RemoveFromButton(InitList.SelectedIndex);
+        }
+
+        private void InitTrackerUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            updateOrdering();
+        }
+
+        private void updateOrdering()
+        {
+            ICollectionView view = CollectionViewSource.GetDefaultView(userAssetManager.userInitTrack.initBubbles);
+            view.SortDescriptions.Add(new SortDescription("init", ListSortDirection.Ascending));
         }
     }
 }

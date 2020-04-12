@@ -10,26 +10,31 @@ using System.Windows.Data;
 
 namespace Atealag
 {
+    /*  Author: Danny Lillard of Atealag Dev Team
+     *  Date: 4/11/2020
+     *  Description: this file holds the mainWindow backend. Allowing funtionality for:
+     *                                                          HP Tracking
+     *                                                          Initiative Tracking
+     *                                                          Creation of new files.
+     */
     class AssetManager
     {
         public HPTracker userHPTrack = new HPTracker();
+        public InitTracker userInitTrack = new InitTracker();
     }
 
     class HPTracker
     {
-        private static readonly object ItemsLock = new object();
         public ObservableCollection<HPBar> hpBars { get; set; }
 
         public HPTracker()
         {
             hpBars = new ObservableCollection<HPBar>();
-            BindingOperations.EnableCollectionSynchronization(hpBars, ItemsLock);
-            hpBars.Add(new HPBar(0, 0, "test"));
         }
 
         public void AddFromButton()
         {
-            hpBars.Add(new HPBar(0, 0, "UNNAMED"));
+            hpBars.Add(new HPBar(0, 0, "UNNAMED" + hpBars.Count));
         }
         public void RemoveFromButton(int toBeDeleted)
         {
@@ -66,6 +71,7 @@ namespace Atealag
             }
 
         }
+
         private string _entityName;
         public string entityName
         {
@@ -89,22 +95,71 @@ namespace Atealag
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         public void NotifyPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 
-    class InitativeTracker
+    class InitTracker
     {
+        public ObservableCollection<InitBubble> initBubbles { get; set; }
 
+        public InitTracker()
+        {
+            initBubbles = new ObservableCollection<InitBubble>();
+        }
+
+        public void AddFromButton()
+        {
+            initBubbles.Add(new InitBubble(0, "UNNAMED" + initBubbles.Count));
+        }
+        public void RemoveFromButton(int toBeDeleted)
+        {
+            initBubbles.RemoveAt(toBeDeleted);
+        }
     }
-    class InitBubble
+    class InitBubble : INotifyPropertyChanged
     {
+        private int _init;
+        public int init
+        {
+            get { return _init; }
+            set
+            {
+                if (_init != value)
+                {
+                    _init = value;
+                    NotifyPropertyChanged("init");
+                }
+            }
 
+        }
+
+        private string _entityName;
+        public string entityName
+        {
+            get { return _entityName; }
+            set
+            {
+                if (_entityName != value)
+                {
+                    _entityName = value;
+                    NotifyPropertyChanged("entityName");
+                }
+            }
+
+        }
+
+        public InitBubble(int init, string entityName)
+        {
+            _init = init;
+            _entityName = entityName;
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
