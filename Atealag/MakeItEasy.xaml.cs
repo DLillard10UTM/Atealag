@@ -55,9 +55,30 @@ namespace Atealag
                 loopIteration++;
             }
 
+            ComboBoxItem defaultValue = new ComboBoxItem(); // Creates the default option in the RaceSelector Combobox ("Select a race")
+            defaultValue.Content = "Select a race";
+            defaultValue.IsSelected = true;
+            RaceSelector.Items.Add(defaultValue);
+
+            List<ComboBoxItem> selectRaces = new List<ComboBoxItem>(); // Used for string equality comparisons, identical data inserted to RaceSelector
+            int sri = 0; // "select races index"
+            bool equalChecker;
+
             for (int i = 0; i < racedata.Count; i++) // Populates the RaceSelector ComboBox with elements of racedata with "unique" content (no repeated races)
             {
-
+                if (i == 0)
+                {
+                    RaceSelector.Items.Add(racedata[0]);
+                    selectRaces[sri] = racedata[0];
+                }
+                else
+                {
+                    for (int j = 0; j < selectRaces.Count; j++) // Loops over all existing data in RaceSelector to compare existing strings
+                    {
+                        equalChecker = Equals(selectRaces[j].Content, racedata[i].Content);
+                    }
+                }
+                sri++;
             }
         }
 
