@@ -29,6 +29,8 @@ namespace Atealag
         OleDbConnection raceCn;
         OleDbConnection classCn;
         OleDbConnection bgCn;
+        Dictionary<string, List<string>> raceDict = new Dictionary<string, List<string>>();
+        Dictionary<string, List<string>> classDict = new Dictionary<string, List<string>>();
         public MakeItEasy()
         {
             InitializeComponent();
@@ -37,22 +39,38 @@ namespace Atealag
             classCn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\ClassData.accdb");
         }
 
-        private void LoadRaceBox(object sender, RoutedEventArgs e)
+        private void LoadRaces(object sender, RoutedEventArgs e)
         {
             string query = "select * from RaceTable";
             OleDbCommand cmd = new OleDbCommand(query, raceCn);
             raceCn.Open();
             OleDbDataReader read = cmd.ExecuteReader();
 
-            List<ComboBoxItem> racedata = new List<ComboBoxItem>(); // Reads the second column (Race) [1] and stores all information (even repeated races)
-            int loopIteration = 0;
+            List<string> raceData = new List<string>(); // Human, Elf, Dwarf, Halfling, Gnome, Half-Elf, Half-Orc, Dragonborn, Tiefling (9 entries base)
+            List<string> raceTotal = new List<string>(); // Human, Human, Elf, Elf, Elf, Dwarf, Dwarf... (24 entries base)
+            List<string> subraceTotal = new List<string>(); // Default, Variant, High, Wood, Drow, Hill, Mountain... (24 entries base)
 
-            while (read.Read()) // Fills the racedata list
+            while (read.Read()) // Creating the three lists necessary to construct the dictionary
             {
-                ComboBoxItem cbi = new ComboBoxItem();
-                cbi.Content = read[1].ToString();
-                racedata[loopIteration] = cbi;
-                loopIteration++;
+                if (!raceData.Contains(read[1].ToString()))
+                {
+                    raceData.Add(read[1].ToString());
+                }
+                raceTotal.Add(read[1].ToString());
+                subraceTotal.Add(read[2].ToString());
+            }
+
+            foreach (string item in raceData) // For each of the [9] races...
+            {
+                if (raceTotal.Contains(item)) // If the raceTotal list contains an instance of the race...
+                {
+                    // Find the first index where that race occurs and make note of it...
+                    // Find any additional indices where the race occurs...
+                    // Create a new list of strings containing the subraces at the aforementioned indicies...
+                    // Add the race as the key to a dictionary entry and add the list of subraces as the corresponding value
+                }
+                // If the raceTotal list does not contain and instance of the race... do nothing (even though there should be at least one)
+                // Repeat for each of the [9] races and the dictionary of entries should be complete.
             }
 
             ComboBoxItem defaultValue = new ComboBoxItem(); // Creates the default option in the RaceSelector Combobox ("Select a race")
@@ -60,26 +78,8 @@ namespace Atealag
             defaultValue.IsSelected = true;
             RaceSelector.Items.Add(defaultValue);
 
-            List<ComboBoxItem> selectRaces = new List<ComboBoxItem>(); // Used for string equality comparisons, identical data inserted to RaceSelector
-            int sri = 0; // "select races index"
-            bool equalChecker;
-
-            for (int i = 0; i < racedata.Count; i++) // Populates the RaceSelector ComboBox with elements of racedata with "unique" content (no repeated races)
-            {
-                if (i == 0)
-                {
-                    RaceSelector.Items.Add(racedata[0]);
-                    selectRaces[sri] = racedata[0];
-                }
-                else
-                {
-                    for (int j = 0; j < selectRaces.Count; j++) // Loops over all existing data in RaceSelector to compare existing strings
-                    {
-                        equalChecker = Equals(selectRaces[j].Content, racedata[i].Content);
-                    }
-                }
-                sri++;
-            }
+            // Using the completed dictionary, create a ComboBoxItem with content corresponding with the keys of the dictionary. This is the race selector.
+            // The contents of the subrace selector will be covered in the ComboBoxItem upon SelectionChanged()
         }
 
     }
