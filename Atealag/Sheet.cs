@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,14 +17,21 @@ namespace Atealag
      */
     class Sheet
     {
+        string fileName;
+
+        //Global variable that all tabs must have to populate ability score dropdown menus.
+        public ReadOnlyCollection<string> abilityScores { get; } = new ReadOnlyCollection<string>(
+        new string[] { "Strength", "Intelligence", "Dexterity", "Wisdom", "constitution", "Charisma" });
         struct charVals
         {
+            
             public string name;
             public string race; 
             public string u_class;
             public string sClass;
             public string BG;
-            //Size 9 array with format: Health, AC, Speed, STR, INT, DEX, WIS, CON, CHA
+            public string alig;
+            //Size 6 array with format: STR, INT, DEX, WIS, CON, CHA
             public int[] scoreVals;
             public List<string> skillProfs;
         }

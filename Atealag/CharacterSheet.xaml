@@ -1,0 +1,18 @@
+﻿<Window x:Class="Atealag.CharacterSheet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Atealag"
+        mc:Ignorable="d"
+        Title="Character Sheet" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="AllTabsGrid" Margin="0,0,-0.4,328">
+            <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="SaveAsBtn" Content="Save As" HorizontalAlignment="Left" Margin="77,0,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="AddToHPTrackerBtn" Content="Add to HP Tracker" HorizontalAlignment="Left" Margin="640,0,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="AddToInitTrackerBtn" Content="Add to Initiative Tracker" HorizontalAlignment="Left" Margin="720,0,-1,0" VerticalAlignment="Top" Width="75"/>
+
+        </Grid>
+    </Grid>
+</Window>
