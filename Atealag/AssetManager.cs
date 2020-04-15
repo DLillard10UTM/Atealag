@@ -53,8 +53,8 @@ namespace Atealag
                 {
                     _currHP = value;
                     NotifyPropertyChanged("currHP");
-                    }
                 }
+            }
         }
         private int _maxHP;
         public int maxHP

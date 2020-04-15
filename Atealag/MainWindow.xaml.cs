@@ -74,5 +74,11 @@ namespace Atealag
 			OpenFileDialog openFileDialog = new OpenFileDialog();
             _ = openFileDialog.ShowDialog() == true;
         }
+
+        private void NewSheetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CharacterSheet newCharSheet = new CharacterSheet();
+            newCharSheet.Show();
+        }
     }
 }

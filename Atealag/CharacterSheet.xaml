@@ -12,7 +12,46 @@
             <Button x:Name="SaveAsBtn" Content="Save As" HorizontalAlignment="Left" Margin="77,0,0,0" VerticalAlignment="Top" Width="75"/>
             <Button x:Name="AddToHPTrackerBtn" Content="Add to HP Tracker" HorizontalAlignment="Left" Margin="640,0,0,0" VerticalAlignment="Top" Width="75"/>
             <Button x:Name="AddToInitTrackerBtn" Content="Add to Initiative Tracker" HorizontalAlignment="Left" Margin="720,0,-1,0" VerticalAlignment="Top" Width="75"/>
+            
+            <TextBox x:Name="NameTextBox" Text ="{Binding name, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="32,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="RaceTextBox" HorizontalAlignment="Left" Height="23" Margin="411,38,0,0" TextWrapping="Wrap" Text="{Binding race, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="ClassTextBox" HorizontalAlignment="Left" Height="23" Margin="411,59,0,0" TextWrapping="Wrap" Text="{Binding u_class, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="BackgroundTextBox" HorizontalAlignment="Left" Height="23" Margin="531,38,0,0" TextWrapping="Wrap" Text="{Binding BG, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="AlignmentTextBox" HorizontalAlignment="Left" Height="23" Margin="531,61,0,0" TextWrapping="Wrap" Text="{Binding alig, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="LevelTextBox" HorizontalAlignment="Left" Height="23" Margin="651,38,0,0" TextWrapping="Wrap" Text="{Binding level, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="PlayerNameTextBox" HorizontalAlignment="Left" Height="23" Margin="651,59,0,0" TextWrapping="Wrap" Text="{Binding userName, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
 
+        </Grid>
+        <Grid Name="TabsGrid" Margin="0,109,-0.4,0">
+            <TabControl TabStripPlacement="Bottom">
+                <TabItem Name="MainTab" Header="Main">
+                    <Grid Margin="0,70,649,58.2">
+                        <TextBox x:Name="STRTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="INTTextBox" HorizontalAlignment="Left" Height="23" Margin="88,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="DEXTextBox" HorizontalAlignment="Left" Height="23" Margin="10,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="WISTextBox" HorizontalAlignment="Left" Height="23" Margin="88,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="CONTextBox" HorizontalAlignment="Left" Height="23" Margin="10,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.544,1.147"/>
+                        <TextBox x:Name="CHATextBox" HorizontalAlignment="Left" Height="23" Margin="88,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+
+                        <TextBox x:Name="MSTRTextBox" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="MINTTextBox" HorizontalAlignment="Left" Height="23" Margin="88,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="MDEXTextBox" HorizontalAlignment="Left" Height="23" Margin="10,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="MWISTextBox" HorizontalAlignment="Left" Height="23" Margin="88,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="MCONTextBox" HorizontalAlignment="Left" Height="23" Margin="10,132,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                        <TextBox x:Name="MCHATextBox" HorizontalAlignment="Left" Height="23" Margin="88,132,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Name="SkillsTab" Header="Skills">
+                </TabItem>
+                <TabItem Name="EquipmentTab" Header="Equipment">
+                </TabItem>
+                <TabItem Name="SpellsTab" Header="Spells">
+                </TabItem>
+                <TabItem Name="AbilitiesTab" Header="Abilities">
+                </TabItem>
+                <TabItem Name="NotesTab" Header="Notes">
+                </TabItem>
+            </TabControl>
         </Grid>
     </Grid>
 </Window>

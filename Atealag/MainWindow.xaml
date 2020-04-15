@@ -9,7 +9,7 @@
         Title="Atealag Tabletop RPG Asset Manager" Height="450" Width="800">
 
     <Grid>
-        <Button x:Name="NewSheetBtn" Content="New Sheet" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="NewSheetBtn" Content="New Sheet" Click ="NewSheetBtn_Click" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="OpenSheetBtn" Content="Open Sheet" Click="OpenSheetBtn_Click" HorizontalAlignment="Left" Margin="127,10,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="MakeItEasyBtn" Content="Make it Easy" HorizontalAlignment="Left" Margin="247,10,0,0" VerticalAlignment="Top" Width="75"/>
         

@@ -19,9 +19,13 @@ namespace Atealag
     /// </summary>
     public partial class CharacterSheet : Window
     {
+        Sheet charSheet;
         public CharacterSheet()
         {
             InitializeComponent();
+            charSheet = new Sheet();
+            AllTabsGrid.DataContext = charSheet.userCharVals;
+            MainTab.DataContext = charSheet.userMainTab;
         }
     }
 }

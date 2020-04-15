@@ -9,6 +9,7 @@ namespace Atealag
 {
     class MainTab
     {
+        AbilityScoresDisplay abScoreDisplay = new AbilityScoresDisplay();
     }
 
     class HealthBox
@@ -76,7 +77,7 @@ namespace Atealag
 
     class AbilityScoresDisplay
     {
-
+        
     }
 
     class SavingThrows
