@@ -35,11 +35,12 @@ namespace Atealag
         {
             InitializeComponent();
             // On all of the following the "| DataDirectory |" pipeline might need to be removed and replaced with a "." before the "\[]Data.accdb"
-            raceCn = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source =| DataDirectory |\RaceData.accdb");
+            raceCn = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = .\RaceData.accdb");
             classCn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\ClassData.accdb");
+            LoadRaces();
         }
 
-        private void LoadRaces(object sender, RoutedEventArgs e)
+        private void LoadRaces()
         {
             string query = "select * from RaceTable";
             OleDbCommand cmd = new OleDbCommand(query, raceCn);
@@ -64,10 +65,21 @@ namespace Atealag
             {
                 if (raceTotal.Contains(item)) // If the raceTotal list contains an instance of the race...
                 {
-                    // Find the first index where that race occurs and make note of it...
-                    // Find any additional indices where the race occurs...
+                    // Find the all indexes where that race occurs and make note of it...
+                    List<int> raceIndex = new List<int>();
+                    
+                    // * Perhaps use Predicates for a FindAllIndexes function or a do-while loop to Add so long as the index does not go beyond the end
+
                     // Create a new list of strings containing the subraces at the aforementioned indicies...
-                    // Add the race as the key to a dictionary entry and add the list of subraces as the corresponding value
+                    List<string> definition = new List<string>();
+                    
+                    foreach (int i in raceIndex)
+                    {
+                        definition.Add(subraceTotal[i]); // For Human, the "0" and "1" indexes correspond to "Default" and "Variant"
+                    }
+
+                    // Add the race as the key to a dictionary entry and add the list of subraces as the corresponding value "Human" --> <"Default", "Variant">
+                    raceDict.Add(item, definition);
                 }
                 // If the raceTotal list does not contain and instance of the race... do nothing (even though there should be at least one)
                 // Repeat for each of the [9] races and the dictionary of entries should be complete.
@@ -79,9 +91,14 @@ namespace Atealag
             RaceSelector.Items.Add(defaultValue);
 
             // Using the completed dictionary, create a ComboBoxItem with content corresponding with the keys of the dictionary. This is the race selector.
+            foreach (string key in raceDict.Keys)
+            {
+                ComboBoxItem keyVal = new ComboBoxItem();
+                keyVal.Content = key;
+                RaceSelector.Items.Add(keyVal);
+            }
             // The contents of the subrace selector will be covered in the ComboBoxItem upon SelectionChanged()
         }
-
     }
 
 }
