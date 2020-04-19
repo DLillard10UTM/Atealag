@@ -25,20 +25,28 @@
         <Grid Name="TabsGrid" Margin="0,109,-0.4,0">
             <TabControl TabStripPlacement="Bottom">
                 <TabItem Name="MainTab" Header="Main">
-                    <Grid Name="AbilityScoreGrid" Margin="0,70,649,58.2">
-                        <TextBox x:Name="STRTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding strBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="INTTextBox" HorizontalAlignment="Left" Height="23" Margin="88,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="DEXTextBox" HorizontalAlignment="Left" Height="23" Margin="10,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="WISTextBox" HorizontalAlignment="Left" Height="23" Margin="88,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="CONTextBox" HorizontalAlignment="Left" Height="23" Margin="10,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.544,1.147"/>
-                        <TextBox x:Name="CHATextBox" HorizontalAlignment="Left" Height="23" Margin="88,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                    <!--For some unknown reason, tabs can only have one item inside of them,
+                    so our gui elements must be in a single grid. -->
+                    <Grid>
+                        <Grid Name="AbilityScoreGrid" Margin="0,70,649,58.2">
+                            <TextBox x:Name="STRTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding strBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="INTTextBox" HorizontalAlignment="Left" Height="23" Margin="88,10,0,0" TextWrapping="Wrap" Text="{Binding intelBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="DEXTextBox" HorizontalAlignment="Left" Height="23" Margin="10,60,0,0" TextWrapping="Wrap" Text="{Binding dexBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="WISTextBox" HorizontalAlignment="Left" Height="23" Margin="88,60,0,0" TextWrapping="Wrap" Text="{Binding wisBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="CONTextBox" HorizontalAlignment="Left" Height="23" Margin="10,111,0,0" TextWrapping="Wrap" Text="{Binding conBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.544,1.147"/>
+                            <TextBox x:Name="CHATextBox" HorizontalAlignment="Left" Height="23" Margin="88,111,0,0" TextWrapping="Wrap" Text="{Binding chaBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
 
-                        <TextBox x:Name="MSTRTextBox" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="MINTTextBox" HorizontalAlignment="Left" Height="23" Margin="88,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="MDEXTextBox" HorizontalAlignment="Left" Height="23" Margin="10,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="MWISTextBox" HorizontalAlignment="Left" Height="23" Margin="88,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="MCONTextBox" HorizontalAlignment="Left" Height="23" Margin="10,132,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
-                        <TextBox x:Name="MCHATextBox" HorizontalAlignment="Left" Height="23" Margin="88,132,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="MSTRTextBox" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" Text="{Binding strMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="MINTTextBox" HorizontalAlignment="Left" Height="23" Margin="88,32,0,0" TextWrapping="Wrap" Text="{Binding intelMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="MDEXTextBox" HorizontalAlignment="Left" Height="23" Margin="10,83,0,0" TextWrapping="Wrap" Text="{Binding dexMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="MWISTextBox" HorizontalAlignment="Left" Height="23" Margin="88,83,0,0" TextWrapping="Wrap" Text="{Binding wisMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="MCONTextBox" HorizontalAlignment="Left" Height="23" Margin="10,132,0,0" TextWrapping="Wrap" Text="{Binding conMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                            <TextBox x:Name="MCHATextBox" HorizontalAlignment="Left" Height="23" Margin="88,132,0,0" TextWrapping="Wrap" Text="{Binding chaMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                        </Grid>
+
+                        <Grid Name="HPDisplayGrid" Margin="10,10,717,218.2">
+                            
+                        </Grid>
                     </Grid>
                 </TabItem>
                 <TabItem Name="SkillsTab" Header="Skills">

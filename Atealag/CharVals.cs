@@ -114,6 +114,8 @@ namespace Atealag
             }
         }
 
+        Broker abilityScoreBroker;
+
         //We cannot put these values inside of an array or any kind of struct for binding reasons.
         private int _strBase; private int _intelBase; private int _dexBase;
         private int _wisBase; private int _conBase; private int _chaBase;
@@ -285,32 +287,50 @@ namespace Atealag
         private void updateTotalStrScoreVal()
         {
             _str = _strBase + _strMisc;
+            abilityScoreBroker.updatePub(0, _str);
         }
         private void updateTotalIntelScoreVal()
         {
             _intel = _intelBase + _intelMisc;
+            abilityScoreBroker.updatePub(1, _intel);
         }
         private void updateTotalDexScoreVal()
         {
             _dex = _dexBase + _dexMisc;
+            abilityScoreBroker.updatePub(2, _dex);
         }
         private void updateTotalWisScoreVal()
         {
             _wis = _wisBase + _wisMisc;
+            abilityScoreBroker.updatePub(3, _wis);
         }
         private void updateTotalConScoreVal()
         {
             _con = _conBase + _conMisc;
+            abilityScoreBroker.updatePub(4, _con);
         }
         private void updateTotalChaScoreVal()
         {
             _cha = _chaBase + _chaMisc;
+            abilityScoreBroker.updatePub(5, _cha);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public CharVals()
+        {
+            name = "Traveler";
+            race = "[RACE]";
+            u_class = "[CLASS]";
+            sClass = "[SUBCLASS]";
+            BG = "[BACKGROUND]";
+            alig = "[ALIGNMENT]";
+            userName = "[USERNAME]";
+            abilityScoreBroker = new Broker();
         }
     }
 }

@@ -26,20 +26,12 @@ namespace Atealag
 
         public CharVals userCharVals;
         public MainTab userMainTab;
-        Broker abilityScoreBroker;
+        
         //Non-paramertized constructor, for "New Sheet" button on Main Window.
         public Sheet()
         {
             userCharVals = new CharVals();
             //I like the name traveler for rpg characters, so that is the name here.
-            userCharVals.name = "Traveler";
-            userCharVals.race = "[RACE]";
-            userCharVals.u_class = "[CLASS]";
-            userCharVals.sClass = "[SUBCLASS]";
-            userCharVals.BG = "[BACKGROUND]";
-            userCharVals.alig = "[ALIGNMENT]";
-            userCharVals.userName = "[USERNAME]";
-            abilityScoreBroker = new Broker();
             userMainTab = new MainTab();
             
         }
