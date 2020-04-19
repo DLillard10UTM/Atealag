@@ -80,5 +80,11 @@ namespace Atealag
             CharacterSheet newCharSheet = new CharacterSheet();
             newCharSheet.Show();
         }
+
+        private void MakeItEasyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MakeItEasy newCharSheet = new MakeItEasy();
+            newCharSheet.Show();
+        }
     }
 }

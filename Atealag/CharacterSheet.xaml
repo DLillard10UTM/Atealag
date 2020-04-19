@@ -25,8 +25,8 @@
         <Grid Name="TabsGrid" Margin="0,109,-0.4,0">
             <TabControl TabStripPlacement="Bottom">
                 <TabItem Name="MainTab" Header="Main">
-                    <Grid Margin="0,70,649,58.2">
-                        <TextBox x:Name="STRTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
+                    <Grid Name="AbilityScoreGrid" Margin="0,70,649,58.2">
+                        <TextBox x:Name="STRTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding strBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
                         <TextBox x:Name="INTTextBox" HorizontalAlignment="Left" Height="23" Margin="88,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
                         <TextBox x:Name="DEXTextBox" HorizontalAlignment="Left" Height="23" Margin="10,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>
                         <TextBox x:Name="WISTextBox" HorizontalAlignment="Left" Height="23" Margin="88,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="27"/>

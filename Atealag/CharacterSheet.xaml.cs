@@ -26,6 +26,7 @@ namespace Atealag
             charSheet = new Sheet();
             AllTabsGrid.DataContext = charSheet.userCharVals;
             MainTab.DataContext = charSheet.userMainTab;
+            AbilityScoreGrid.DataContext = charSheet.userCharVals;
         }
     }
 }

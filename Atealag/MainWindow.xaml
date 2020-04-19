@@ -11,7 +11,7 @@
     <Grid>
         <Button x:Name="NewSheetBtn" Content="New Sheet" Click ="NewSheetBtn_Click" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="OpenSheetBtn" Content="Open Sheet" Click="OpenSheetBtn_Click" HorizontalAlignment="Left" Margin="127,10,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="MakeItEasyBtn" Content="Make it Easy" HorizontalAlignment="Left" Margin="247,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="MakeItEasyBtn" Content="Make it Easy" Click="MakeItEasyBtn_Click" HorizontalAlignment="Left" Margin="247,10,0,0" VerticalAlignment="Top" Width="75"/>
         
         <Grid Name ="HPTrackerGrid" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="774" Margin="10,54,0,0">
             <ListView Name ="HPList" ItemsSource="{Binding hpBars, Mode=OneWay}" IsSynchronizedWithCurrentItem="True">

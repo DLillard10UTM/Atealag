@@ -59,6 +59,7 @@
     <Compile Include="CharacterSheet.xaml.cs">
       <DependentUpon>CharacterSheet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CharVals.cs" />
     <Compile Include="MainTab.cs" />
     <Compile Include="Sheet.cs" />
     <Page Include="CharacterSheet.xaml">
