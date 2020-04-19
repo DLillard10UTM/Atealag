@@ -73,6 +73,8 @@ namespace Atealag
             //TODO: Make it such that when the user opens the file it goes near the .exe for atealag.
 			OpenFileDialog openFileDialog = new OpenFileDialog();
             _ = openFileDialog.ShowDialog() == true;
+            CharacterSheet fileOpener = new CharacterSheet(openFileDialog.FileName);
+            fileOpener.Show();
         }
 
         private void NewSheetBtn_Click(object sender, RoutedEventArgs e)

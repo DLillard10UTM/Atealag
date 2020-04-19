@@ -282,7 +282,7 @@ namespace Atealag
                 updateTotalChaScoreVal();
             }
         }
-        public List<string> skillProfs;
+        public string skillProfs;
 
         private void updateTotalStrScoreVal()
         {
@@ -331,6 +331,34 @@ namespace Atealag
             alig = "[ALIGNMENT]";
             userName = "[USERNAME]";
             abilityScoreBroker = new Broker();
+        }
+
+        public CharVals(string n, string r, string c, string sc, string bg, string alight, string l, string un, string strB, string intelB,
+                        string dexB, string wisB, string conB, string chaB, string strM, string intelM,
+                        string dexM, string wisM, string conM, string chaM, string sp)
+        {
+            abilityScoreBroker = new Broker();
+            name = n;
+            race = r;
+            u_class = c;
+            sClass = sc;
+            BG = bg;
+            alig = alight;
+            level = Convert.ToInt32(l);
+            userName = un;
+            strBase = Convert.ToInt32(strB);
+            intelBase = Convert.ToInt32(intelB);
+            dexBase = Convert.ToInt32(dexB);
+            wisBase = Convert.ToInt32(wisB);
+            conBase = Convert.ToInt32(conB);
+            chaBase = Convert.ToInt32(chaB);
+            strMisc = Convert.ToInt32(strM);
+            intelMisc = Convert.ToInt32(intelM);
+            dexMisc = Convert.ToInt32(dexM);
+            wisMisc = Convert.ToInt32(wisM);
+            conMisc = Convert.ToInt32(conM);
+            chaMisc = Convert.ToInt32(chaM);
+            skillProfs = sp;
         }
     }
 }

@@ -60,7 +60,11 @@
       <DependentUpon>CharacterSheet.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharVals.cs" />
+    <Compile Include="HPCalc.xaml.cs">
+      <DependentUpon>HPCalc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainTab.cs" />
+    <Compile Include="OpenFromFile.cs" />
     <Compile Include="Sheet.cs" />
     <Page Include="CharacterSheet.xaml">
       <SubType>Designer</SubType>
@@ -76,6 +80,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RaceDataDataSet.xsd</DependentUpon>
     </Compile>
+    <Page Include="HPCalc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

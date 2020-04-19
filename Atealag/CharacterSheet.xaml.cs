@@ -28,5 +28,17 @@ namespace Atealag
             MainTab.DataContext = charSheet.userMainTab;
             AbilityScoreGrid.DataContext = charSheet.userCharVals;
         }
+        public CharacterSheet(string s)
+        {
+            InitializeComponent();
+            charSheet = new Sheet(s);
+            AllTabsGrid.DataContext = charSheet.userCharVals;
+            MainTab.DataContext = charSheet.userMainTab;
+            AbilityScoreGrid.DataContext = charSheet.userCharVals;
+        }
+        private void OpenHPCalc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

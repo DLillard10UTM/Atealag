@@ -45,7 +45,8 @@
                         </Grid>
 
                         <Grid Name="HPDisplayGrid" Margin="10,10,717,218.2">
-                            
+                            <Button x:Name="OpenHPCalc" Content="HPCalc" HorizontalAlignment="Left" Margin="0,35,0,0" Click ="OpenHPCalc_Click" VerticalAlignment="Top" Width="61"/>
+
                         </Grid>
                     </Grid>
                 </TabItem>
