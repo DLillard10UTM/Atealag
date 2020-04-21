@@ -23,6 +23,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button x:Name="HPTrackerAdd" Content="HP Add" Height ="25" Width="75" Click ="HPTrackerAdd_Click" Margin="699,-30,0,185"/>
+        <Button Content="MAKEITEASY" HorizontalAlignment="Left" Height="100" Margin="352,221,0,-141" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
     
 </Window>

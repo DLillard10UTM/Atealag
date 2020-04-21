@@ -39,5 +39,11 @@ namespace Atealag
             HPList.SelectedItem = HPList.Items[index];
             userAssetManager.userHPTrack.RemoveFromButton(HPList.SelectedIndex);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MakeItEasy mk = new MakeItEasy();
+            mk.Show();
+        }
     }
 }
