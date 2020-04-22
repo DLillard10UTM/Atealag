@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BackgroundDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackgroundDataDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ClassDataDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +109,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="BackgroundDataDataSet.xsc">
+      <DependentUpon>BackgroundDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BackgroundDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BackgroundDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BackgroundDataDataSet.xss">
+      <DependentUpon>BackgroundDataDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ClassDataDataSet.xsc">
       <DependentUpon>ClassDataDataSet.xsd</DependentUpon>
     </None>
@@ -135,6 +151,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BackgroundData.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ClassData.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

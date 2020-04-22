@@ -7,21 +7,29 @@
         mc:Ignorable="d"
         Title="MakeItEasy" Height="450" Width="400">
     <Grid>
-        <ComboBox x:Name="RaceSelector" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="170" Height="20" SelectionChanged="RaceSelector_SelectionChanged">
+        <ComboBox x:Name="RaceSelector" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="170" Height="27" SelectionChanged="RaceSelector_SelectionChanged">
             
         </ComboBox>
         
-        <ComboBox x:Name="ClassSelector" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="170" Height="20">
+        <ComboBox x:Name="ClassSelector" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Width="170" Height="27" SelectionChanged="ClassSelector_SelectionChanged">
             
         </ComboBox>
         
-        <ComboBox x:Name="SubraceSelector" HorizontalAlignment="Left" Margin="212,10,0,0" VerticalAlignment="Top" Width="170" Height="20">
+        <ComboBox x:Name="SubraceSelector" HorizontalAlignment="Left" Margin="204,21,0,0" VerticalAlignment="Top" Width="170" Height="27">
             
         </ComboBox>
 
-        <ComboBox x:Name="SubclassSelector" HorizontalAlignment="Left" Margin="212,35,0,0" VerticalAlignment="Top" Width="170" Height="20">
+        <ComboBox x:Name="SubclassSelector" HorizontalAlignment="Left" Margin="204,73,0,0" VerticalAlignment="Top" Width="170" Height="27">
             
         </ComboBox>
-        
+        <ComboBox x:Name="BackgroundSelector" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="170" Height="27">
+
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="204,5,0,0" TextWrapping="Wrap" Text="Subrace" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top"/>
+        <TextBlock x:Name="SubclassPreface" HorizontalAlignment="Left" Margin="204,57,0,0" TextWrapping="Wrap" Text="Subclass" VerticalAlignment="Top" Width="170"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,111,0,0" TextWrapping="Wrap" Text="Background" VerticalAlignment="Top" Width="170"/>
+
     </Grid>
 </Window>

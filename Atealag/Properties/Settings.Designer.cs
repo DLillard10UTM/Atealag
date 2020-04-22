@@ -42,5 +42,16 @@ namespace Atealag.Properties {
                 return ((string)(this["ClassDataConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\BackgroundData.accd" +
+            "b")]
+        public string BackgroundDataConnectionString {
+            get {
+                return ((string)(this["BackgroundDataConnectionString"]));
+            }
+        }
     }
 }
