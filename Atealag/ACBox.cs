@@ -33,20 +33,6 @@ namespace Atealag
         }
 
         //Mod is calculated, (bonus - 10) / 2.
-        private int _primaryAbilityBonus;
-        public int primaryAbilityBonus
-        {
-            get
-            {
-                return _primaryAbilityBonus;
-            }
-            set
-            {
-                _primaryAbilityBonus = value;
-                
-                NotifyPropertyChanged("primaryAbilityBonus");
-            }
-        }
 
         private int _primaryAbilityMod;
         public int primaryAbilityMod
@@ -55,23 +41,11 @@ namespace Atealag
             set
             {
                 _primaryAbilityMod = value;
+                NotifyPropertyChanged("primaryAbilityMod");
                 ACTotal = calculateAC();
             }
         }
 
-        private int _secondaryAbilityBonus;
-        public int secondaryAbilityBonus
-        {
-            get
-            {
-                return _secondaryAbilityBonus;
-            }
-            set
-            {
-                _secondaryAbilityBonus = value;
-                NotifyPropertyChanged("secondaryAbilityBonus");
-            }
-        }
         private int _secondaryAbilityMod;
         public int secondaryAbilityMod
         {
@@ -79,6 +53,7 @@ namespace Atealag
             set
             {
                 _secondaryAbilityMod = value;
+                NotifyPropertyChanged("secondaryAbilityMod");
                 ACTotal = calculateAC();
             }
         }
@@ -183,15 +158,24 @@ namespace Atealag
                 ourBroker.subscribe(this, newIndex);
                 pubIndex = newIndex;
                 ourACBox.calculateSecondaryAbilityMod();
+                return;
             }
             //If moving into N/A
-            if (newIndex == 6)
+            if (newIndex == 6 && currIndex != 6)
             {
                 ourBroker.unSubscribe(this, currIndex);
                 //Nothing to sub to
                 pubIndex = newIndex;
-                ourACBox.calculateSecondaryAbilityMod();
+                setScore(0);
+                ourACBox.secondaryAbilityMod = 0;
+                return;
             }
+            if (newIndex == 6 && currIndex == 6)
+            { /*Do NOTHING */ return;  }
+            ourBroker.unSubscribe(this, currIndex);
+            ourBroker.subscribe(this, newIndex);
+            pubIndex = newIndex;
+            ourACBox.calculatePrimaryAbilityMod();
         }
     }
 }

@@ -53,6 +53,10 @@
                             <Button x:Name="OpenACCalc" Content="ACCalc" HorizontalAlignment="Left" Margin="0,35,0,0" Click ="OpenACCalc_Click" VerticalAlignment="Top" Width="61"/>
                             <TextBlock x:Name="ACDisplay" HorizontalAlignment="Left" Margin="29,0,0,0" TextWrapping="Wrap" Text="{Binding ACTotal}" VerticalAlignment="Top" Width="32" Height="30"/>
                         </Grid>
+                        <Grid Name="SpeedDisplayGrid" Margin="144,10,583,218.2">
+                            <Button x:Name="OpenSpeedCalc" Content="SpeedCalc" HorizontalAlignment="Left" Margin="0,35,0,0" Click ="OpenSpeedCalc_Click" VerticalAlignment="Top" Width="61"/>
+                            <TextBlock x:Name="SpeedDisplay" HorizontalAlignment="Left" Margin="29,0,0,0" TextWrapping="Wrap" Text="{Binding totalSpeed}" VerticalAlignment="Top" Width="32" Height="30"/>
+                        </Grid>
                     </Grid>
                 </TabItem>
                 <TabItem Name="SkillsTab" Header="Skills">

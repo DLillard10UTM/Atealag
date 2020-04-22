@@ -20,6 +20,7 @@ namespace Atealag
             set
             {
                 _currHealth = value;
+                NotifyPropertyChanged("currHealth");
             }
         }
         private int _maxHealth;

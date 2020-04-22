@@ -12,20 +12,13 @@ namespace Atealag
     {
         public HealthBox hpDisplay;
         public ACBox acDisplay;
+        public SpeedBox speedDisplay;
         public MainTab()
         {
             hpDisplay = new HealthBox(0,0);
             acDisplay = new ACBox();
+            speedDisplay = new SpeedBox();
         }
-    }
-
-    class SpeedBox
-    {
-
-    }
-    class SpeedCalc
-    {
-
     }
 
     class SensesAndLanguages

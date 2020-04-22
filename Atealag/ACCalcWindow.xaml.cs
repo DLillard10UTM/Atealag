@@ -50,7 +50,7 @@ namespace Atealag
         private void SecondaryAbilityScoreDropDown_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //If the code runs with N/A an error will be produced.
-            if (SecondaryAbilityScoreDropDown.SelectedIndex != 6)
+            //if (SecondaryAbilityScoreDropDown.SelectedIndex != 6)
                 globacBox.secondarySubCouple.changeAbScore(globacBox.secondarySubCouple.getScoreIndex(), SecondaryAbilityScoreDropDown.SelectedIndex);
             //else
            // {

@@ -70,6 +70,10 @@
     </Compile>
     <Compile Include="MainTab.cs" />
     <Compile Include="Sheet.cs" />
+    <Compile Include="SpeedBox.cs" />
+    <Compile Include="SpeedCalc.xaml.cs">
+      <DependentUpon>SpeedCalc.xaml</DependentUpon>
+    </Compile>
     <Page Include="ACCalcWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +110,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MakeItEasy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpeedCalc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
