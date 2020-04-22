@@ -27,6 +27,8 @@ namespace Atealag
             AllTabsGrid.DataContext = charSheet.userCharVals;
             MainTab.DataContext = charSheet.userMainTab;
             AbilityScoreGrid.DataContext = charSheet.userCharVals;
+            HPDisplayGrid.DataContext = charSheet.userMainTab.hpDisplay;
+            ACDisplayGrid.DataContext = charSheet.userMainTab.acDisplay;
         }
         public CharacterSheet(string s)
         {
@@ -35,10 +37,21 @@ namespace Atealag
             AllTabsGrid.DataContext = charSheet.userCharVals;
             MainTab.DataContext = charSheet.userMainTab;
             AbilityScoreGrid.DataContext = charSheet.userCharVals;
+            HPDisplayGrid.DataContext = charSheet.userMainTab.hpDisplay;
+            ACDisplayGrid.DataContext = charSheet.userMainTab.acDisplay;
         }
         private void OpenHPCalc_Click(object sender, RoutedEventArgs e)
         {
+            //Create a paramterized constructor for this to display values dynamically.
+            HPCalc hpCalcWindow = new HPCalc(charSheet.userMainTab.hpDisplay);
+            hpCalcWindow.Show();
+        }
 
+        private void OpenACCalc_Click(object sender, RoutedEventArgs e)
+        {
+            //Create a paramterized constructor for this to display values dynamically.
+            ACCalcWindow acCalcWindow = new ACCalcWindow(charSheet.userMainTab.acDisplay);
+            acCalcWindow.Show();
         }
     }
 }

@@ -56,16 +56,24 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AbilityScorePubSub.cs" />
+    <Compile Include="ACBox.cs" />
+    <Compile Include="ACCalcWindow.xaml.cs">
+      <DependentUpon>ACCalcWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CharacterSheet.xaml.cs">
       <DependentUpon>CharacterSheet.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharVals.cs" />
+    <Compile Include="HealthBox.cs" />
     <Compile Include="HPCalc.xaml.cs">
       <DependentUpon>HPCalc.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainTab.cs" />
-    <Compile Include="OpenFromFile.cs" />
     <Compile Include="Sheet.cs" />
+    <Page Include="ACCalcWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CharacterSheet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

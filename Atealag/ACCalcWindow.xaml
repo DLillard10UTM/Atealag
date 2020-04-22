@@ -1,0 +1,19 @@
+﻿<Window x:Class="Atealag.ACCalcWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Atealag"
+        mc:Ignorable="d"
+        Title="ACCalcWindow" Height="110" Width="451">
+    <Grid>
+        <ComboBox x:Name="PrimaryAbilityScoreDropDown" SelectionChanged="PrimaryAbilityScoreDropDown_SelectionChanged" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox x:Name="SecondaryAbilityScoreDropDown" SelectionChanged="SecondaryAbilityScoreDropDown_SelectionChanged" HorizontalAlignment="Left" Margin="75,27,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBlock x:Name="BaseAC" HorizontalAlignment="Left" Height="23" Margin="160,28,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="46"/>
+        <TextBlock x:Name="PrimaryAbilityBonusDisplay" HorizontalAlignment="Left" Margin="244,28,0,0" TextWrapping="Wrap" Text="{Binding primaryAbilityMod}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="SecondaryAbilityBonusDisplay" HorizontalAlignment="Left" Margin="288,28,0,0" TextWrapping="Wrap" Text="{Binding secondaryAbilityMod}" VerticalAlignment="Top"/>
+        <TextBox x:Name="MiscInput" HorizontalAlignment="Left" Height="23" Margin="369,28,0,0" TextWrapping="Wrap" Text="{Binding misc, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
+        <TextBlock x:Name="addition" HorizontalAlignment="Left" Margin="223,28,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+        <TextBlock x:Name="addition1" HorizontalAlignment="Left" Margin="332,28,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

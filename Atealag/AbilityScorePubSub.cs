@@ -37,7 +37,7 @@ namespace Atealag
     }
 
     //Works between the publishers and the subscribers.
-    class Broker
+    public class Broker
     {
         private List<Pub> abilityScoreList = new List<Pub>();
         private List<List<Sub>> subList = new List<List<Sub>>();
@@ -54,6 +54,8 @@ namespace Atealag
         public void subscribe(Sub subToAdd, int index)
         {
             subList[index].Add(subToAdd);
+            subToAdd.setScoreIndex(index);
+            subToAdd.setScore(abilityScoreList[index].getScore());
         }
 
         public void unSubscribe(Sub subToRemove, int index)
@@ -77,9 +79,13 @@ namespace Atealag
         }
     }
 
-    abstract class Sub
+    public class Sub
     {
-        private int score;
+        //the score, eg DEX = 12, this holds 12.
+        protected int score;
+        //The index they are subscribed to, eg subbed to str = 0.
+        protected int pubIndex;
+        //The broker they communicate to, should be same for all subs and pubs, we only have one broker.
         private Broker subBroker;
 
         public Sub(Broker broker)
@@ -87,15 +93,29 @@ namespace Atealag
             subBroker = broker;
         }
         //this function will be called when the drop down menu Ability scores is changed.
-        public void changeAbScore(int currIndex, int newIndex)
+        public virtual void changeAbScore(int currIndex, int newIndex)
         {
             subBroker.unSubscribe(this, currIndex);
             subBroker.subscribe(this, newIndex);
+            pubIndex = newIndex;
         }
-        public void setScore(int newScore)
+        public virtual void setScore(int newScore)
         {
             score = newScore;
         }
-
+        public int getScore()
+        {
+            return score;
+        }
+        //we use this function to set up the comboboxes.
+        public int getScoreIndex()
+        {
+            return pubIndex;
+        }
+        //For the start of setting drop down menus and subs.
+        public void setScoreIndex(int index)
+        {
+            pubIndex = index;
+        }
     }
 }

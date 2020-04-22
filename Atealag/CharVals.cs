@@ -9,6 +9,7 @@ namespace Atealag
 {
     class CharVals : INotifyPropertyChanged
     {
+        public Sheet sheet;
         private string _name;
         public string name
         {
@@ -96,6 +97,7 @@ namespace Atealag
                 if (_level != value)
                 {
                     _level = value;
+                    sheet.updateLevel();
                     NotifyPropertyChanged("level");
                 }
             }
@@ -114,7 +116,7 @@ namespace Atealag
             }
         }
 
-        Broker abilityScoreBroker;
+        public Broker abilityScoreBroker;
 
         //We cannot put these values inside of an array or any kind of struct for binding reasons.
         private int _strBase; private int _intelBase; private int _dexBase;
@@ -333,10 +335,11 @@ namespace Atealag
             abilityScoreBroker = new Broker();
         }
 
-        public CharVals(string n, string r, string c, string sc, string bg, string alight, string l, string un, string strB, string intelB,
+        public CharVals(Sheet userSheet, string n, string r, string c, string sc, string bg, string alight, string l, string un, string strB, string intelB,
                         string dexB, string wisB, string conB, string chaB, string strM, string intelM,
                         string dexM, string wisM, string conM, string chaM, string sp)
         {
+            sheet = userSheet;
             abilityScoreBroker = new Broker();
             name = n;
             race = r;
