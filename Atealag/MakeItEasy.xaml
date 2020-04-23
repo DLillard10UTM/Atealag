@@ -27,14 +27,14 @@
 
         </ComboBox>
 
-        <ComboBox x:Name="SubraceSelector" HorizontalAlignment="Left" Margin="204,21,0,0" VerticalAlignment="Top" Width="170" Height="27">
+        <ComboBox x:Name="SubraceSelector" HorizontalAlignment="Left" Margin="204,21,0,0" VerticalAlignment="Top" Width="170" Height="27" SelectionChanged="SubraceSelector_SelectionChanged">
 
         </ComboBox>
 
-        <ComboBox x:Name="SubclassSelector" HorizontalAlignment="Left" Margin="204,73,0,0" VerticalAlignment="Top" Width="170" Height="27">
+        <ComboBox x:Name="SubclassSelector" HorizontalAlignment="Left" Margin="204,73,0,0" VerticalAlignment="Top" Width="170" Height="27" SelectionChanged="SubclassSelector_SelectionChanged">
 
         </ComboBox>
-        <ComboBox x:Name="BackgroundSelector" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="170" Height="27">
+        <ComboBox x:Name="BackgroundSelector" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="170" Height="27" SelectionChanged="BackgroundSelector_SelectionChanged">
 
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top"/>

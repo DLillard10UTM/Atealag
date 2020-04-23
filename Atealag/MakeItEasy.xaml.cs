@@ -39,12 +39,16 @@ namespace Atealag
         OleDbConnection classCn;
         OleDbConnection bgCn;
 
-        Dictionary<string, List<string>> raceDict = new Dictionary<string, List<string>>();
-        Dictionary<string, List<string>> classDict = new Dictionary<string, List<string>>();
-        Dictionary<string, List<string>> bgDict = new Dictionary<string, List<string>>();
+        Dictionary<string, List<string>> raceDict = new Dictionary<string, List<string>>();     // Race --> Subrace
+        Dictionary<string, List<string>> classDict = new Dictionary<string, List<string>>();    // Class --> Subclass
+        Dictionary<string, List<string>> bgDict = new Dictionary<string, List<string>>();       // Background --> Skill Proficiencies
 
-        List<string> classHead = new List<string>();        // List of Subclass headings
-        List<int[]> raceMods = new List<int[]>();           // List of Racial Modifiers based on Subrace
+        Dictionary<string, List<int[]>> modDict = new Dictionary<string, List<int[]>>();        // Subrace --> Array of Ability Score Racial Modifiers
+
+        List<string> classHead = new List<string>();                                            // List of Subclass headings
+        
+
+        charVals character = new charVals();                // Creating a new character
 
         public MakeItEasy()
         {
@@ -54,7 +58,6 @@ namespace Atealag
             classCn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= .\ClassData.accdb");
             bgCn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= .\BackgroundData.accdb");
 
-            charVals character = new charVals();                        // Creating a new character
             character.charAS = new int[] { 10, 10, 10, 10, 10, 10 };    // Assigning default values to the ability scores
             character.charSProf = new List<string>();                   // Initializing the skill proficiency list
 
@@ -71,15 +74,22 @@ namespace Atealag
             OleDbDataReader read = cmd.ExecuteReader();
 
             string race;
+            string subrace;
 
             while (read.Read())                               // Populating the race dictionary 
             {
-                race = read[1].ToString();                    // The key is chosen for the loop
+                race = read[1].ToString();                    // The raceDict key is chosen for the loop
                 if (!raceDict.ContainsKey(race))              // If the key is not present, create a new list of subraces to serve as that key's definition
                 {
                     raceDict[race] = new List<string>();
                 }
-                raceDict[race].Add(read[2].ToString());       // Add the subrace to the definition of the key
+                subrace = read[2].ToString();
+                raceDict[race].Add(subrace);                 // Add the subrace to the definition of the key
+
+                if (!modDict.ContainsKey(subrace))
+                {
+                    modDict[subrace] = new List<int[]>();
+                }
             }
 
             // Using the completed dictionary, create a ComboBoxItem with content corresponding with the keys of the dictionary. This is the race selector.
@@ -197,7 +207,16 @@ namespace Atealag
                         // ... and add the combobox item to the SubraceSelector as an option.
                     }
                 }
-            }
+            }            
+        }
+
+        private void SubraceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string baseRace = ((ComboBoxItem)RaceSelector.SelectedItem).Content.ToString();
+            string subRace = ((ComboBoxItem)SubraceSelector.SelectedItem).Content.ToString();
+
+            if (subRace != "Default") character.charRace = subRace + " " + baseRace;
+            else character.charRace = baseRace;
         }
 
         private void ClassSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -232,6 +251,21 @@ namespace Atealag
                 }
             }
         }
+
+        private void SubclassSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string baseClass = ((ComboBoxItem)ClassSelector.SelectedItem).Content.ToString();
+            string subClass = ((ComboBoxItem)SubclassSelector.SelectedItem).Content.ToString();
+
+            character.charClass = baseClass;
+            character.charSClass = subClass;
+        }
+
+        private void BackgroundSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
     }
 
 }
