@@ -46,13 +46,11 @@ namespace Atealag
 
         Dictionary<string, int[]> modDict = new Dictionary<string, int[]>();                    // Subrace --> Array of Ability Score Racial Modifiers
         Dictionary<string, List<string>> cProfDict = new Dictionary<string, List<string>>();    // Class-Subclass Pair --> List of Skill Proficiencies for that Class-Subclass Pair
-        Dictionary<string, List<int>> cProfCount = new Dictionary<string, List<int>>();         // Class-Subclass Pair --> Number of possible Skill Proficiencies for that Class-Subclass Pair
-        Dictionary<string, List<int>> cProfChoiceCount = new Dictionary<string, List<int>>();   // Class-Subclass Pair --> Number of actual Skill Proficiencies able to be chosen for that Class-Subclass Pair
+        Dictionary<string, int> cProfCount = new Dictionary<string, int>();                     // Class-Subclass Pair --> Number of possible Skill Proficiencies for that Class-Subclass Pair
+        Dictionary<string, int> cProfChoiceCount = new Dictionary<string, int>();               // Class-Subclass Pair --> Number of actual Skill Proficiencies able to be chosen for that Class-Subclass Pair
 
         List<string> classHead = new List<string>();                                            // List of Subclass headings
-
-
-        List<string> charBGSProf;                                                               // List of Skill Proficiencies from Chosen Background
+        List<string> charBGSProf = new List<string>();                                          // List of Skill Proficiencies received from Background
 
         charVals character = new charVals();                // Creating a new character
 
@@ -154,13 +152,11 @@ namespace Atealag
 
                 if (!cProfChoiceCount.ContainsKey(classPair))
                 {
-                    cProfChoiceCount[classPair] = new List<int>();
-                    cProfChoiceCount[classPair].Add(choiceCount);
+                    cProfChoiceCount[classPair] = choiceCount;
                 }
 
                 if (!cProfCount.ContainsKey(classPair))
-                    cProfCount[classPair] = new List<int>();
-                    cProfCount[classPair].Add(profCount);
+                    cProfCount[classPair] = profCount;
 
                 if (!cProfDict.ContainsKey(classPair))          // If the Dictionary does not contain a given class-subclass combo as a key...
                 {
@@ -270,6 +266,7 @@ namespace Atealag
         private void ClassSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SubclassSelector.Items.Clear(); // Clears the content of the SubclassSelector.
+            ProficiencySelector.Items.Clear();
 
             string comp = ((ComboBoxItem)ClassSelector.SelectedItem).Content.ToString(); // The current content of the ClassSelector after change.
 
@@ -303,12 +300,36 @@ namespace Atealag
         private void SubclassSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string baseClass = ((ComboBoxItem)ClassSelector.SelectedItem).Content.ToString();
-            string subClass = ((ComboBoxItem)SubclassSelector.SelectedItem).Content.ToString();
+            ProficiencySelector.Items.Clear();
 
-            character.charClass = baseClass;
-            character.charSClass = subClass;
+            if (SubclassSelector.SelectedItem != null)
+            {
+                string subClass = ((ComboBoxItem)SubclassSelector.SelectedItem).Content.ToString();
 
+                character.charClass = baseClass;
+                character.charSClass = subClass;
 
+                string classPair = RemoveSpecialCharacters(baseClass) + RemoveSpecialCharacters(subClass);
+
+                foreach (var entry in cProfDict) // For each Class-Subclass pair...
+                {
+                    if (entry.Key == classPair) // Find the one where it matches.
+                    {
+                        List<string> proficiencies = entry.Value;   // The class's proficiencies equal the Value.
+                        int choices = cProfChoiceCount[classPair];  // cProfChoiceCount and cProfDict have identical keys
+
+                        foreach (string proficiency in proficiencies)
+                        {
+                            ListBoxItem nProf = new ListBoxItem();
+                            nProf.Content = proficiency;
+
+                            nProf.Name = RemoveSpecialCharacters(entry.Key) + "_" + RemoveSpecialCharacters(proficiency); // "BarbarianTotemWarrior_AnimalHandling"
+
+                            ProficiencySelector.Items.Add(nProf);
+                        }
+                    }
+                }
+            }
         }
 
         private void BackgroundSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -316,6 +337,9 @@ namespace Atealag
             string background = ((ComboBoxItem)BackgroundSelector.SelectedItem).Content.ToString();
 
             character.charBG = background;
+
+            // for each string in charBGSProf, delete those entries in the TextBlock and the character skill list
+
             charBGSProf.Clear();                // Clears the list of background skill proficiencies
 
             foreach (var entry in bgDict)
@@ -327,6 +351,7 @@ namespace Atealag
                     foreach (string proficiency in proficiencies)
                     {
                         charBGSProf.Add(proficiency);
+                        // Add these proficiencies to the TextBlock for Proficiencies and the character skill list
                     }
                 }
             }
@@ -334,7 +359,17 @@ namespace Atealag
 
         private void ProficiencySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            string baseClass = ((ComboBoxItem)ClassSelector.SelectedItem).Content.ToString();
+            string subClass = ((ComboBoxItem)SubclassSelector.SelectedItem).Content.ToString();
+
+            string classPair = RemoveSpecialCharacters(baseClass) + RemoveSpecialCharacters(subClass);
+
+            int maxSelections = cProfChoiceCount[classPair];
+
+            if (ProficiencySelector.SelectedItems.Count > maxSelections)
+            {
+                ProficiencySelector.SelectedIndex = -1;                     // Need to test, should clear selections
+            }
         }
     }
 
