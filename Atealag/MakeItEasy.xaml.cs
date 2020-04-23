@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -617,9 +619,63 @@ namespace Atealag
             // Skill proficiencies are handled by...    This function (as it cements all changes).  Name: character.charSProf   (List<string>)
 
             string totalProfs = ProficiencyTotalList.Text;
-            character.charSProf = totalProfs.Split(',').ToList();   // Should work, let me know if it doesn't.
+            //character.charSProf = totalProfs.Split(',').ToList();   // Should work, let me know if it doesn't.
 
-            // Danny needs to link all of that character information to the Main Window. It's 4 am. Goodnight.
+            SaveFileDialog openFileDialog = new SaveFileDialog();
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                using (StreamWriter writer = new StreamWriter(openFileDialog.FileName))
+                {
+                    writer.WriteLine("Traveler");
+                    writer.WriteLine(character.charRace);
+                    writer.WriteLine(character.charClass);
+                    writer.WriteLine(character.charSClass);
+                    writer.WriteLine(character.charBG);
+                    writer.WriteLine("[ALIGNMENT]");
+                    writer.WriteLine("1");
+                    writer.WriteLine("[USERNAME]");
+                    writer.WriteLine(character.charAS[0]);
+                    writer.WriteLine(character.charAS[3]);
+                    writer.WriteLine(character.charAS[1]);
+                    writer.WriteLine(character.charAS[4]);
+                    writer.WriteLine(character.charAS[2]);
+                    writer.WriteLine(character.charAS[5]);
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine(character.charSProf);
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("4");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("2");
+                    writer.WriteLine(6);
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("False");
+                    writer.WriteLine("False");
+                    writer.WriteLine("False");
+                    writer.WriteLine("False");
+                    writer.WriteLine("False");
+                    writer.WriteLine("False");
+                    writer.WriteLine("0");
+                }
+                CharacterSheet newChar = new CharacterSheet(openFileDialog.FileName);
+                newChar.Show();
+            }
+            
         }
     }
 }

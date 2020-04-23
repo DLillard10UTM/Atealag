@@ -71,7 +71,6 @@ namespace Atealag
         private void OpenSheetBtn_Click(object sender, RoutedEventArgs e)
         {
 			OpenFileDialog openFileDialog = new OpenFileDialog();
-            _ = openFileDialog.ShowDialog() == true;
             if(openFileDialog.ShowDialog() == true)
             {
                 CharacterSheet fileOpener = new CharacterSheet(openFileDialog.FileName);

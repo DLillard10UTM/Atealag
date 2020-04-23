@@ -95,7 +95,6 @@ namespace Atealag
         private void SaveAsBtn_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog openFileDialog = new SaveFileDialog();
-            _ = openFileDialog.ShowDialog() == true;
 
             if (openFileDialog.ShowDialog() == true)
             {

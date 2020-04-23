@@ -173,7 +173,10 @@ namespace Atealag
             userCharVals.abilityScoreBroker.subscribe(userMainTab.acDisplay.primarySubCouple, acPrimIndex);
 
             userMainTab.acDisplay.secondarySubCouple = new secondaryACSub(userCharVals.abilityScoreBroker, userMainTab.acDisplay);
-            userCharVals.abilityScoreBroker.subscribe(userMainTab.acDisplay.secondarySubCouple, acSecIndex);
+            if (acSecIndex != 6)
+            {
+                userCharVals.abilityScoreBroker.subscribe(userMainTab.acDisplay.secondarySubCouple, acSecIndex);
+            }
 
             userMainTab.savingThrowsDisplay.createSubs(userCharVals.abilityScoreBroker);
 
