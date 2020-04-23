@@ -62,7 +62,7 @@ namespace Atealag
 
         public void calculateProfBonus()
         {
-            profBonus = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(level / 4)) + 1);
+            profBonus = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(level) / 4) + 1);
         }
 
         public void calculateTotalScore(int index)

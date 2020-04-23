@@ -32,6 +32,7 @@ namespace Atealag
             SpeedDisplayGrid.DataContext = charSheet.userMainTab.speedDisplay;
             SavingThrowsGrid.DataContext = charSheet.userMainTab.savingThrowsDisplay;
             InitGrid.DataContext = charSheet.userMainTab.initCalcDisplay;
+            ProficientBonusGrid.DataContext = charSheet.userCharVals;
         }
         public CharacterSheet(string s)
         {
@@ -46,6 +47,7 @@ namespace Atealag
             SpeedDisplayGrid.DataContext = charSheet.userMainTab.speedDisplay;
             SavingThrowsGrid.DataContext = charSheet.userMainTab.savingThrowsDisplay;
             InitGrid.DataContext = charSheet.userMainTab.initCalcDisplay;
+            ProficientBonusGrid.DataContext = charSheet.userCharVals;
         }
         private void OpenHPCalc_Click(object sender, RoutedEventArgs e)
         {

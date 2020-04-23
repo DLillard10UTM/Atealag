@@ -82,6 +82,7 @@ namespace Atealag
         {
             userMainTab.hpDisplay.level = userCharVals.level;
             userMainTab.savingThrowsDisplay.level = userCharVals.level;
+            userCharVals.calcProficientBonus();
         }
 
         //Couple the ability score pub subs, for new sheet.

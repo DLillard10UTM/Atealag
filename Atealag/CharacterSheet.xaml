@@ -62,8 +62,8 @@
 
         </Grid>
         <Grid Name="TabsGrid" Margin="0,109,-0.4,0">
-            <TabControl TabStripPlacement="Bottom">
-                <TabItem Name="MainTab" Header="Main">
+           <!-- <TabControl TabStripPlacement="Bottom">
+                <TabItem Name="MainTab" Header="Main"> -->
                     <!--For some unknown reason, tabs can only have one item inside of them,
                     so our gui elements must be in a single grid. -->
                     <Grid>
@@ -151,12 +151,13 @@
                             <CheckBox x:Name="checkBox2" Style="{StaticResource CircleCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,3,0,0" Background="White" Grid.Row="1"/>
                         </Grid>
 
-                        <Grid Name="SensesandLangsGrid" HorizontalAlignment="Left" Height="81" Margin="445,108,0,0" VerticalAlignment="Top" Width="90">
-                            <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="75" Margin="6,0,0,0" Grid.RowSpan="2"/>
-                            <TextBlock x:Name="SensesandLangs" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Senses and Languages:" VerticalAlignment="Center" Margin="10,10,10,39" Width="70"/>
+                        <Grid Name="ProficientBonusGrid" HorizontalAlignment="Left" Height="66" Margin="444,108,0,0" VerticalAlignment="Top" Width="142">
+                            <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="104" Margin="21,0,0,0"/>
+                            <TextBlock x:Name="text" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Proficiency Bonus:" VerticalAlignment="Bottom" Margin="26,0,46,28" Width="70"/>
+                            <TextBlock x:Name="ProficientBonus" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding proficientBonus}" VerticalAlignment="Center" Margin="96,22,28,28" Width="18"/>
                         </Grid>
                     </Grid>
-                </TabItem>
+               <!-- </TabItem>
                 <TabItem Name="SkillsTab" Header="Skills">
                 </TabItem>
                 <TabItem Name="EquipmentTab" Header="Equipment">
@@ -167,7 +168,7 @@
                 </TabItem>
                 <TabItem Name="NotesTab" Header="Notes">
                 </TabItem>
-            </TabControl>
+            </TabControl> -->
         </Grid>
     </Grid>
 </Window>

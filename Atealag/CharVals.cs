@@ -116,6 +116,20 @@ namespace Atealag
             }
         }
 
+        private int _proficientBonus;
+        public int proficientBonus
+        {
+            get { return _proficientBonus; }
+            set
+            {
+                if (_proficientBonus != value)
+                {
+                    _proficientBonus = value;
+                    NotifyPropertyChanged("proficientBonus");
+                }
+            }
+        }
+
         public Broker abilityScoreBroker;
 
         //We cannot put these values inside of an array or any kind of struct for binding reasons.
@@ -317,6 +331,11 @@ namespace Atealag
             abilityScoreBroker.updatePub(5, _cha);
         }
 
+        public void calcProficientBonus()
+        {
+            double bruh = Convert.ToDouble(level) / 4;
+            proficientBonus = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(level) / 4) + 1);
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propertyName)
         {
