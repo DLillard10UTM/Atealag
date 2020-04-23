@@ -7,17 +7,6 @@
         mc:Ignorable="d"
         Title="MakeItEasy" Height="700" Width="400">
 
-    <Window.Resources>
-        <Style x:Key="VisibleStyle" TargetType="TextBlock">
-            <Setter Property="Visibility" Value="Collapsed"/>
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ControlType}" Value="visible">
-                    <Setter Property="Visibility" Value="Visible"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
-
     <Grid>
         <ComboBox x:Name="RaceSelector" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="170" Height="27" SelectionChanged="RaceSelector_SelectionChanged">
 
@@ -46,12 +35,12 @@
         <TextBlock HorizontalAlignment="Left" Margin="40,174,0,0" TextWrapping="Wrap" Text="Ability Scores" VerticalAlignment="Top" RenderTransformOrigin="0.204,0"/>
         <TextBlock HorizontalAlignment="Left" Margin="145,174,0,0" TextWrapping="Wrap" Text="Racial Modifiers" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="strBox" HorizontalAlignment="Left" Height="23" Margin="43,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-        <TextBox x:Name="dexBox" HorizontalAlignment="Left" Height="23" Margin="43,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-        <TextBox x:Name="conBox" HorizontalAlignment="Left" Height="23" Margin="43,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-        <TextBox x:Name="intBox" HorizontalAlignment="Left" Height="23" Margin="43,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-        <TextBox x:Name="wisBox" HorizontalAlignment="Left" Height="23" Margin="43,307,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-        <TextBox x:Name="chaBox" HorizontalAlignment="Left" Height="23" Margin="43,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
+        <TextBox x:Name="strBox" HorizontalAlignment="Left" Height="23" Margin="43,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51" TextChanged="strBox_TextChanged"/>
+        <TextBox x:Name="dexBox" HorizontalAlignment="Left" Height="23" Margin="43,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51" TextChanged="dexBox_TextChanged"/>
+        <TextBox x:Name="conBox" HorizontalAlignment="Left" Height="23" Margin="43,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51" TextChanged="conBox_TextChanged"/>
+        <TextBox x:Name="intBox" HorizontalAlignment="Left" Height="23" Margin="43,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51" TextChanged="intBox_TextChanged"/>
+        <TextBox x:Name="wisBox" HorizontalAlignment="Left" Height="23" Margin="43,307,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51" TextChanged="wisBox_TextChanged"/>
+        <TextBox x:Name="chaBox" HorizontalAlignment="Left" Height="23" Margin="43,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51" TextChanged="chaBox_TextChanged"/>
 
         <TextBlock x:Name="strRM" HorizontalAlignment="Left" Margin="175,196,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock x:Name="dexRM" HorizontalAlignment="Left" Margin="175,224,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
@@ -68,7 +57,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="308,308,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="308,336,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
 
-        <TextBlock x:Name="abilityWarning" Style="{StaticResource VisibleStyle}" HorizontalAlignment="Left" Margin="19,372,0,0" TextWrapping="Wrap" Text="*Ability Scores must be integer values" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBlock x:Name="abilityWarning" Visibility="Collapsed" HorizontalAlignment="Left" Margin="19,372,0,0" TextWrapping="Wrap" Text="*Ability Scores must be integer values" VerticalAlignment="Top" Foreground="Red"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="Class Skill Proficiencies" VerticalAlignment="Top"/>
         

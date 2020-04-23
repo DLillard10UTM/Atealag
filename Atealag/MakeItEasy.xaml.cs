@@ -358,6 +358,31 @@ namespace Atealag
                     }
                 }
             }
+
+            if (ClassSelector.SelectedItem != null && SubclassSelector.SelectedItem != null)
+            {
+                string baseClass = ((ComboBoxItem)ClassSelector.SelectedItem).Content.ToString();
+                string subClass = ((ComboBoxItem)SubclassSelector.SelectedItem).Content.ToString();
+
+                string classPair = RemoveSpecialCharacters(baseClass) + RemoveSpecialCharacters(subClass);
+
+                int maxSelections = cProfChoiceCount[classPair];
+
+                StringBuilder sb = new StringBuilder();
+
+                foreach (ListBoxItem item in ProficiencySelector.SelectedItems)
+                {
+                    sb.Append(item.Content + ", ");
+                }
+
+                foreach (string proficiency in charBGSProf)
+                {
+                    sb.Append(proficiency + ", ");
+                }
+
+                ProficiencyTotalList.Text = sb.ToString();
+
+            }
         }
 
         private void ProficiencySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -392,6 +417,143 @@ namespace Atealag
                 }
             }
         }
-    }
 
+        private void strBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int value;
+            if (int.TryParse(strBox.Text, out value))
+            {
+                abilityWarning.Visibility = Visibility.Collapsed;
+                character.charAS[0] = value;
+
+                if (!int.TryParse(dexBox.Text, out value) ||
+                    !int.TryParse(conBox.Text, out value) ||
+                    !int.TryParse(intBox.Text, out value) ||
+                    !int.TryParse(wisBox.Text, out value) ||
+                    !int.TryParse(chaBox.Text, out value))
+                {
+                    abilityWarning.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                abilityWarning.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void dexBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int value;
+            if (int.TryParse(dexBox.Text, out value))
+            {
+                abilityWarning.Visibility = Visibility.Collapsed;
+                character.charAS[1] = value;
+
+                if (!int.TryParse(strBox.Text, out value) ||
+                    !int.TryParse(conBox.Text, out value) ||
+                    !int.TryParse(intBox.Text, out value) ||
+                    !int.TryParse(wisBox.Text, out value) ||
+                    !int.TryParse(chaBox.Text, out value))
+                {
+                    abilityWarning.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                abilityWarning.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void conBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int value;
+            if (int.TryParse(conBox.Text, out value))
+            {
+                abilityWarning.Visibility = Visibility.Collapsed;
+                character.charAS[2] = value;
+
+                if (!int.TryParse(strBox.Text, out value) ||
+                    !int.TryParse(dexBox.Text, out value) ||
+                    !int.TryParse(intBox.Text, out value) ||
+                    !int.TryParse(wisBox.Text, out value) ||
+                    !int.TryParse(chaBox.Text, out value))
+                {
+                    abilityWarning.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                abilityWarning.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void intBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int value;
+            if (int.TryParse(conBox.Text, out value))
+            {
+                abilityWarning.Visibility = Visibility.Collapsed;
+                character.charAS[3] = value;
+
+                if (!int.TryParse(strBox.Text, out value) ||
+                    !int.TryParse(dexBox.Text, out value) ||
+                    !int.TryParse(conBox.Text, out value) ||
+                    !int.TryParse(wisBox.Text, out value) ||
+                    !int.TryParse(chaBox.Text, out value))
+                {
+                    abilityWarning.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                abilityWarning.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void wisBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int value;
+            if (int.TryParse(conBox.Text, out value))
+            {
+                abilityWarning.Visibility = Visibility.Collapsed;
+                character.charAS[4] = value;
+
+                if (!int.TryParse(strBox.Text, out value) ||
+                    !int.TryParse(dexBox.Text, out value) ||
+                    !int.TryParse(conBox.Text, out value) ||
+                    !int.TryParse(intBox.Text, out value) ||
+                    !int.TryParse(chaBox.Text, out value))
+                {
+                    abilityWarning.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                abilityWarning.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void chaBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int value;
+            if (int.TryParse(conBox.Text, out value))
+            {
+                abilityWarning.Visibility = Visibility.Collapsed;
+                character.charAS[5] = value;
+
+                if (!int.TryParse(strBox.Text, out value) ||
+                    !int.TryParse(dexBox.Text, out value) ||
+                    !int.TryParse(conBox.Text, out value) ||
+                    !int.TryParse(intBox.Text, out value) ||
+                    !int.TryParse(wisBox.Text, out value))
+                {
+                    abilityWarning.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                abilityWarning.Visibility = Visibility.Visible;
+            }
+        }
+    }
 }
