@@ -24,11 +24,12 @@ namespace Atealag
     {
         struct charVals
         {
-            public string charRace;        // Race
-            public string charClass;       // Class
-            public string charSClass;      // Subclass
-            public int[] charAS;           // Ability Scores (with Racial Modifiers)
-            public List<string> charSProf; // List of Skill Proficiencies
+            public string charRace;             // Race
+            public string charClass;            // Class
+            public string charSClass;           // Subclass
+            public string charBG;               // Background
+            public int[] charAS;                // Ability Scores (with Racial Modifiers)
+            public List<string> charSProf;      // List of All Skill Proficiencies
         };
         
         // Need to add a LoadData function and a number of derived functions to access information from SQL databases
@@ -43,10 +44,15 @@ namespace Atealag
         Dictionary<string, List<string>> classDict = new Dictionary<string, List<string>>();    // Class --> Subclass
         Dictionary<string, List<string>> bgDict = new Dictionary<string, List<string>>();       // Background --> Skill Proficiencies
 
-        Dictionary<string, List<int[]>> modDict = new Dictionary<string, List<int[]>>();        // Subrace --> Array of Ability Score Racial Modifiers
+        Dictionary<string, int[]> modDict = new Dictionary<string, int[]>();                    // Subrace --> Array of Ability Score Racial Modifiers
+        Dictionary<string, List<string>> cProfDict = new Dictionary<string, List<string>>();    // Class-Subclass Pair --> List of Skill Proficiencies for that Class-Subclass Pair
+        Dictionary<string, List<int>> cProfCount = new Dictionary<string, List<int>>();         // Class-Subclass Pair --> Number of possible Skill Proficiencies for that Class-Subclass Pair
+        Dictionary<string, List<int>> cProfChoiceCount = new Dictionary<string, List<int>>();   // Class-Subclass Pair --> Number of actual Skill Proficiencies able to be chosen for that Class-Subclass Pair
 
         List<string> classHead = new List<string>();                                            // List of Subclass headings
-        
+
+
+        List<string> charBGSProf;                                                               // List of Skill Proficiencies from Chosen Background
 
         charVals character = new charVals();                // Creating a new character
 
@@ -75,6 +81,7 @@ namespace Atealag
 
             string race;
             string subrace;
+            string mSub;
 
             while (read.Read())                               // Populating the race dictionary 
             {
@@ -86,9 +93,20 @@ namespace Atealag
                 subrace = read[2].ToString();
                 raceDict[race].Add(subrace);                 // Add the subrace to the definition of the key
 
-                if (!modDict.ContainsKey(subrace))
+                mSub = RemoveSpecialCharacters(race) + RemoveSpecialCharacters(subrace);
+                // mSub (or Modifier Subrace) has the title "RaceSubrace" with no special characters. Default Half-Orc becomes HalfOrcDefault.
+                // There are multiple "Default" races, so this ensures that everything after the first Default isn't filtered out.
+
+                if (!modDict.ContainsKey(mSub))          // If the modifier dictionary does not already contain the subrace
                 {
-                    modDict[subrace] = new List<int[]>();
+                    modDict[mSub] = new int[]
+                        {Convert.ToInt32(read[3]),          // Strength
+                         Convert.ToInt32(read[4]),          // Dexterity
+                         Convert.ToInt32(read[5]),          // Constitution
+                         Convert.ToInt32(read[6]),          // Intelligence
+                         Convert.ToInt32(read[7]),          // Wisdom
+                         Convert.ToInt32(read[8])           // Charisma
+                        };
                 }
             }
 
@@ -113,6 +131,10 @@ namespace Atealag
             OleDbDataReader read = cmd.ExecuteReader();
 
             string vclass;
+            string subclass;
+            string classPair;
+            int profCount;
+            int choiceCount;
 
             while (read.Read())                                 // Populating the class dictionary and list
             {
@@ -122,7 +144,33 @@ namespace Atealag
                     classDict[vclass] = new List<string>();
                     classHead.Add(read[2].ToString());          // Archetype heading: "School, Path of, etc." (flavor text)
                 }
-                classDict[vclass].Add(read[3].ToString());      // Add the subclass to the definition list
+                subclass = read[3].ToString();
+                classDict[vclass].Add(subclass);                // Add the subclass to the definition list
+
+                choiceCount = Convert.ToInt32(read[4]);
+                profCount = Convert.ToInt32(read[5]);
+
+                classPair = RemoveSpecialCharacters(vclass) + RemoveSpecialCharacters(subclass);
+
+                if (!cProfChoiceCount.ContainsKey(classPair))
+                {
+                    cProfChoiceCount[classPair] = new List<int>();
+                    cProfChoiceCount[classPair].Add(choiceCount);
+                }
+
+                if (!cProfCount.ContainsKey(classPair))
+                    cProfCount[classPair] = new List<int>();
+                    cProfCount[classPair].Add(profCount);
+
+                if (!cProfDict.ContainsKey(classPair))          // If the Dictionary does not contain a given class-subclass combo as a key...
+                {
+                    cProfDict[classPair] = new List<string>();
+
+                    for (int i = 6; i < profCount + 5; i++)     // Proficiencies start at column 6 and go until column 23, maxing out with a profCount of 18
+                    {
+                        cProfDict[classPair].Add(read[i].ToString());   // BardLore has all 18, but BarbarianTotemWarrior just has 6
+                    }
+                }
             }
 
             foreach (string key in classDict.Keys)
@@ -259,13 +307,35 @@ namespace Atealag
 
             character.charClass = baseClass;
             character.charSClass = subClass;
+
+
         }
 
         private void BackgroundSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string background = ((ComboBoxItem)BackgroundSelector.SelectedItem).Content.ToString();
 
+            character.charBG = background;
+            charBGSProf.Clear();                // Clears the list of background skill proficiencies
+
+            foreach (var entry in bgDict)
+            {
+                if (entry.Key == background)
+                {
+                    List<string> proficiencies = entry.Value;
+
+                    foreach (string proficiency in proficiencies)
+                    {
+                        charBGSProf.Add(proficiency);
+                    }
+                }
+            }
         }
 
+        private void ProficiencySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 
 }

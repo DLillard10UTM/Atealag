@@ -17,7 +17,7 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    
+
     <Grid>
         <ComboBox x:Name="RaceSelector" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="170" Height="27" SelectionChanged="RaceSelector_SelectionChanged">
 
@@ -45,21 +45,21 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="10,174,0,0" TextWrapping="Wrap" Text="Ability Scores" VerticalAlignment="Top" RenderTransformOrigin="0.204,0"/>
         <TextBlock HorizontalAlignment="Left" Margin="145,174,0,0" TextWrapping="Wrap" Text="Racial Modifiers" VerticalAlignment="Top"/>
-        
+
         <TextBox x:Name="strBox" HorizontalAlignment="Left" Height="23" Margin="19,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
         <TextBox x:Name="dexBox" HorizontalAlignment="Left" Height="23" Margin="19,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
         <TextBox x:Name="conBox" HorizontalAlignment="Left" Height="23" Margin="19,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
         <TextBox x:Name="intBox" HorizontalAlignment="Left" Height="23" Margin="19,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
         <TextBox x:Name="wisBox" HorizontalAlignment="Left" Height="23" Margin="19,307,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
         <TextBox x:Name="chaBox" HorizontalAlignment="Left" Height="23" Margin="19,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="51"/>
-        
+
         <TextBlock HorizontalAlignment="Left" Margin="175,196,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="175,224,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="175,252,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="175,280,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="175,308,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="175,336,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
-        
+
         <TextBlock HorizontalAlignment="Left" Margin="297,174,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" RenderTransformOrigin="-1.823,0.564"/>
         <TextBlock HorizontalAlignment="Left" Margin="308,196,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="308,224,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
@@ -70,9 +70,17 @@
 
         <TextBlock x:Name="abilityWarning" Style="{StaticResource VisibleStyle}" HorizontalAlignment="Left" Margin="19,372,0,0" TextWrapping="Wrap" Text="*Ability Scores must be integer values" VerticalAlignment="Top" Foreground="Red"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="Skill Proficiencies" VerticalAlignment="Top"/>
-        <ListBox x:Name="ProficiencySelector"  HorizontalAlignment="Left" Height="100" Margin="10,424,0,0" VerticalAlignment="Top" Width="100">
+        <TextBlock HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="Class Skill Proficiencies" VerticalAlignment="Top"/>
+        
+        <ListBox x:Name="ProficiencySelector"  HorizontalAlignment="Left" Height="135" Margin="10,424,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ProficiencySelector_SelectionChanged">
+            
         </ListBox>
+
+        <TextBlock HorizontalAlignment="Left" Margin="175,403,0,0" TextWrapping="Wrap" Text="Total Proficiencies" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="175,424,0,0" VerticalAlignment="Top" Width="199"/>
+        <TextBlock x:Name="ProficiencyTotalList"  HorizontalAlignment="Left" Margin="185,434,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="90" Width="189"/>
+
+
 
 
 
