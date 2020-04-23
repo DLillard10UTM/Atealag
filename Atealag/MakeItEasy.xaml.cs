@@ -337,7 +337,14 @@ namespace Atealag
             string background = ((ComboBoxItem)BackgroundSelector.SelectedItem).Content.ToString();
 
             character.charBG = background;
+            int length;
 
+            foreach (string proficiency in charBGSProf)
+            {
+                length = proficiency.Length;
+                character.charSProf.Remove(proficiency);
+                ProficiencyTotalList.Text.Remove(ProficiencyTotalList.Text.IndexOf(proficiency), length + 1);
+            }
             // for each string in charBGSProf, delete those entries in the TextBlock and the character skill list
 
             charBGSProf.Clear();                // Clears the list of background skill proficiencies
@@ -365,6 +372,8 @@ namespace Atealag
             string classPair = RemoveSpecialCharacters(baseClass) + RemoveSpecialCharacters(subClass);
 
             int maxSelections = cProfChoiceCount[classPair];
+
+
 
             if (ProficiencySelector.SelectedItems.Count > maxSelections)
             {

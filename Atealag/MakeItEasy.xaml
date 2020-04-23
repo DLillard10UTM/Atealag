@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Atealag"
         mc:Ignorable="d"
-        Title="MakeItEasy" Height="600" Width="400">
+        Title="MakeItEasy" Height="700" Width="400">
 
     <Window.Resources>
         <Style x:Key="VisibleStyle" TargetType="TextBlock">
@@ -72,13 +72,13 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="Class Skill Proficiencies" VerticalAlignment="Top"/>
         
-        <ListBox x:Name="ProficiencySelector"  HorizontalAlignment="Left" Height="135" Margin="10,424,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ProficiencySelector_SelectionChanged">
+        <ListBox x:Name="ProficiencySelector" SelectionMode="Multiple" HorizontalAlignment="Left" Height="135" Margin="10,424,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ProficiencySelector_SelectionChanged">
             
         </ListBox>
 
         <TextBlock HorizontalAlignment="Left" Margin="175,403,0,0" TextWrapping="Wrap" Text="Total Proficiencies" VerticalAlignment="Top"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="175,424,0,0" VerticalAlignment="Top" Width="199"/>
-        <TextBlock x:Name="ProficiencyTotalList"  HorizontalAlignment="Left" Margin="185,434,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="90" Width="189"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="135" Margin="175,424,0,0" VerticalAlignment="Top" Width="199"/>
+        <TextBlock x:Name="ProficiencyTotalList"  HorizontalAlignment="Left" Margin="185,434,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="125" Width="189"/>
 
 
 
