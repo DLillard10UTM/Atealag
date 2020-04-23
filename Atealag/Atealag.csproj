@@ -55,6 +55,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AbilityScorePubSub.cs" />
+    <Compile Include="ACBox.cs" />
+    <Compile Include="ACCalcWindow.xaml.cs">
+      <DependentUpon>ACCalcWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CharacterSheet.xaml.cs">
+      <DependentUpon>CharacterSheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CharVals.cs" />
+    <Compile Include="HealthBox.cs" />
+    <Compile Include="HPCalc.xaml.cs">
+      <DependentUpon>HPCalc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InitCalc.cs" />
+    <Compile Include="InitCalcWindow.xaml.cs">
+      <DependentUpon>InitCalcWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainTab.cs" />
+    <Compile Include="SavingThrowsCalc.cs" />
+    <Compile Include="SavingThrowsCalcWindow.xaml.cs">
+      <DependentUpon>SavingThrowsCalcWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet.cs" />
+    <Compile Include="SpeedBox.cs" />
+    <Compile Include="SpeedCalc.xaml.cs">
+      <DependentUpon>SpeedCalc.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ACCalcWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CharacterSheet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="ClassDataDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
