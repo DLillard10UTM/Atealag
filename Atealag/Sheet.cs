@@ -81,6 +81,7 @@ namespace Atealag
         public void updateLevel()
         {
             userMainTab.hpDisplay.level = userCharVals.level;
+            userMainTab.savingThrowsDisplay.level = userCharVals.level;
         }
 
         //Couple the ability score pub subs, for new sheet.
@@ -95,6 +96,12 @@ namespace Atealag
             userCharVals.abilityScoreBroker.subscribe(userMainTab.acDisplay.primarySubCouple, 2);
 
             userMainTab.acDisplay.secondarySubCouple = new secondaryACSub(userCharVals.abilityScoreBroker, userMainTab.acDisplay);
+
+            userMainTab.savingThrowsDisplay.createSubs(userCharVals.abilityScoreBroker);
+
+            //creating sub and subbing to dex.
+            userMainTab.initCalcDisplay.initSub = new InitSub(userCharVals.abilityScoreBroker, userMainTab.initCalcDisplay);
+            userCharVals.abilityScoreBroker.subscribe(userMainTab.initCalcDisplay.initSub, 2);
         }
 
         //Couple the ability score pub subs, for saved sheet. index is the ability score they are subbed to.
@@ -111,6 +118,12 @@ namespace Atealag
 
             userMainTab.acDisplay.secondarySubCouple = new secondaryACSub(userCharVals.abilityScoreBroker, userMainTab.acDisplay);
             userCharVals.abilityScoreBroker.subscribe(userMainTab.acDisplay.secondarySubCouple, acSecIndex);
+
+            userMainTab.savingThrowsDisplay.createSubs(userCharVals.abilityScoreBroker);
+
+            //creating sub and subbing to dex.
+            userMainTab.initCalcDisplay.initSub = new InitSub(userCharVals.abilityScoreBroker, userMainTab.initCalcDisplay);
+            userCharVals.abilityScoreBroker.subscribe(userMainTab.initCalcDisplay.initSub, 2);
         }
     }
 }

@@ -1,0 +1,43 @@
+﻿<Window x:Class="Atealag.SavingThrowsCalcWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Atealag"
+        mc:Ignorable="d"
+        Title="SavingThrowsCalc" Height="220.782" Width="223.081">
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="20,4,0,0" TextWrapping="Wrap" Text="Proficient?" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="140,4,0,0" TextWrapping="Wrap" Text="Misc Bonus" VerticalAlignment="Top"/>
+        
+        <TextBox x:Name="strMisc" HorizontalAlignment="Left" Height="20" Margin="140,25,0,0" TextWrapping="Wrap" Text="{Binding miscBonuses[0], Mode=TwoWay}" VerticalAlignment="Top" Width="42" TextChanged="strMisc_TextChanged"/>
+        <TextBox x:Name="intelMisc" HorizontalAlignment="Left" Height="20" Margin="140,50,0,0" TextWrapping="Wrap" Text="{Binding miscBonuses[1], Mode=TwoWay}" VerticalAlignment="Top" Width="42" TextChanged="intelMisc_TextChanged"/>
+        <TextBox x:Name="dexMisc" HorizontalAlignment="Left" Height="20" Margin="140,75,0,0" TextWrapping="Wrap" Text="{Binding miscBonuses[2], Mode=TwoWay}" VerticalAlignment="Top" Width="42" TextChanged="dexMisc_TextChanged"/>
+        <TextBox x:Name="wisMisc" HorizontalAlignment="Left" Height="20" Margin="140,100,0,0" TextWrapping="Wrap" Text="{Binding miscBonuses[3], Mode=TwoWay}" VerticalAlignment="Top" Width="42" TextChanged="wisMisc_TextChanged"/>
+        <TextBox x:Name="conMisc" HorizontalAlignment="Left" Height="20" Margin="140,125,0,0" TextWrapping="Wrap" Text="{Binding miscBonuses[4], Mode=TwoWay}" VerticalAlignment="Top" Width="42" TextChanged="conMisc_TextChanged"/>
+        <TextBox x:Name="chaMisc" HorizontalAlignment="Left" Height="20" Margin="140,150,0,0" TextWrapping="Wrap" Text="{Binding miscBonuses[5], Mode=TwoWay}" VerticalAlignment="Top" Width="42" TextChanged="chaMisc_TextChanged"/>
+
+        <TextBlock x:Name="addition" HorizontalAlignment="Left" Height="20" Margin="120,25,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="15"/>
+        <TextBlock x:Name="addition1" HorizontalAlignment="Left" Height="20" Margin="120,50,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="15"/>
+        <TextBlock x:Name="addition2" HorizontalAlignment="Left" Height="20" Margin="120,75,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="15"/>
+        <TextBlock x:Name="addition3" HorizontalAlignment="Left" Height="20" Margin="120,100,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="15"/>
+        <TextBlock x:Name="addition4" HorizontalAlignment="Left" Height="20" Margin="120,125,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="15"/>
+        <TextBlock x:Name="addition5" HorizontalAlignment="Left" Height="20" Margin="120,150,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="15"/>
+
+        <TextBlock x:Name="str" HorizontalAlignment="Left" Height="20" Margin="20,25,0,0" TextWrapping="Wrap" Text="Str:" VerticalAlignment="Top" Width="30"/>
+        <TextBlock x:Name="intel" HorizontalAlignment="Left" Height="20" Margin="20,50,0,0" TextWrapping="Wrap" Text="Intel:" VerticalAlignment="Top" Width="30"/>
+        <TextBlock x:Name="dex" HorizontalAlignment="Left" Height="20" Margin="20,75,0,0" TextWrapping="Wrap" Text="Dex:" VerticalAlignment="Top" Width="30"/>
+        <TextBlock x:Name="wis" HorizontalAlignment="Left" Height="20" Margin="20,100,0,0" TextWrapping="Wrap" Text="Wis:" VerticalAlignment="Top" Width="30"/>
+        <TextBlock x:Name="con" HorizontalAlignment="Left" Height="20" Margin="20,125,0,0" TextWrapping="Wrap" Text="Con:" VerticalAlignment="Top" Width="30"/>
+        <TextBlock x:Name="cha" HorizontalAlignment="Left" Height="20" Margin="20,150,0,0" TextWrapping="Wrap" Text="Cha:" VerticalAlignment="Top" Width="30"/>
+
+        <CheckBox x:Name="strProf" HorizontalAlignment="Left" Margin="67,25,0,0" VerticalAlignment="Top" Click="strProf_Click"/>
+        <CheckBox x:Name="intelProf" HorizontalAlignment="Left" Margin="67,50,0,0" VerticalAlignment="Top" Click="intelProf_Click"/>
+        <CheckBox x:Name="dexProf" HorizontalAlignment="Left" Margin="67,75,0,0" VerticalAlignment="Top" Click="dexProf_Click"/>
+        <CheckBox x:Name="wisProf" HorizontalAlignment="Left" Margin="67,100,0,0" VerticalAlignment="Top" Click="wisProf_Click"/>
+        <CheckBox x:Name="conProf" HorizontalAlignment="Left" Margin="67,125,0,0" VerticalAlignment="Top" Click="conProf_Click"/>
+        <CheckBox x:Name="chaProf" HorizontalAlignment="Left" Margin="67,150,0,0" VerticalAlignment="Top" Click="chaProf_Click"/>
+        
+
+    </Grid>
+</Window>

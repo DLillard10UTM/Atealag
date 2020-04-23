@@ -68,7 +68,15 @@
     <Compile Include="HPCalc.xaml.cs">
       <DependentUpon>HPCalc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InitCalc.cs" />
+    <Compile Include="InitCalcWindow.xaml.cs">
+      <DependentUpon>InitCalcWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainTab.cs" />
+    <Compile Include="SavingThrowsCalc.cs" />
+    <Compile Include="SavingThrowsCalcWindow.xaml.cs">
+      <DependentUpon>SavingThrowsCalcWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sheet.cs" />
     <Compile Include="SpeedBox.cs" />
     <Compile Include="SpeedCalc.xaml.cs">
@@ -96,6 +104,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="InitCalcWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +122,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MakeItEasy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SavingThrowsCalcWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

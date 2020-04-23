@@ -30,17 +30,22 @@ namespace Atealag
             HPDisplayGrid.DataContext = charSheet.userMainTab.hpDisplay;
             ACDisplayGrid.DataContext = charSheet.userMainTab.acDisplay;
             SpeedDisplayGrid.DataContext = charSheet.userMainTab.speedDisplay;
+            SavingThrowsGrid.DataContext = charSheet.userMainTab.savingThrowsDisplay;
+            InitGrid.DataContext = charSheet.userMainTab.initCalcDisplay;
         }
         public CharacterSheet(string s)
         {
             InitializeComponent();
             charSheet = new Sheet(s);
+
             AllTabsGrid.DataContext = charSheet.userCharVals;
             MainTab.DataContext = charSheet.userMainTab;
             AbilityScoreGrid.DataContext = charSheet.userCharVals;
             HPDisplayGrid.DataContext = charSheet.userMainTab.hpDisplay;
             ACDisplayGrid.DataContext = charSheet.userMainTab.acDisplay;
             SpeedDisplayGrid.DataContext = charSheet.userMainTab.speedDisplay;
+            SavingThrowsGrid.DataContext = charSheet.userMainTab.savingThrowsDisplay;
+            InitGrid.DataContext = charSheet.userMainTab.initCalcDisplay;
         }
         private void OpenHPCalc_Click(object sender, RoutedEventArgs e)
         {
@@ -60,6 +65,18 @@ namespace Atealag
         {
             SpeedCalc speedCalcWindow = new SpeedCalc(charSheet.userMainTab.speedDisplay);
             speedCalcWindow.Show();
+        }
+
+        private void OpenSavingThrowsCalc_Click(object sender, RoutedEventArgs e)
+        {
+            SavingThrowsCalcWindow savingThrowsWindow = new SavingThrowsCalcWindow(charSheet.userMainTab.savingThrowsDisplay);
+            savingThrowsWindow.Show();
+        }
+
+        private void InitCalc_Click(object sender, RoutedEventArgs e)
+        {
+            InitCalcWindow initCalcWindow = new InitCalcWindow(charSheet.userMainTab.initCalcDisplay);
+            initCalcWindow.Show();
         }
     }
 }

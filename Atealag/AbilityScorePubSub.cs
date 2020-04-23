@@ -32,7 +32,6 @@ namespace Atealag
         public int getScore()
         {
             return score;
-            
         }
     }
 
