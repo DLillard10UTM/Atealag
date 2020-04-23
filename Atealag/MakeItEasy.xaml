@@ -5,7 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Atealag"
         mc:Ignorable="d"
-        Title="MakeItEasy" Height="500" Width="400">
+        Title="MakeItEasy" Height="600" Width="400">
+
+    <Window.Resources>
+        <Style x:Key="VisibleStyle" TargetType="TextBlock">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ControlType}" Value="visible">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <ComboBox x:Name="RaceSelector" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="170" Height="27" SelectionChanged="RaceSelector_SelectionChanged">
 
@@ -55,6 +67,14 @@
         <TextBlock HorizontalAlignment="Left" Margin="308,280,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="308,308,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="308,336,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="abilityWarning" Style="{StaticResource VisibleStyle}" HorizontalAlignment="Left" Margin="19,372,0,0" TextWrapping="Wrap" Text="*Ability Scores must be integer values" VerticalAlignment="Top" Foreground="Red"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="Skill Proficiencies" VerticalAlignment="Top"/>
+        <ListBox x:Name="ProficiencySelector"  HorizontalAlignment="Left" Height="100" Margin="10,424,0,0" VerticalAlignment="Top" Width="100">
+        </ListBox>
+
+
 
     </Grid>
 </Window>
