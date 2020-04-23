@@ -327,7 +327,6 @@ namespace Atealag
                 character.charSClass = subClass;
 
                 string classPair = RemoveSpecialCharacters(baseClass) + RemoveSpecialCharacters(subClass);
-
                 
                 MaxClassSkills.Text = cProfChoiceCount[classPair].ToString();
 
@@ -605,6 +604,22 @@ namespace Atealag
             {
                 abilityWarning.Visibility = Visibility.Visible;
             }
+        }
+
+        private void CreateCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            // Sanity check for all character charVals values:
+            // Race is handled by...                    SubraceSelector_Changed()                   Name: character.charRace    (string)
+            // Class is handled by...                   SubclassSelector_Changed()                  Name: character.charClass   (string)
+            // Subclass is handled by...                SubclassSelector_Changed()                  Name: character.charSClass  (string)
+            // Background is handled by...              BackgroundSelector_Changed()                Name: character.charBG      (string)
+            // Ability Scores are handled by...         []box_TextChanged()                         Name: character.charAS      (int[])
+            // Skill proficiencies are handled by...    This function (as it cements all changes).  Name: character.charSProf   (List<string>)
+
+            string totalProfs = ProficiencyTotalList.Text;
+            character.charSProf = totalProfs.Split(',').ToList();   // Should work, let me know if it doesn't.
+
+            // Danny needs to link all of that character information to the Main Window. It's 4 am. Goodnight.
         }
     }
 }
