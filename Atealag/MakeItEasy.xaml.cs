@@ -22,6 +22,15 @@ namespace Atealag
     /// </summary>
     public partial class MakeItEasy : Window
     {
+        struct charVals
+        {
+            public string charRace;        // Race
+            public string charClass;       // Class
+            public string charSClass;      // Subclass
+            public int[] charAS;           // Ability Scores (with Racial Modifiers)
+            public List<string> charSProf; // List of Skill Proficiencies
+        };
+        
         // Need to add a LoadData function and a number of derived functions to access information from SQL databases
         // There need to be the following databases: RACE, CLASS, BACKGROUND
         // These three databases will determine the available skill proficiencies, subrace, and subclass options
@@ -29,10 +38,14 @@ namespace Atealag
         OleDbConnection raceCn;
         OleDbConnection classCn;
         OleDbConnection bgCn;
+
         Dictionary<string, List<string>> raceDict = new Dictionary<string, List<string>>();
         Dictionary<string, List<string>> classDict = new Dictionary<string, List<string>>();
         Dictionary<string, List<string>> bgDict = new Dictionary<string, List<string>>();
-        List<string> classHead = new List<string>();
+
+        List<string> classHead = new List<string>();        // List of Subclass headings
+        List<int[]> raceMods = new List<int[]>();           // List of Racial Modifiers based on Subrace
+
         public MakeItEasy()
         {
             InitializeComponent();
@@ -40,6 +53,11 @@ namespace Atealag
             raceCn = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = .\RaceData.accdb");
             classCn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= .\ClassData.accdb");
             bgCn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= .\BackgroundData.accdb");
+
+            charVals character = new charVals();                        // Creating a new character
+            character.charAS = new int[] { 10, 10, 10, 10, 10, 10 };    // Assigning default values to the ability scores
+            character.charSProf = new List<string>();                   // Initializing the skill proficiency list
+
             LoadRaces();
             LoadClasses();
             LoadBGs();
@@ -141,7 +159,7 @@ namespace Atealag
             bgCn.Close();
         }
 
-        public static string RemoveSpecialCharacters(string str)
+        public string RemoveSpecialCharacters(string str)
         {
             StringBuilder sb = new StringBuilder();
             foreach (char c in str)
