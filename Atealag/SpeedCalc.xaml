@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Atealag"
         mc:Ignorable="d"
-        Title="SpeedCalc" Height="110" Width="451">
+        Title="SpeedCalc" Height="112.612" Width="180.374">
     <Grid>
-        <TextBox x:Name="BaseSpeed" HorizontalAlignment="Left" Height="23" Margin="160,28,0,0" TextWrapping="Wrap" Text="{Binding baseSpeed, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
-        <TextBox x:Name="MiscSpeed" HorizontalAlignment="Left" Height="23" Margin="251,28,0,0" TextWrapping="Wrap" Text="{Binding miscSpeed, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
+        <TextBox x:Name="BaseSpeed" HorizontalAlignment="Left" Height="23" Margin="14,44,0,0" TextWrapping="Wrap" Text="{Binding baseSpeed, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
+        <TextBox x:Name="MiscSpeed" HorizontalAlignment="Left" Height="23" Margin="105,44,0,0" TextWrapping="Wrap" Text="{Binding miscSpeed, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
 
-        <TextBlock x:Name="addition" HorizontalAlignment="Left" Margin="224,28,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+        <TextBlock x:Name="addition" HorizontalAlignment="Left" Margin="78,44,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="19,7,0,0" TextWrapping="Wrap" Text="Base Speed:" VerticalAlignment="Top" Width="37"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="110,7,0,0" TextWrapping="Wrap" Text="Misc Speed:" VerticalAlignment="Top" Width="37"/>
     </Grid>
 </Window>

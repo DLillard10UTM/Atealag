@@ -647,7 +647,7 @@ namespace Atealag
                     writer.WriteLine("0");
                     writer.WriteLine("0");
                     writer.WriteLine("0");
-                    writer.WriteLine(character.charSProf);
+                    writer.WriteLine(totalProfs);
                     writer.WriteLine("0");
                     writer.WriteLine("0");
                     writer.WriteLine("0");
@@ -674,6 +674,7 @@ namespace Atealag
                 }
                 CharacterSheet newChar = new CharacterSheet(openFileDialog.FileName);
                 newChar.Show();
+                this.Close();
             }
             
         }

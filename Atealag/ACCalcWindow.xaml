@@ -7,16 +7,23 @@
         mc:Ignorable="d"
         Title="ACCalcWindow" Height="110" Width="532.927">
     <Grid>
-        <ComboBox x:Name="PrimaryAbilityScoreDropDown" SelectionChanged="PrimaryAbilityScoreDropDown_SelectionChanged" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="60"/>
-        <ComboBox x:Name="SecondaryAbilityScoreDropDown" SelectionChanged="SecondaryAbilityScoreDropDown_SelectionChanged" HorizontalAlignment="Left" Margin="75,27,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBlock x:Name="BaseAC" HorizontalAlignment="Left" Height="23" Margin="160,28,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="46"/>
-        <TextBlock x:Name="PrimaryAbilityBonusDisplay" HorizontalAlignment="Left" Margin="244,28,0,0" TextWrapping="Wrap" Text="{Binding primaryAbilityMod}" VerticalAlignment="Top"/>
-        <TextBlock x:Name="SecondaryAbilityBonusDisplay" HorizontalAlignment="Left" Margin="288,28,0,0" TextWrapping="Wrap" Text="{Binding secondaryAbilityMod}" VerticalAlignment="Top"/>
-        <TextBox x:Name="MiscInput" HorizontalAlignment="Left" Height="23" Margin="369,28,0,0" TextWrapping="Wrap" Text="{Binding misc, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
-        <TextBox x:Name="ArmorBonusInput" HorizontalAlignment="Left" Height="23" Margin="468,26,0,0" TextWrapping="Wrap" Text="{Binding ArmorBonus, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
-        <TextBlock x:Name="addition" HorizontalAlignment="Left" Margin="223,28,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
-        <TextBlock x:Name="addition1" HorizontalAlignment="Left" Margin="332,28,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
-        <TextBlock x:Name="addition2" HorizontalAlignment="Left" Margin="271,28,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="17"/>
-        <TextBlock x:Name="addition1_Copy" HorizontalAlignment="Left" Margin="444,28,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+        <ComboBox x:Name="PrimaryAbilityScoreDropDown" SelectionChanged="PrimaryAbilityScoreDropDown_SelectionChanged" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox x:Name="SecondaryAbilityScoreDropDown" SelectionChanged="SecondaryAbilityScoreDropDown_SelectionChanged" HorizontalAlignment="Left" Margin="75,37,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBlock x:Name="BaseAC" HorizontalAlignment="Left" Height="23" Margin="160,38,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="46"/>
+        <TextBlock x:Name="PrimaryAbilityBonusDisplay" HorizontalAlignment="Left" Margin="248,38,0,0" TextWrapping="Wrap" Text="{Binding primaryAbilityMod}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="SecondaryAbilityBonusDisplay" HorizontalAlignment="Left" Margin="302,38,0,0" TextWrapping="Wrap" Text="{Binding secondaryAbilityMod}" VerticalAlignment="Top"/>
+        <TextBox x:Name="MiscInput" HorizontalAlignment="Left" Height="23" Margin="369,38,0,0" TextWrapping="Wrap" Text="{Binding misc, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
+        <TextBox x:Name="ArmorBonusInput" HorizontalAlignment="Left" Height="23" Margin="468,38,0,0" TextWrapping="Wrap" Text="{Binding ArmorBonus, Mode= TwoWay}" VerticalAlignment="Top" Width="47"/>
+        <TextBlock x:Name="addition" HorizontalAlignment="Left" Margin="223,38,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+        <TextBlock x:Name="addition1" HorizontalAlignment="Left" Margin="332,38,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+        <TextBlock x:Name="addition2" HorizontalAlignment="Left" Margin="271,38,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Width="17"/>
+        <TextBlock x:Name="addition1_Copy" HorizontalAlignment="Left" Margin="444,38,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="16,0,0,0" TextWrapping="Wrap" Text="Primary Ability:" VerticalAlignment="Top" Width="41"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="75,0,0,0" TextWrapping="Wrap" Text="Secondary Ability:" VerticalAlignment="Top" Width="57"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="143,16,0,0" TextWrapping="Wrap" Text="Base AC:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="228,1,0,0" TextWrapping="Wrap" Text="Primary Bonus:" VerticalAlignment="Top" Width="41"/>
+        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="278,1,0,0" TextWrapping="Wrap" Text="Secondary Bonus:" VerticalAlignment="Top" Width="56"/>
+        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="375,1,0,0" TextWrapping="Wrap" Text="Armor Bonus:" VerticalAlignment="Top" Width="36"/>
+        <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="477,16,0,0" TextWrapping="Wrap" Text="Misc:" VerticalAlignment="Top"/>
     </Grid>
 </Window>

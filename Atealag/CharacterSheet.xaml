@@ -46,116 +46,131 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid x:Name="AllTabsGrid" Margin="0,0,-0.4,328">
+        <Grid x:Name="AllTabsGrid" Margin="0,0,-0.4,307">
             <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="SaveBtn_Click"/>
             <Button x:Name="SaveAsBtn" Content="Save As" HorizontalAlignment="Left" Margin="77,0,0,0" VerticalAlignment="Top" Width="75" Click="SaveAsBtn_Click"/>
 
-            <TextBox x:Name="NameTextBox" Text ="{Binding name, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="32,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="RaceTextBox" HorizontalAlignment="Left" Height="23" Margin="411,38,0,0" TextWrapping="Wrap" Text="{Binding race, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="ClassTextBox" HorizontalAlignment="Left" Height="23" Margin="411,59,0,0" TextWrapping="Wrap" Text="{Binding u_class, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="BackgroundTextBox" HorizontalAlignment="Left" Height="23" Margin="531,38,0,0" TextWrapping="Wrap" Text="{Binding BG, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="AlignmentTextBox" HorizontalAlignment="Left" Height="23" Margin="531,59,0,0" TextWrapping="Wrap" Text="{Binding alig, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="NameTextBox" Text ="{Binding name, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="77,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="RaceTextBox" HorizontalAlignment="Left" Height="23" Margin="261,38,0,0" TextWrapping="Wrap" Text="{Binding race, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="ClassTextBox" HorizontalAlignment="Left" Height="23" Margin="261,59,0,0" TextWrapping="Wrap" Text="{Binding u_class, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="BackgroundTextBox" HorizontalAlignment="Left" Height="23" Margin="462,38,0,0" TextWrapping="Wrap" Text="{Binding BG, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="AlignmentTextBox" HorizontalAlignment="Left" Height="23" Margin="462,59,0,0" TextWrapping="Wrap" Text="{Binding alig, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="LevelTextBox" HorizontalAlignment="Left" Height="23" Margin="651,38,0,0" TextWrapping="Wrap" Text="{Binding level, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="PlayerNameTextBox" HorizontalAlignment="Left" Height="23" Margin="651,59,0,0" TextWrapping="Wrap" Text="{Binding userName, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBlock x:Name="textBlock11" HorizontalAlignment="Left" Margin="226,45,0,0" TextWrapping="Wrap" Text="Race: " VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock12" HorizontalAlignment="Left" Margin="10,29,0,0" TextWrapping="Wrap" Text="Character Name:" VerticalAlignment="Top" Width="67"/>
+            <TextBlock x:Name="textBlock13" HorizontalAlignment="Left" Margin="388,43,0,0" TextWrapping="Wrap" Text="Background: " VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock14" HorizontalAlignment="Left" Margin="396,66,0,0" TextWrapping="Wrap" Text="Alignment: " VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock15" HorizontalAlignment="Left" Margin="613,45,0,0" TextWrapping="Wrap" Text="Level: " VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock16" HorizontalAlignment="Left" Margin="587,66,0,0" TextWrapping="Wrap" Text="Username: " VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="261,82,0,-1" TextWrapping="Wrap" Text="{Binding sClass, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+            <TextBlock x:Name="textBlock17" HorizontalAlignment="Left" Margin="223,66,0,0" TextWrapping="Wrap" Text="Class: " VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock18" HorizontalAlignment="Left" Margin="208,89,0,0" TextWrapping="Wrap" Text="Subclass:" VerticalAlignment="Top"/>
 
         </Grid>
         <Grid Name="TabsGrid" Margin="0,109,-0.4,0">
-           <!-- <TabControl TabStripPlacement="Bottom">
+            <!-- <TabControl TabStripPlacement="Bottom">
                 <TabItem Name="MainTab" Header="Main"> -->
-                    <!--For some unknown reason, tabs can only have one item inside of them,
+            <!--For some unknown reason, tabs can only have one item inside of them,
                     so our gui elements must be in a single grid. -->
-                    <Grid Name="MainTabGrid">
-                        <Grid Name="AbilityScoreGrid" Margin="0,108,589,0.2">
-                            <TextBox x:Name="STRTextBox" HorizontalAlignment="Left" Height="23" Margin="58,10,0,0" TextWrapping="Wrap" Text="{Binding strBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="INTTextBox" HorizontalAlignment="Left" Height="23" Margin="153,10,0,0" TextWrapping="Wrap" Text="{Binding intelBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="DEXTextBox" HorizontalAlignment="Left" Height="23" Margin="58,60,0,0" TextWrapping="Wrap" Text="{Binding dexBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="WISTextBox" HorizontalAlignment="Left" Height="23" Margin="153,60,0,0" TextWrapping="Wrap" Text="{Binding wisBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="CONTextBox" HorizontalAlignment="Left" Height="23" Margin="58,111,0,0" TextWrapping="Wrap" Text="{Binding conBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.544,1.147"/>
-                            <TextBox x:Name="CHATextBox" HorizontalAlignment="Left" Height="23" Margin="153,111,0,0" TextWrapping="Wrap" Text="{Binding chaBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+            <Grid Name="MainTabGrid">
+                <Grid Name="AbilityScoreGrid" Margin="0,108,589,0.2">
+                    <TextBox x:Name="STRTextBox" HorizontalAlignment="Left" Height="23" Margin="58,10,0,0" TextWrapping="Wrap" Text="{Binding strBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="INTTextBox" HorizontalAlignment="Left" Height="23" Margin="153,10,0,0" TextWrapping="Wrap" Text="{Binding intelBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="DEXTextBox" HorizontalAlignment="Left" Height="23" Margin="58,60,0,0" TextWrapping="Wrap" Text="{Binding dexBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="WISTextBox" HorizontalAlignment="Left" Height="23" Margin="153,60,0,0" TextWrapping="Wrap" Text="{Binding wisBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="CONTextBox" HorizontalAlignment="Left" Height="23" Margin="58,111,0,0" TextWrapping="Wrap" Text="{Binding conBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.544,1.147"/>
+                    <TextBox x:Name="CHATextBox" HorizontalAlignment="Left" Height="23" Margin="153,111,0,0" TextWrapping="Wrap" Text="{Binding chaBase, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
 
-                            <TextBox x:Name="MSTRTextBox" HorizontalAlignment="Left" Height="23" Margin="58,32,0,0" TextWrapping="Wrap" Text="{Binding strMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="MINTTextBox" HorizontalAlignment="Left" Height="23" Margin="153,32,0,0" TextWrapping="Wrap" Text="{Binding intelMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="MDEXTextBox" HorizontalAlignment="Left" Height="23" Margin="58,83,0,0" TextWrapping="Wrap" Text="{Binding dexMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="MWISTextBox" HorizontalAlignment="Left" Height="23" Margin="153,83,0,0" TextWrapping="Wrap" Text="{Binding wisMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="MCONTextBox" HorizontalAlignment="Left" Height="23" Margin="58,132,0,0" TextWrapping="Wrap" Text="{Binding conMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
-                            <TextBox x:Name="MCHATextBox" HorizontalAlignment="Left" Height="23" Margin="153,132,0,0" TextWrapping="Wrap" Text="{Binding chaMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="MSTRTextBox" HorizontalAlignment="Left" Height="23" Margin="58,32,0,0" TextWrapping="Wrap" Text="{Binding strMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="MINTTextBox" HorizontalAlignment="Left" Height="23" Margin="153,32,0,0" TextWrapping="Wrap" Text="{Binding intelMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="MDEXTextBox" HorizontalAlignment="Left" Height="23" Margin="58,83,0,0" TextWrapping="Wrap" Text="{Binding dexMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="MWISTextBox" HorizontalAlignment="Left" Height="23" Margin="153,83,0,0" TextWrapping="Wrap" Text="{Binding wisMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="MCONTextBox" HorizontalAlignment="Left" Height="23" Margin="58,132,0,0" TextWrapping="Wrap" Text="{Binding conMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
+                    <TextBox x:Name="MCHATextBox" HorizontalAlignment="Left" Height="23" Margin="153,132,0,0" TextWrapping="Wrap" Text="{Binding chaMisc, Mode=TwoWay}" VerticalAlignment="Top" Width="27"/>
 
-                            <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Margin="95,18,0,0" TextWrapping="Wrap" Text="Base Intel:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock8" HorizontalAlignment="Left" Margin="95,39,0,0" TextWrapping="Wrap" Text="Misc Intel:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock7_Copy" HorizontalAlignment="Left" Margin="100,67,0,0" TextWrapping="Wrap" Text="Base Wis:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock8_Copy" HorizontalAlignment="Left" Margin="100,88,0,0" TextWrapping="Wrap" Text="Misc Wis:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock7_Copy1" HorizontalAlignment="Left" Margin="100,118,0,0" TextWrapping="Wrap" Text="Base Cha:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock8_Copy1" HorizontalAlignment="Left" Margin="100,139,0,0" TextWrapping="Wrap" Text="Misc Cha:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock7_Copy2" HorizontalAlignment="Left" Margin="3,118,0,0" TextWrapping="Wrap" Text="Base Con:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock8_Copy2" HorizontalAlignment="Left" Margin="3,139,0,0" TextWrapping="Wrap" Text="Misc Con:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock7_Copy3" HorizontalAlignment="Left" Margin="3,69,0,0" TextWrapping="Wrap" Text="Base Dex:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock8_Copy3" HorizontalAlignment="Left" Margin="3,90,0,0" TextWrapping="Wrap" Text="Misc Dex:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock7_Copy4" HorizontalAlignment="Left" Margin="3,18,0,0" TextWrapping="Wrap" Text="Base Str:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock8_Copy4" HorizontalAlignment="Left" Margin="3,39,0,0" TextWrapping="Wrap" Text="Misc Str:" VerticalAlignment="Top"/>
-                            <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="164" VerticalAlignment="Top" Width="190"/>
-                        </Grid>
+                    <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Margin="95,18,0,0" TextWrapping="Wrap" Text="Base Intel:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock8" HorizontalAlignment="Left" Margin="95,39,0,0" TextWrapping="Wrap" Text="Misc Intel:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock7_Copy" HorizontalAlignment="Left" Margin="100,67,0,0" TextWrapping="Wrap" Text="Base Wis:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock8_Copy" HorizontalAlignment="Left" Margin="100,88,0,0" TextWrapping="Wrap" Text="Misc Wis:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock7_Copy1" HorizontalAlignment="Left" Margin="100,118,0,0" TextWrapping="Wrap" Text="Base Cha:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock8_Copy1" HorizontalAlignment="Left" Margin="100,139,0,0" TextWrapping="Wrap" Text="Misc Cha:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock7_Copy2" HorizontalAlignment="Left" Margin="3,118,0,0" TextWrapping="Wrap" Text="Base Con:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock8_Copy2" HorizontalAlignment="Left" Margin="3,139,0,0" TextWrapping="Wrap" Text="Misc Con:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock7_Copy3" HorizontalAlignment="Left" Margin="3,69,0,0" TextWrapping="Wrap" Text="Base Dex:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock8_Copy3" HorizontalAlignment="Left" Margin="3,90,0,0" TextWrapping="Wrap" Text="Misc Dex:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock7_Copy4" HorizontalAlignment="Left" Margin="3,18,0,0" TextWrapping="Wrap" Text="Base Str:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock8_Copy4" HorizontalAlignment="Left" Margin="3,39,0,0" TextWrapping="Wrap" Text="Misc Str:" VerticalAlignment="Top"/>
+                    <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="164" VerticalAlignment="Top" Width="190"/>
+                </Grid>
 
-                        <Grid Name="HPDisplayGrid" Margin="10,10,705,205.2">
-                            <Button x:Name="OpenHPCalc" Content="HPCalc" HorizontalAlignment="Left" Margin="0,35,0,0" Click ="OpenHPCalc_Click" VerticalAlignment="Top" Width="61"/>
-                            <TextBlock x:Name="MaxHPDiplay" HorizontalAlignment="Left" Margin="34,10,0,0" TextWrapping="Wrap" Text="{Binding maxHealth}" VerticalAlignment="Top" Width="22" Height="20"/>
-                            <TextBox x:Name="currHPDisplay" HorizontalAlignment="Left" Height="26" Margin="0,4,0,0" TextWrapping="Wrap" Text="{Binding currHealth, Mode=TwoWay}" VerticalAlignment="Top" Width="29"/>
-                            <Border BorderBrush="Red" BorderThickness="3" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="63"/>
-                        </Grid>
-                        <Grid Name="ACDisplayGrid" Margin="83,10,629,205.2">
-                            <Button x:Name="OpenACCalc" Content="ACCalc" HorizontalAlignment="Left" Margin="2,35,0,0" Click ="OpenACCalc_Click" VerticalAlignment="Top" Width="61" Height="19"/>
-                            <TextBlock x:Name="ACDisplay" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding ACTotal}" VerticalAlignment="Top" Width="44" Height="20"/>
-                            <Border BorderBrush="GreenYellow" BorderThickness="3" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="63"/>
-                        </Grid>
-                        <Grid Name="SpeedDisplayGrid" Margin="159,10,558,205.2">
-                            <Button x:Name="OpenSpeedCalc" Content="SpeedCalc" HorizontalAlignment="Left" Margin="0,35,0,0" Click ="OpenSpeedCalc_Click" VerticalAlignment="Top" Width="61"/>
-                            <TextBlock x:Name="SpeedDisplay" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding totalSpeed}" VerticalAlignment="Top" Width="44" Height="20"/>
-                            <Border BorderBrush="Blue" BorderThickness="3" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="63"/>
-                        </Grid>
-                        <Grid Name="SavingThrowsGrid" HorizontalAlignment="Left" Height="165" Margin="204,108,0,0" VerticalAlignment="Top" Width="120">
-                            <Button x:Name="OpenSavingThrowsCalc" Content="SavingThrowsCalc" HorizontalAlignment="Left" Margin="0,136,0,0" Click ="OpenSavingThrowsCalc_Click" VerticalAlignment="Top" Width="120" Height="29"/>
-                            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Str:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="Intel:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" Text="Dex:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="10,73,0,0" TextWrapping="Wrap" Text="Wis:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="10,94,0,0" TextWrapping="Wrap" Text="Con:" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="10,115,0,0" TextWrapping="Wrap" Text="Cha:" VerticalAlignment="Top"/>
+                <Grid Name="HPDisplayGrid" Margin="10,10,705,205.2">
+                    <Button x:Name="OpenHPCalc" Content="HPCalc" HorizontalAlignment="Left" Margin="0,35,0,0" Click ="OpenHPCalc_Click" VerticalAlignment="Top" Width="61"/>
+                    <TextBlock x:Name="MaxHPDiplay" HorizontalAlignment="Left" Margin="34,10,0,0" TextWrapping="Wrap" Text="{Binding maxHealth}" VerticalAlignment="Top" Width="22" Height="20"/>
+                    <TextBox x:Name="currHPDisplay" HorizontalAlignment="Left" Height="26" Margin="0,4,0,0" TextWrapping="Wrap" Text="{Binding currHealth, Mode=TwoWay}" VerticalAlignment="Top" Width="29"/>
+                    <Border BorderBrush="Red" BorderThickness="3" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="63"/>
+                </Grid>
+                <Grid Name="ACDisplayGrid" Margin="83,10,629,205.2">
+                    <Button x:Name="OpenACCalc" Content="ACCalc" HorizontalAlignment="Left" Margin="0,36,0,0" Click ="OpenACCalc_Click" VerticalAlignment="Top" Width="61" Height="19"/>
+                    <TextBlock x:Name="ACDisplay" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding ACTotal}" VerticalAlignment="Top" Width="44" Height="20"/>
+                    <Border BorderBrush="GreenYellow" BorderThickness="3" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="63"/>
+                </Grid>
+                <Grid Name="SpeedDisplayGrid" Margin="159,10,558,205.2">
+                    <Button x:Name="OpenSpeedCalc" Content="SpeedCalc" HorizontalAlignment="Left" Margin="0,35,0,0" Click ="OpenSpeedCalc_Click" VerticalAlignment="Top" Width="61"/>
+                    <TextBlock x:Name="SpeedDisplay" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding totalSpeed}" VerticalAlignment="Top" Width="44" Height="20"/>
+                    <Border BorderBrush="Blue" BorderThickness="3" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="63"/>
+                </Grid>
+                <Grid Name="SavingThrowsGrid" HorizontalAlignment="Left" Height="165" Margin="204,108,0,0" VerticalAlignment="Top" Width="120">
+                    <Button x:Name="OpenSavingThrowsCalc" Content="SavingThrowsCalc" HorizontalAlignment="Left" Margin="0,136,0,0" Click ="OpenSavingThrowsCalc_Click" VerticalAlignment="Top" Width="120" Height="29"/>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Str:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="Intel:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" Text="Dex:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="10,73,0,0" TextWrapping="Wrap" Text="Wis:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="10,94,0,0" TextWrapping="Wrap" Text="Con:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="10,115,0,0" TextWrapping="Wrap" Text="Cha:" VerticalAlignment="Top"/>
 
-                            <TextBlock x:Name="strDis" HorizontalAlignment="Left" Margin="50,10,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[0]}" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="intelDis" HorizontalAlignment="Left" Margin="50,31,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[1]}" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="dexDis" HorizontalAlignment="Left" Margin="50,52,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[2]}" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="wisDis" HorizontalAlignment="Left" Margin="50,73,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[3]}" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="conDis" HorizontalAlignment="Left" Margin="50,94,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[4]}" VerticalAlignment="Top"/>
-                            <TextBlock x:Name="chaDis" HorizontalAlignment="Left" Margin="50,115,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[5]}" VerticalAlignment="Top"/>
-                            <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="165" VerticalAlignment="Top" Width="120"/>
-                        </Grid>
-                        <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="56,87,0,0" TextWrapping="Wrap" Text="Ability Scores" VerticalAlignment="Top"/>
-                        <Grid Name="InitGrid" HorizontalAlignment="Left" Height="81" Margin="329,108,0,0" VerticalAlignment="Top" Width="90">
-                            <Button x:Name="initCalcButton" Content="Init Calc" HorizontalAlignment="Left" Margin="6,42,0,0" VerticalAlignment="Top" Width="75" Click="InitCalc_Click"/>
+                    <TextBlock x:Name="strDis" HorizontalAlignment="Left" Margin="50,10,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[0]}" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="intelDis" HorizontalAlignment="Left" Margin="50,31,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[1]}" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="dexDis" HorizontalAlignment="Left" Margin="50,52,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[2]}" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="wisDis" HorizontalAlignment="Left" Margin="50,73,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[3]}" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="conDis" HorizontalAlignment="Left" Margin="50,94,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[4]}" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="chaDis" HorizontalAlignment="Left" Margin="50,115,0,0" TextWrapping="Wrap" Text="{Binding savingThrowTotals[5]}" VerticalAlignment="Top"/>
+                    <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="165" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+                <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="56,87,0,0" TextWrapping="Wrap" Text="Ability Scores" VerticalAlignment="Top"/>
+                <Grid Name="InitGrid" HorizontalAlignment="Left" Height="81" Margin="329,108,0,0" VerticalAlignment="Top" Width="90">
+                    <Button x:Name="initCalcButton" Content="Init Calc" HorizontalAlignment="Left" Margin="6,42,0,0" VerticalAlignment="Top" Width="75" Click="InitCalc_Click"/>
 
-                            <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="75" Margin="6,0,0,0"/>
-                            <TextBlock x:Name="textBlock9" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Init Bonus:" VerticalAlignment="Top" Margin="10,5,0,0" Width="37"/>
-                            <TextBlock x:Name="textBlock10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding totalInit}" VerticalAlignment="Top" Height="27" Width="29" Margin="52,10,0,0"/>
-                        </Grid>
+                    <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="75" Margin="6,0,0,0"/>
+                    <TextBlock x:Name="textBlock9" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Init Bonus:" VerticalAlignment="Top" Margin="10,5,0,0" Width="37"/>
+                    <TextBlock x:Name="textBlock10" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding totalInit}" VerticalAlignment="Top" Height="27" Width="29" Margin="52,10,0,0"/>
+                </Grid>
 
-                        <Grid Name="DeathSavesGrid" HorizontalAlignment="Left" Height="81" Margin="329,189,0,0" VerticalAlignment="Top" Width="90">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="28*"/>
-                                <RowDefinition Height="53*"/>
-                            </Grid.RowDefinitions>
-                            <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="75" Margin="6,0,0,0" Grid.RowSpan="2"/>
-                            <TextBlock x:Name="death" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Death Saves" VerticalAlignment="Center" Margin="11,10,9,1.533" Width="70"/>
-                            <CheckBox x:Name="checkBox" Style="{StaticResource CircleCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,3,0,0" Background="White" Grid.Row="1"/>
-                            <CheckBox x:Name="checkBox1" Style="{StaticResource CircleCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,3,0,0" Background="White" Grid.Row="1"/>
-                            <CheckBox x:Name="checkBox2" Style="{StaticResource CircleCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,3,0,0" Background="White" Grid.Row="1"/>
-                        </Grid>
+                <Grid Name="DeathSavesGrid" HorizontalAlignment="Left" Height="81" Margin="329,189,0,0" VerticalAlignment="Top" Width="90">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="28*"/>
+                        <RowDefinition Height="53*"/>
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="63" VerticalAlignment="Top" Width="75" Margin="6,0,0,0" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="death" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Death Saves" VerticalAlignment="Center" Margin="11,10,9,1.533" Width="70"/>
+                    <CheckBox x:Name="checkBox" Style="{StaticResource CircleCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,3,0,0" Background="White" Grid.Row="1"/>
+                    <CheckBox x:Name="checkBox1" Style="{StaticResource CircleCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,3,0,0" Background="White" Grid.Row="1"/>
+                    <CheckBox x:Name="checkBox2" Style="{StaticResource CircleCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,3,0,0" Background="White" Grid.Row="1"/>
+                </Grid>
 
-                        <Grid Name="ProficientBonusGrid" HorizontalAlignment="Left" Height="66" Margin="444,108,0,0" VerticalAlignment="Top" Width="142">
-                            <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="104" Margin="21,0,0,0"/>
-                            <TextBlock x:Name="text" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Proficiency Bonus:" VerticalAlignment="Bottom" Margin="26,0,46,28" Width="70"/>
-                            <TextBlock x:Name="ProficientBonus" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding proficientBonus}" VerticalAlignment="Center" Margin="96,22,28,28" Width="18"/>
-                        </Grid>
-                    </Grid>
-               <!-- </TabItem>
+                <Grid Name="ProficientBonusGrid" HorizontalAlignment="Left" Height="66" Margin="444,108,0,0" VerticalAlignment="Top" Width="142">
+                    <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="104" Margin="21,0,0,0"/>
+                    <TextBlock x:Name="text" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Proficiency Bonus:" VerticalAlignment="Bottom" Margin="26,0,46,28" Width="70"/>
+                    <TextBlock x:Name="ProficientBonus" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding proficientBonus}" VerticalAlignment="Center" Margin="96,22,28,28" Width="18"/>
+                </Grid>
+                <Grid x:Name="ProfSkills" HorizontalAlignment="Left" Height="81" Margin="457,189,0,0" VerticalAlignment="Top" Width="281">
+
+                    <Border BorderBrush="Gray" BorderThickness="3" HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="270" Margin="6,0,0,0"/>
+                    <TextBlock x:Name="textBlock19" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Proficient skills:" VerticalAlignment="Top" Margin="10,5,0,0" Width="56"/>
+                    <TextBox x:Name="textBlock20" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding skillProfs, Mode=TwoWay}" VerticalAlignment="Top" Height="61" Width="196" Margin="71,10,0,0"/>
+                </Grid>
+            </Grid>
+            <!-- </TabItem>
                 <TabItem Name="SkillsTab" Header="Skills">
                 </TabItem>
                 <TabItem Name="EquipmentTab" Header="Equipment">

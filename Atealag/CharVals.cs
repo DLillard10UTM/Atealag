@@ -141,6 +141,8 @@ namespace Atealag
 
         private int _str; private int _intel; private int _dex;
         private int _wis; private int _con; private int _cha;
+
+        private string _skillProfs;
         public int strBase
         {
             get
@@ -298,7 +300,18 @@ namespace Atealag
                 updateTotalChaScoreVal();
             }
         }
-        public string skillProfs;
+        public string skillProfs
+        {
+            get
+            {
+                return _skillProfs;
+            }
+            set
+            {
+                _skillProfs = value;
+                NotifyPropertyChanged("skillProfs");
+            }
+        }
 
         private void updateTotalStrScoreVal()
         {
