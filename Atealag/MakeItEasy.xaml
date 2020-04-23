@@ -50,12 +50,12 @@
         <TextBlock x:Name="chaRM" HorizontalAlignment="Left" Margin="175,336,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="297,174,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" RenderTransformOrigin="-1.823,0.564"/>
-        <TextBlock HorizontalAlignment="Left" Margin="308,196,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="308,224,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="308,252,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="308,280,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="308,308,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="308,336,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <TextBlock x:Name="strTotal" HorizontalAlignment="Left" Margin="308,196,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <TextBlock x:Name="dexTotal" HorizontalAlignment="Left" Margin="308,224,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <TextBlock x:Name="conTotal" HorizontalAlignment="Left" Margin="308,252,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <TextBlock x:Name="intTotal" HorizontalAlignment="Left" Margin="308,280,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <TextBlock x:Name="wisTotal" HorizontalAlignment="Left" Margin="308,308,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <TextBlock x:Name="chaTotal" HorizontalAlignment="Left" Margin="308,336,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
 
         <TextBlock x:Name="abilityWarning" Visibility="Collapsed" HorizontalAlignment="Left" Margin="19,372,0,0" TextWrapping="Wrap" Text="*Ability Scores must be integer values" VerticalAlignment="Top" Foreground="Red"/>
 
@@ -68,8 +68,10 @@
         <TextBlock HorizontalAlignment="Left" Margin="175,403,0,0" TextWrapping="Wrap" Text="Total Proficiencies" VerticalAlignment="Top"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="135" Margin="175,424,0,0" VerticalAlignment="Top" Width="199"/>
         <TextBlock x:Name="ProficiencyTotalList"  HorizontalAlignment="Left" Margin="185,434,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="125" Width="189"/>
+        
         <TextBlock HorizontalAlignment="Left" Margin="10,564,0,0" TextWrapping="Wrap" Text="Max Class Skills:" VerticalAlignment="Top"/>
         <TextBlock x:Name="MaxClassSkills" HorizontalAlignment="Left" Margin="111,564,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        
         <TextBlock HorizontalAlignment="Left" Margin="15,199,0,0" TextWrapping="Wrap" Text="STR" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="13,227,0,0" TextWrapping="Wrap" Text="DEX" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="9,255,0,0" TextWrapping="Wrap" Text="CON" VerticalAlignment="Top"/>

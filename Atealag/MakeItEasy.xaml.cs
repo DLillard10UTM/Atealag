@@ -46,7 +46,6 @@ namespace Atealag
 
         Dictionary<string, int[]> modDict = new Dictionary<string, int[]>();                    // Subrace --> Array of Ability Score Racial Modifiers
         Dictionary<string, List<string>> cProfDict = new Dictionary<string, List<string>>();    // Class-Subclass Pair --> List of Skill Proficiencies for that Class-Subclass Pair
-        Dictionary<string, int> cProfCount = new Dictionary<string, int>();                     // Class-Subclass Pair --> Number of possible Skill Proficiencies for that Class-Subclass Pair
         Dictionary<string, int> cProfChoiceCount = new Dictionary<string, int>();               // Class-Subclass Pair --> Number of actual Skill Proficiencies able to be chosen for that Class-Subclass Pair
 
         List<string> classHead = new List<string>();                                            // List of Subclass headings
@@ -155,9 +154,6 @@ namespace Atealag
                     cProfChoiceCount[classPair] = choiceCount;
                 }
 
-                if (!cProfCount.ContainsKey(classPair))
-                    cProfCount[classPair] = profCount;
-
                 if (!cProfDict.ContainsKey(classPair))          // If the Dictionary does not contain a given class-subclass combo as a key...
                 {
                     cProfDict[classPair] = new List<string>();
@@ -230,6 +226,13 @@ namespace Atealag
         {
             SubraceSelector.Items.Clear(); // Clears the content of the SubraceSelector.
 
+            strRM.Text = "-";
+            dexRM.Text = "-";
+            conRM.Text = "-";
+            intRM.Text = "-";
+            wisRM.Text = "-";
+            chaRM.Text = "-";
+
             string comp = ((ComboBoxItem)RaceSelector.SelectedItem).Content.ToString(); // The current content of the RaceSelector after change.
 
             foreach (var entry in raceDict) // For each entry in the RaceDictionary...
@@ -257,10 +260,22 @@ namespace Atealag
         private void SubraceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string baseRace = ((ComboBoxItem)RaceSelector.SelectedItem).Content.ToString();
-            string subRace = ((ComboBoxItem)SubraceSelector.SelectedItem).Content.ToString();
+            if (SubraceSelector.SelectedItem != null)
+            {
+                string subRace = ((ComboBoxItem)SubraceSelector.SelectedItem).Content.ToString();
 
-            if (subRace != "Default") character.charRace = subRace + " " + baseRace;
-            else character.charRace = baseRace;
+                if (subRace != "Default") character.charRace = subRace + " " + baseRace;
+                else character.charRace = baseRace;
+
+                string classPair = RemoveSpecialCharacters(baseRace) + RemoveSpecialCharacters(subRace);
+
+                strRM.Text = modDict[classPair][0].ToString();
+                dexRM.Text = modDict[classPair][1].ToString();
+                conRM.Text = modDict[classPair][2].ToString();
+                intRM.Text = modDict[classPair][3].ToString();
+                wisRM.Text = modDict[classPair][4].ToString();
+                chaRM.Text = modDict[classPair][5].ToString();
+            }
         }
 
         private void ClassSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -420,17 +435,23 @@ namespace Atealag
 
         private void strBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int value;
-            if (int.TryParse(strBox.Text, out value))
+            int basevalue;
+            int RMvalue;
+            if (int.TryParse(strBox.Text, out basevalue))
             {
                 abilityWarning.Visibility = Visibility.Collapsed;
-                character.charAS[0] = value;
 
-                if (!int.TryParse(dexBox.Text, out value) ||
-                    !int.TryParse(conBox.Text, out value) ||
-                    !int.TryParse(intBox.Text, out value) ||
-                    !int.TryParse(wisBox.Text, out value) ||
-                    !int.TryParse(chaBox.Text, out value))
+                if (int.TryParse(strRM.Text, out RMvalue))
+                {
+                    character.charAS[0] = basevalue + RMvalue;
+                    strTotal.Text = character.charAS[0].ToString();
+                }
+
+                if (!int.TryParse(dexBox.Text, out basevalue) ||
+                    !int.TryParse(conBox.Text, out basevalue) ||
+                    !int.TryParse(intBox.Text, out basevalue) ||
+                    !int.TryParse(wisBox.Text, out basevalue) ||
+                    !int.TryParse(chaBox.Text, out basevalue))
                 {
                     abilityWarning.Visibility = Visibility.Visible;
                 }
@@ -443,17 +464,23 @@ namespace Atealag
 
         private void dexBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int value;
-            if (int.TryParse(dexBox.Text, out value))
+            int basevalue;
+            int RMvalue;
+            if (int.TryParse(dexBox.Text, out basevalue))
             {
                 abilityWarning.Visibility = Visibility.Collapsed;
-                character.charAS[1] = value;
 
-                if (!int.TryParse(strBox.Text, out value) ||
-                    !int.TryParse(conBox.Text, out value) ||
-                    !int.TryParse(intBox.Text, out value) ||
-                    !int.TryParse(wisBox.Text, out value) ||
-                    !int.TryParse(chaBox.Text, out value))
+                if (int.TryParse(dexRM.Text, out RMvalue))
+                {
+                    character.charAS[1] = basevalue + RMvalue;
+                    dexTotal.Text = character.charAS[1].ToString();
+                }
+
+                if (!int.TryParse(strBox.Text, out basevalue) ||
+                    !int.TryParse(conBox.Text, out basevalue) ||
+                    !int.TryParse(intBox.Text, out basevalue) ||
+                    !int.TryParse(wisBox.Text, out basevalue) ||
+                    !int.TryParse(chaBox.Text, out basevalue))
                 {
                     abilityWarning.Visibility = Visibility.Visible;
                 }
@@ -466,17 +493,23 @@ namespace Atealag
 
         private void conBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int value;
-            if (int.TryParse(conBox.Text, out value))
+            int basevalue;
+            int RMvalue;
+            if (int.TryParse(conBox.Text, out basevalue))
             {
                 abilityWarning.Visibility = Visibility.Collapsed;
-                character.charAS[2] = value;
 
-                if (!int.TryParse(strBox.Text, out value) ||
-                    !int.TryParse(dexBox.Text, out value) ||
-                    !int.TryParse(intBox.Text, out value) ||
-                    !int.TryParse(wisBox.Text, out value) ||
-                    !int.TryParse(chaBox.Text, out value))
+                if (int.TryParse(conRM.Text, out RMvalue))
+                {
+                    character.charAS[2] = basevalue + RMvalue;
+                    conTotal.Text = character.charAS[2].ToString();
+                }
+
+                if (!int.TryParse(strBox.Text, out basevalue) ||
+                    !int.TryParse(dexBox.Text, out basevalue) ||
+                    !int.TryParse(intBox.Text, out basevalue) ||
+                    !int.TryParse(wisBox.Text, out basevalue) ||
+                    !int.TryParse(chaBox.Text, out basevalue))
                 {
                     abilityWarning.Visibility = Visibility.Visible;
                 }
@@ -489,17 +522,23 @@ namespace Atealag
 
         private void intBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int value;
-            if (int.TryParse(conBox.Text, out value))
+            int basevalue;
+            int RMvalue;
+            if (int.TryParse(intBox.Text, out basevalue))
             {
                 abilityWarning.Visibility = Visibility.Collapsed;
-                character.charAS[3] = value;
 
-                if (!int.TryParse(strBox.Text, out value) ||
-                    !int.TryParse(dexBox.Text, out value) ||
-                    !int.TryParse(conBox.Text, out value) ||
-                    !int.TryParse(wisBox.Text, out value) ||
-                    !int.TryParse(chaBox.Text, out value))
+                if (int.TryParse(intRM.Text, out RMvalue))
+                {
+                    character.charAS[3] = basevalue + RMvalue;
+                    intTotal.Text = character.charAS[3].ToString();
+                }
+
+                if (!int.TryParse(strBox.Text, out basevalue) ||
+                    !int.TryParse(dexBox.Text, out basevalue) ||
+                    !int.TryParse(conBox.Text, out basevalue) ||
+                    !int.TryParse(wisBox.Text, out basevalue) ||
+                    !int.TryParse(chaBox.Text, out basevalue))
                 {
                     abilityWarning.Visibility = Visibility.Visible;
                 }
@@ -512,17 +551,23 @@ namespace Atealag
 
         private void wisBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int value;
-            if (int.TryParse(conBox.Text, out value))
+            int basevalue;
+            int RMvalue;
+            if (int.TryParse(wisBox.Text, out basevalue))
             {
                 abilityWarning.Visibility = Visibility.Collapsed;
-                character.charAS[4] = value;
 
-                if (!int.TryParse(strBox.Text, out value) ||
-                    !int.TryParse(dexBox.Text, out value) ||
-                    !int.TryParse(conBox.Text, out value) ||
-                    !int.TryParse(intBox.Text, out value) ||
-                    !int.TryParse(chaBox.Text, out value))
+                if (int.TryParse(wisRM.Text, out RMvalue))
+                {
+                    character.charAS[4] = basevalue + RMvalue;
+                    wisTotal.Text = character.charAS[4].ToString();
+                }
+
+                if (!int.TryParse(strBox.Text, out basevalue) ||
+                    !int.TryParse(dexBox.Text, out basevalue) ||
+                    !int.TryParse(conBox.Text, out basevalue) ||
+                    !int.TryParse(intBox.Text, out basevalue) ||
+                    !int.TryParse(chaBox.Text, out basevalue))
                 {
                     abilityWarning.Visibility = Visibility.Visible;
                 }
@@ -535,17 +580,23 @@ namespace Atealag
 
         private void chaBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int value;
-            if (int.TryParse(conBox.Text, out value))
+            int basevalue;
+            int RMvalue;
+            if (int.TryParse(chaBox.Text, out basevalue))
             {
                 abilityWarning.Visibility = Visibility.Collapsed;
-                character.charAS[5] = value;
 
-                if (!int.TryParse(strBox.Text, out value) ||
-                    !int.TryParse(dexBox.Text, out value) ||
-                    !int.TryParse(conBox.Text, out value) ||
-                    !int.TryParse(intBox.Text, out value) ||
-                    !int.TryParse(wisBox.Text, out value))
+                if (int.TryParse(chaRM.Text, out RMvalue))
+                {
+                    character.charAS[5] = basevalue + RMvalue;
+                    chaTotal.Text = character.charAS[5].ToString();
+                }
+
+                if (!int.TryParse(strBox.Text, out basevalue) ||
+                    !int.TryParse(dexBox.Text, out basevalue) ||
+                    !int.TryParse(conBox.Text, out basevalue) ||
+                    !int.TryParse(intBox.Text, out basevalue) ||
+                    !int.TryParse(wisBox.Text, out basevalue))
                 {
                     abilityWarning.Visibility = Visibility.Visible;
                 }
