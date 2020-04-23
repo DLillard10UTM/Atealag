@@ -103,6 +103,15 @@ namespace Atealag
             currHealth = currHP;
             maxHealth = maxHP;
         }
+
+        //Constructor for the file load.
+        public HealthBox(int currHP, int bh, int m)
+        {
+            currHealth = currHP;
+            baseHealth = bh;
+            misc = m;
+        }
+
         public void CalculateAbilityMod()
         {
             abilityMod = (HPCalcCouple.getScore() - 10) / 2;

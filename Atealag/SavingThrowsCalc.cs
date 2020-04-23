@@ -43,6 +43,22 @@ namespace Atealag
                 checkBoxes.Add(false);
             }
         }
+
+        //for saved files and make it easy
+        public SavingThrowsCalc(List<int> miscBonus, List<bool> isChecked)
+        {
+            miscBonuses = new ObservableCollection<int>();
+            subsScores = new List<int>();
+            savingThrowTotals = new ObservableCollection<int>();
+            checkBoxes = new List<bool>();
+            for (int i = 0; i < 6; i++)
+            {
+                miscBonuses.Add(miscBonus[i]);
+                subsScores.Add(0);
+                savingThrowTotals.Add(0);
+                checkBoxes.Add(isChecked[i]);
+            }
+        }
         public void createSubs(Broker broker)
         {
             subs = new List<SavingThrowsSub>();
@@ -83,7 +99,6 @@ namespace Atealag
         {
             ourBroker = broker;
             ourstc = stc;
-
         }
 
         public override void setScore(int newScore)

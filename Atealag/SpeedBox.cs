@@ -52,6 +52,18 @@ namespace Atealag
             }
         }
 
+        public SpeedBox() 
+        {
+            baseSpeed = 0;
+            miscSpeed = 0;
+        }
+
+        //for file and Make it easy.
+        public SpeedBox(int bs, int sm)
+        {
+            baseSpeed = bs;
+            miscSpeed = sm;
+        }
         int calculateTotalSpeed()
         {
             return baseSpeed + miscSpeed;

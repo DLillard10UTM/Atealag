@@ -50,39 +50,94 @@ namespace Atealag
                     text.Add(line);
                 }
             }
-            
+
+            List<int> miscBonuses = new List<int>();
+            //loading the saving throw miscs and bools into lists for sanity.
+            for(int i = 31; i <= 36; i++)
+            {
+                miscBonuses.Add(Convert.ToInt32(text[i]));
+            }
+            List<bool> isChecked = new List<bool>();
+            for(int i = 37; i <= 42; i++)
+            {
+                    isChecked.Add(Convert.ToBoolean(text[i]));
+            }
+            userMainTab = new MainTab(text[21], text[22], text[23], text[25], text[26], text[29], text[30], miscBonuses,
+                                      isChecked, text[43]);
             //Begin with the userCharVals.
             userCharVals = new CharVals(this, text[0], text[1], text[2], text[3], text[4], text[5], text[6], text[7],
                                         text[8], text[9], text[10], text[11], text[12], text[13], text[14], text[15],
                                         text[16], text[17], text[18], text[19], text[20]);
 
+
             //Leave this for last.
-            coupleObjects();
+            updateLevel();
+            coupleObjects(Convert.ToInt32(text[24]), Convert.ToInt32(text[27]), Convert.ToInt32(text[28]));
         }
-        public void saveSheet()
+        public void saveSheet(string ourFileName)
         {
-
+            using (StreamWriter writer = new StreamWriter(ourFileName))
+            {
+                writer.WriteLine(userCharVals.name);
+                writer.WriteLine(userCharVals.race);
+                writer.WriteLine(userCharVals.u_class);
+                writer.WriteLine(userCharVals.sClass);
+                writer.WriteLine(userCharVals.BG);
+                writer.WriteLine(userCharVals.alig);
+                writer.WriteLine(userCharVals.level);
+                writer.WriteLine(userCharVals.userName);
+                writer.WriteLine(userCharVals.strBase);
+                writer.WriteLine(userCharVals.intelBase);
+                writer.WriteLine(userCharVals.dexBase);
+                writer.WriteLine(userCharVals.wisBase);
+                writer.WriteLine(userCharVals.conBase);
+                writer.WriteLine(userCharVals.chaBase);
+                writer.WriteLine(userCharVals.strMisc);
+                writer.WriteLine(userCharVals.intelMisc);
+                writer.WriteLine(userCharVals.dexMisc);
+                writer.WriteLine(userCharVals.wisMisc);
+                writer.WriteLine(userCharVals.conMisc);
+                writer.WriteLine(userCharVals.chaMisc);
+                writer.WriteLine(userCharVals.skillProfs);
+                writer.WriteLine(userMainTab.hpDisplay.currHealth);
+                writer.WriteLine(userMainTab.hpDisplay.baseHealth);
+                writer.WriteLine(userMainTab.hpDisplay.misc);
+                writer.WriteLine(userMainTab.hpDisplay.HPCalcCouple.getScoreIndex());
+                writer.WriteLine(userMainTab.acDisplay.ArmorBonus);
+                writer.WriteLine(userMainTab.acDisplay.misc);
+                writer.WriteLine(userMainTab.acDisplay.primarySubCouple.getScoreIndex());
+                writer.WriteLine(userMainTab.acDisplay.secondarySubCouple.getScoreIndex());
+                writer.WriteLine(userMainTab.speedDisplay.baseSpeed);
+                writer.WriteLine(userMainTab.speedDisplay.miscSpeed);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.miscBonuses[0]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.miscBonuses[1]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.miscBonuses[2]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.miscBonuses[3]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.miscBonuses[4]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.miscBonuses[5]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.checkBoxes[0]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.checkBoxes[1]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.checkBoxes[2]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.checkBoxes[3]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.checkBoxes[4]);
+                writer.WriteLine(userMainTab.savingThrowsDisplay.checkBoxes[5]);
+                writer.WriteLine(userMainTab.initCalcDisplay.miscBonus);
+            }
         }
-        public void saveAsSheet()
+        public void saveAsSheet(string ourFileName)
         {
-
-        }
-
-        public void addToHPTracker()
-        {
-
-        }
-        public void addToInitTracker()
-        {
-
+            saveSheet(ourFileName);
         }
 
         //This function will update all things dependent on level when called, called when level is changed.
         public void updateLevel()
         {
-            userMainTab.hpDisplay.level = userCharVals.level;
-            userMainTab.savingThrowsDisplay.level = userCharVals.level;
-            userCharVals.calcProficientBonus();
+            if (userCharVals != null)
+            {
+                userMainTab.hpDisplay.level = userCharVals.level;
+                userMainTab.savingThrowsDisplay.level = userCharVals.level;
+                userCharVals.calcProficientBonus();
+            }
         }
 
         //Couple the ability score pub subs, for new sheet.

@@ -45,6 +45,16 @@ namespace Atealag
         }
 
         public InitSub initSub;
+
+        public InitCalc()
+        {
+            miscBonus = 0;
+        }
+        //for files.
+        public InitCalc(int m)
+        {
+            miscBonus = m;
+        }
         public void calculateAbilityBonus()
         {
             abilityBonus = (initSub.getScore() - 10) / 2;

@@ -112,26 +112,31 @@ namespace Atealag
         private void intelProf_Click(object sender, RoutedEventArgs e)
         {
             ourStc.checkBoxes[1] = !ourStc.checkBoxes[1];
+            ourStc.calculateTotalScore(1);
         }
 
         private void dexProf_Click(object sender, RoutedEventArgs e)
         {
             ourStc.checkBoxes[2] = !ourStc.checkBoxes[2];
+            ourStc.calculateTotalScore(2);
         }
 
         private void wisProf_Click(object sender, RoutedEventArgs e)
         {
             ourStc.checkBoxes[3] = !ourStc.checkBoxes[3];
+            ourStc.calculateTotalScore(3);
         }
 
         private void conProf_Click(object sender, RoutedEventArgs e)
         {
             ourStc.checkBoxes[4] = !ourStc.checkBoxes[4];
+            ourStc.calculateTotalScore(4);
         }
 
         private void chaProf_Click(object sender, RoutedEventArgs e)
         {
             ourStc.checkBoxes[5] = !ourStc.checkBoxes[5];
+            ourStc.calculateTotalScore(5);
         }
     }
 }

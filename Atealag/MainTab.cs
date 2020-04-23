@@ -23,15 +23,15 @@ namespace Atealag
             savingThrowsDisplay = new SavingThrowsCalc();
             initCalcDisplay = new InitCalc();
         }
-    }
-
-    class SensesAndLanguages
-    {
-
-    }
-
-    class ShortRest
-    {
-
+        //for make it easy and load.
+        public MainTab(string currhp, string basehp, string mischp, string arAc, string miscac, string bspd, string mspd,
+                        List<int> miscSaves, List<bool> isCheckSaves, string initm)
+        {
+            hpDisplay = new HealthBox(Convert.ToInt32(currhp), Convert.ToInt32(basehp), Convert.ToInt32(mischp));
+            acDisplay = new ACBox(Convert.ToInt32(arAc), Convert.ToInt32(miscac));
+            speedDisplay = new SpeedBox(Convert.ToInt32(bspd), Convert.ToInt32(mspd));
+            savingThrowsDisplay = new SavingThrowsCalc(miscSaves, isCheckSaves);
+            initCalcDisplay = new InitCalc(Convert.ToInt32(initm));
+        }
     }
 }

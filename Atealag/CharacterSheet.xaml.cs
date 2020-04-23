@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace Atealag
             InitializeComponent();
             charSheet = new Sheet();
             AllTabsGrid.DataContext = charSheet.userCharVals;
-            MainTab.DataContext = charSheet.userMainTab;
+            MainTabGrid.DataContext = charSheet.userMainTab;
             AbilityScoreGrid.DataContext = charSheet.userCharVals;
             HPDisplayGrid.DataContext = charSheet.userMainTab.hpDisplay;
             ACDisplayGrid.DataContext = charSheet.userMainTab.acDisplay;
@@ -40,7 +41,7 @@ namespace Atealag
             charSheet = new Sheet(s);
 
             AllTabsGrid.DataContext = charSheet.userCharVals;
-            MainTab.DataContext = charSheet.userMainTab;
+            MainTabGrid.DataContext = charSheet.userMainTab;
             AbilityScoreGrid.DataContext = charSheet.userCharVals;
             HPDisplayGrid.DataContext = charSheet.userMainTab.hpDisplay;
             ACDisplayGrid.DataContext = charSheet.userMainTab.acDisplay;
@@ -79,6 +80,27 @@ namespace Atealag
         {
             InitCalcWindow initCalcWindow = new InitCalcWindow(charSheet.userMainTab.initCalcDisplay);
             initCalcWindow.Show();
+        }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(charSheet.fileName == null)
+            {
+                SaveAsBtn_Click(this, e);
+                return;
+            }
+            charSheet.saveSheet(charSheet.fileName);
+        }
+
+        private void SaveAsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog openFileDialog = new SaveFileDialog();
+            _ = openFileDialog.ShowDialog() == true;
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                charSheet.saveAsSheet(openFileDialog.FileName);
+            }
         }
     }
 }

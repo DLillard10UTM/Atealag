@@ -86,6 +86,13 @@ namespace Atealag
             }
         }
 
+        public ACBox() { }
+
+        public ACBox(int ab, int m)
+        {
+            ArmorBonus = ab;
+            misc = m;
+        }
         public void calculatePrimaryAbilityMod()
         {
             primaryAbilityMod = (primarySubCouple.getScore() - 10) / 2;
