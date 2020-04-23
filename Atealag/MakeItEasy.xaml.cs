@@ -267,6 +267,8 @@ namespace Atealag
         {
             SubclassSelector.Items.Clear(); // Clears the content of the SubclassSelector.
             ProficiencySelector.Items.Clear();
+            MaxClassSkills.Text = "";
+            ProficiencyTotalList.Text = "";
 
             string comp = ((ComboBoxItem)ClassSelector.SelectedItem).Content.ToString(); // The current content of the ClassSelector after change.
 
@@ -311,6 +313,9 @@ namespace Atealag
 
                 string classPair = RemoveSpecialCharacters(baseClass) + RemoveSpecialCharacters(subClass);
 
+                
+                MaxClassSkills.Text = cProfChoiceCount[classPair].ToString();
+
                 foreach (var entry in cProfDict) // For each Class-Subclass pair...
                 {
                     if (entry.Key == classPair) // Find the one where it matches.
@@ -337,15 +342,6 @@ namespace Atealag
             string background = ((ComboBoxItem)BackgroundSelector.SelectedItem).Content.ToString();
 
             character.charBG = background;
-            int length;
-
-            foreach (string proficiency in charBGSProf)
-            {
-                length = proficiency.Length;
-                character.charSProf.Remove(proficiency);
-                ProficiencyTotalList.Text.Remove(ProficiencyTotalList.Text.IndexOf(proficiency), length + 1);
-            }
-            // for each string in charBGSProf, delete those entries in the TextBlock and the character skill list
 
             charBGSProf.Clear();                // Clears the list of background skill proficiencies
 
@@ -367,17 +363,33 @@ namespace Atealag
         private void ProficiencySelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string baseClass = ((ComboBoxItem)ClassSelector.SelectedItem).Content.ToString();
-            string subClass = ((ComboBoxItem)SubclassSelector.SelectedItem).Content.ToString();
-
-            string classPair = RemoveSpecialCharacters(baseClass) + RemoveSpecialCharacters(subClass);
-
-            int maxSelections = cProfChoiceCount[classPair];
-
-
-
-            if (ProficiencySelector.SelectedItems.Count > maxSelections)
+            if (SubclassSelector.SelectedItem != null)
             {
-                ProficiencySelector.SelectedIndex = -1;                     // Need to test, should clear selections
+                string subClass = ((ComboBoxItem)SubclassSelector.SelectedItem).Content.ToString();
+
+                string classPair = RemoveSpecialCharacters(baseClass) + RemoveSpecialCharacters(subClass);
+
+                int maxSelections = cProfChoiceCount[classPair];
+
+                StringBuilder sb = new StringBuilder();
+
+                foreach (ListBoxItem item in ProficiencySelector.SelectedItems)
+                {
+                    sb.Append(item.Content + ", ");
+                }
+
+                foreach (string proficiency in charBGSProf)
+                {
+                    sb.Append(proficiency + ", ");
+                }
+
+                ProficiencyTotalList.Text = sb.ToString();
+
+                if (ProficiencySelector.SelectedItems.Count > maxSelections)
+                {
+                    ProficiencyTotalList.Text = "";
+                    ProficiencySelector.SelectedIndex = -1;                     // Need to test, should clear selections and text box of selections
+                }
             }
         }
     }
