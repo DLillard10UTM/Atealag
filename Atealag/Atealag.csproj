@@ -55,41 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AbilityScorePubSub.cs" />
-    <Compile Include="ACBox.cs" />
-    <Compile Include="ACCalcWindow.xaml.cs">
-      <DependentUpon>ACCalcWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterSheet.xaml.cs">
-      <DependentUpon>CharacterSheet.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CharVals.cs" />
-    <Compile Include="HealthBox.cs" />
-    <Compile Include="HPCalc.xaml.cs">
-      <DependentUpon>HPCalc.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="InitCalc.cs" />
-    <Compile Include="InitCalcWindow.xaml.cs">
-      <DependentUpon>InitCalcWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainTab.cs" />
-    <Compile Include="SavingThrowsCalc.cs" />
-    <Compile Include="SavingThrowsCalcWindow.xaml.cs">
-      <DependentUpon>SavingThrowsCalcWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sheet.cs" />
-    <Compile Include="SpeedBox.cs" />
-    <Compile Include="SpeedCalc.xaml.cs">
-      <DependentUpon>SpeedCalc.xaml</DependentUpon>
-    </Compile>
-    <Page Include="ACCalcWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CharacterSheet.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Compile Include="ClassDataDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +120,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="BackgroundDataDataSet.xsc">
+      <DependentUpon>BackgroundDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BackgroundDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BackgroundDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BackgroundDataDataSet.xss">
+      <DependentUpon>BackgroundDataDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ClassDataDataSet.xsc">
       <DependentUpon>ClassDataDataSet.xsd</DependentUpon>
     </None>
@@ -186,6 +162,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BackgroundData.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ClassData.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

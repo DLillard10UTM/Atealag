@@ -20,17 +20,17 @@ namespace Atealag {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("RaceDataDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BackgroundDataDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class RaceDataDataSet : global::System.Data.DataSet {
+    public partial class BackgroundDataDataSet : global::System.Data.DataSet {
         
-        private RaceTableDataTable tableRaceTable;
+        private BGTableDataTable tableBGTable;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public RaceDataDataSet() {
+        public BackgroundDataDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Atealag {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected RaceDataDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BackgroundDataDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Atealag {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["RaceTable"] != null)) {
-                    base.Tables.Add(new RaceTableDataTable(ds.Tables["RaceTable"]));
+                if ((ds.Tables["BGTable"] != null)) {
+                    base.Tables.Add(new BGTableDataTable(ds.Tables["BGTable"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Atealag {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RaceTableDataTable RaceTable {
+        public BGTableDataTable BGTable {
             get {
-                return this.tableRaceTable;
+                return this.tableBGTable;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Atealag {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            RaceDataDataSet cln = ((RaceDataDataSet)(base.Clone()));
+            BackgroundDataDataSet cln = ((BackgroundDataDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Atealag {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["RaceTable"] != null)) {
-                    base.Tables.Add(new RaceTableDataTable(ds.Tables["RaceTable"]));
+                if ((ds.Tables["BGTable"] != null)) {
+                    base.Tables.Add(new BGTableDataTable(ds.Tables["BGTable"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Atealag {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableRaceTable = ((RaceTableDataTable)(base.Tables["RaceTable"]));
+            this.tableBGTable = ((BGTableDataTable)(base.Tables["BGTable"]));
             if ((initTable == true)) {
-                if ((this.tableRaceTable != null)) {
-                    this.tableRaceTable.InitVars();
+                if ((this.tableBGTable != null)) {
+                    this.tableBGTable.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Atealag {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "RaceDataDataSet";
+            this.DataSetName = "BackgroundDataDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/RaceDataDataSet.xsd";
+            this.Namespace = "http://tempuri.org/BackgroundDataDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableRaceTable = new RaceTableDataTable();
-            base.Tables.Add(this.tableRaceTable);
+            this.tableBGTable = new BGTableDataTable();
+            base.Tables.Add(this.tableBGTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeRaceTable() {
+        private bool ShouldSerializeBGTable() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Atealag {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            RaceDataDataSet ds = new RaceDataDataSet();
+            BackgroundDataDataSet ds = new BackgroundDataDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,39 +270,27 @@ namespace Atealag {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void RaceTableRowChangeEventHandler(object sender, RaceTableRowChangeEvent e);
+        public delegate void BGTableRowChangeEventHandler(object sender, BGTableRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RaceTableDataTable : global::System.Data.TypedTableBase<RaceTableRow> {
+        public partial class BGTableDataTable : global::System.Data.TypedTableBase<BGTableRow> {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnRace;
+            private global::System.Data.DataColumn columnBackground;
             
-            private global::System.Data.DataColumn columnSubrace;
+            private global::System.Data.DataColumn columnSkill1;
             
-            private global::System.Data.DataColumn columnSTRBON;
-            
-            private global::System.Data.DataColumn columnDEXBON;
-            
-            private global::System.Data.DataColumn columnCONBON;
-            
-            private global::System.Data.DataColumn columnINTBON;
-            
-            private global::System.Data.DataColumn columnWISBON;
-            
-            private global::System.Data.DataColumn columnCHABON;
-            
-            private global::System.Data.DataColumn columnChoose2;
+            private global::System.Data.DataColumn columnSkill2;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaceTableDataTable() {
-                this.TableName = "RaceTable";
+            public BGTableDataTable() {
+                this.TableName = "BGTable";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -310,7 +298,7 @@ namespace Atealag {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal RaceTableDataTable(global::System.Data.DataTable table) {
+            internal BGTableDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -327,7 +315,7 @@ namespace Atealag {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected RaceTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected BGTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -342,73 +330,25 @@ namespace Atealag {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RaceColumn {
+            public global::System.Data.DataColumn BackgroundColumn {
                 get {
-                    return this.columnRace;
+                    return this.columnBackground;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SubraceColumn {
+            public global::System.Data.DataColumn Skill1Column {
                 get {
-                    return this.columnSubrace;
+                    return this.columnSkill1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn STRBONColumn {
+            public global::System.Data.DataColumn Skill2Column {
                 get {
-                    return this.columnSTRBON;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DEXBONColumn {
-                get {
-                    return this.columnDEXBON;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CONBONColumn {
-                get {
-                    return this.columnCONBON;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn INTBONColumn {
-                get {
-                    return this.columnINTBON;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn WISBONColumn {
-                get {
-                    return this.columnWISBON;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CHABONColumn {
-                get {
-                    return this.columnCHABON;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Choose2Column {
-                get {
-                    return this.columnChoose2;
+                    return this.columnSkill2;
                 }
             }
             
@@ -423,61 +363,55 @@ namespace Atealag {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaceTableRow this[int index] {
+            public BGTableRow this[int index] {
                 get {
-                    return ((RaceTableRow)(this.Rows[index]));
+                    return ((BGTableRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RaceTableRowChangeEventHandler RaceTableRowChanging;
+            public event BGTableRowChangeEventHandler BGTableRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RaceTableRowChangeEventHandler RaceTableRowChanged;
+            public event BGTableRowChangeEventHandler BGTableRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RaceTableRowChangeEventHandler RaceTableRowDeleting;
+            public event BGTableRowChangeEventHandler BGTableRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RaceTableRowChangeEventHandler RaceTableRowDeleted;
+            public event BGTableRowChangeEventHandler BGTableRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddRaceTableRow(RaceTableRow row) {
+            public void AddBGTableRow(BGTableRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaceTableRow AddRaceTableRow(string Race, string Subrace, int STRBON, int DEXBON, int CONBON, int INTBON, int WISBON, int CHABON, int Choose2) {
-                RaceTableRow rowRaceTableRow = ((RaceTableRow)(this.NewRow()));
+            public BGTableRow AddBGTableRow(string Background, string Skill1, string Skill2) {
+                BGTableRow rowBGTableRow = ((BGTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Race,
-                        Subrace,
-                        STRBON,
-                        DEXBON,
-                        CONBON,
-                        INTBON,
-                        WISBON,
-                        CHABON,
-                        Choose2};
-                rowRaceTableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRaceTableRow);
-                return rowRaceTableRow;
+                        Background,
+                        Skill1,
+                        Skill2};
+                rowBGTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBGTableRow);
+                return rowBGTableRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaceTableRow FindByID(int ID) {
-                return ((RaceTableRow)(this.Rows.Find(new object[] {
+            public BGTableRow FindByID(int ID) {
+                return ((BGTableRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                RaceTableDataTable cln = ((RaceTableDataTable)(base.Clone()));
+                BGTableDataTable cln = ((BGTableDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -485,22 +419,16 @@ namespace Atealag {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new RaceTableDataTable();
+                return new BGTableDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnRace = base.Columns["Race"];
-                this.columnSubrace = base.Columns["Subrace"];
-                this.columnSTRBON = base.Columns["STRBON"];
-                this.columnDEXBON = base.Columns["DEXBON"];
-                this.columnCONBON = base.Columns["CONBON"];
-                this.columnINTBON = base.Columns["INTBON"];
-                this.columnWISBON = base.Columns["WISBON"];
-                this.columnCHABON = base.Columns["CHABON"];
-                this.columnChoose2 = base.Columns["Choose2"];
+                this.columnBackground = base.Columns["Background"];
+                this.columnSkill1 = base.Columns["Skill1"];
+                this.columnSkill2 = base.Columns["Skill2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -508,24 +436,12 @@ namespace Atealag {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnRace = new global::System.Data.DataColumn("Race", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRace);
-                this.columnSubrace = new global::System.Data.DataColumn("Subrace", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSubrace);
-                this.columnSTRBON = new global::System.Data.DataColumn("STRBON", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTRBON);
-                this.columnDEXBON = new global::System.Data.DataColumn("DEXBON", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDEXBON);
-                this.columnCONBON = new global::System.Data.DataColumn("CONBON", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCONBON);
-                this.columnINTBON = new global::System.Data.DataColumn("INTBON", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnINTBON);
-                this.columnWISBON = new global::System.Data.DataColumn("WISBON", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWISBON);
-                this.columnCHABON = new global::System.Data.DataColumn("CHABON", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCHABON);
-                this.columnChoose2 = new global::System.Data.DataColumn("Choose2", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnChoose2);
+                this.columnBackground = new global::System.Data.DataColumn("Background", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBackground);
+                this.columnSkill1 = new global::System.Data.DataColumn("Skill1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSkill1);
+                this.columnSkill2 = new global::System.Data.DataColumn("Skill2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSkill2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -533,34 +449,35 @@ namespace Atealag {
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnRace.MaxLength = 255;
-                this.columnSubrace.MaxLength = 255;
+                this.columnBackground.MaxLength = 255;
+                this.columnSkill1.MaxLength = 255;
+                this.columnSkill2.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaceTableRow NewRaceTableRow() {
-                return ((RaceTableRow)(this.NewRow()));
+            public BGTableRow NewBGTableRow() {
+                return ((BGTableRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new RaceTableRow(builder);
+                return new BGTableRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(RaceTableRow);
+                return typeof(BGTableRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.RaceTableRowChanged != null)) {
-                    this.RaceTableRowChanged(this, new RaceTableRowChangeEvent(((RaceTableRow)(e.Row)), e.Action));
+                if ((this.BGTableRowChanged != null)) {
+                    this.BGTableRowChanged(this, new BGTableRowChangeEvent(((BGTableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -568,8 +485,8 @@ namespace Atealag {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.RaceTableRowChanging != null)) {
-                    this.RaceTableRowChanging(this, new RaceTableRowChangeEvent(((RaceTableRow)(e.Row)), e.Action));
+                if ((this.BGTableRowChanging != null)) {
+                    this.BGTableRowChanging(this, new BGTableRowChangeEvent(((BGTableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -577,8 +494,8 @@ namespace Atealag {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.RaceTableRowDeleted != null)) {
-                    this.RaceTableRowDeleted(this, new RaceTableRowChangeEvent(((RaceTableRow)(e.Row)), e.Action));
+                if ((this.BGTableRowDeleted != null)) {
+                    this.BGTableRowDeleted(this, new BGTableRowChangeEvent(((BGTableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -586,14 +503,14 @@ namespace Atealag {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.RaceTableRowDeleting != null)) {
-                    this.RaceTableRowDeleting(this, new RaceTableRowChangeEvent(((RaceTableRow)(e.Row)), e.Action));
+                if ((this.BGTableRowDeleting != null)) {
+                    this.BGTableRowDeleting(this, new BGTableRowChangeEvent(((BGTableRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveRaceTableRow(RaceTableRow row) {
+            public void RemoveBGTableRow(BGTableRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -602,7 +519,7 @@ namespace Atealag {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RaceDataDataSet ds = new RaceDataDataSet();
+                BackgroundDataDataSet ds = new BackgroundDataDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -620,7 +537,7 @@ namespace Atealag {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "RaceTableDataTable";
+                attribute2.FixedValue = "BGTableDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -664,278 +581,110 @@ namespace Atealag {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class RaceTableRow : global::System.Data.DataRow {
+        public partial class BGTableRow : global::System.Data.DataRow {
             
-            private RaceTableDataTable tableRaceTable;
+            private BGTableDataTable tableBGTable;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal RaceTableRow(global::System.Data.DataRowBuilder rb) : 
+            internal BGTableRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableRaceTable = ((RaceTableDataTable)(this.Table));
+                this.tableBGTable = ((BGTableDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID {
                 get {
-                    return ((int)(this[this.tableRaceTable.IDColumn]));
+                    return ((int)(this[this.tableBGTable.IDColumn]));
                 }
                 set {
-                    this[this.tableRaceTable.IDColumn] = value;
+                    this[this.tableBGTable.IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Race {
+            public string Background {
                 get {
                     try {
-                        return ((string)(this[this.tableRaceTable.RaceColumn]));
+                        return ((string)(this[this.tableBGTable.BackgroundColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Race\' in table \'RaceTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Background\' in table \'BGTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRaceTable.RaceColumn] = value;
+                    this[this.tableBGTable.BackgroundColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Subrace {
+            public string Skill1 {
                 get {
                     try {
-                        return ((string)(this[this.tableRaceTable.SubraceColumn]));
+                        return ((string)(this[this.tableBGTable.Skill1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Subrace\' in table \'RaceTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Skill1\' in table \'BGTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRaceTable.SubraceColumn] = value;
+                    this[this.tableBGTable.Skill1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int STRBON {
+            public string Skill2 {
                 get {
                     try {
-                        return ((int)(this[this.tableRaceTable.STRBONColumn]));
+                        return ((string)(this[this.tableBGTable.Skill2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STRBON\' in table \'RaceTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Skill2\' in table \'BGTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRaceTable.STRBONColumn] = value;
+                    this[this.tableBGTable.Skill2Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int DEXBON {
-                get {
-                    try {
-                        return ((int)(this[this.tableRaceTable.DEXBONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DEXBON\' in table \'RaceTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRaceTable.DEXBONColumn] = value;
-                }
+            public bool IsBackgroundNull() {
+                return this.IsNull(this.tableBGTable.BackgroundColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CONBON {
-                get {
-                    try {
-                        return ((int)(this[this.tableRaceTable.CONBONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CONBON\' in table \'RaceTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRaceTable.CONBONColumn] = value;
-                }
+            public void SetBackgroundNull() {
+                this[this.tableBGTable.BackgroundColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int INTBON {
-                get {
-                    try {
-                        return ((int)(this[this.tableRaceTable.INTBONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'INTBON\' in table \'RaceTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRaceTable.INTBONColumn] = value;
-                }
+            public bool IsSkill1Null() {
+                return this.IsNull(this.tableBGTable.Skill1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int WISBON {
-                get {
-                    try {
-                        return ((int)(this[this.tableRaceTable.WISBONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WISBON\' in table \'RaceTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRaceTable.WISBONColumn] = value;
-                }
+            public void SetSkill1Null() {
+                this[this.tableBGTable.Skill1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CHABON {
-                get {
-                    try {
-                        return ((int)(this[this.tableRaceTable.CHABONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CHABON\' in table \'RaceTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRaceTable.CHABONColumn] = value;
-                }
+            public bool IsSkill2Null() {
+                return this.IsNull(this.tableBGTable.Skill2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Choose2 {
-                get {
-                    try {
-                        return ((int)(this[this.tableRaceTable.Choose2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Choose2\' in table \'RaceTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRaceTable.Choose2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsRaceNull() {
-                return this.IsNull(this.tableRaceTable.RaceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetRaceNull() {
-                this[this.tableRaceTable.RaceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSubraceNull() {
-                return this.IsNull(this.tableRaceTable.SubraceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSubraceNull() {
-                this[this.tableRaceTable.SubraceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSTRBONNull() {
-                return this.IsNull(this.tableRaceTable.STRBONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSTRBONNull() {
-                this[this.tableRaceTable.STRBONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDEXBONNull() {
-                return this.IsNull(this.tableRaceTable.DEXBONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDEXBONNull() {
-                this[this.tableRaceTable.DEXBONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCONBONNull() {
-                return this.IsNull(this.tableRaceTable.CONBONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCONBONNull() {
-                this[this.tableRaceTable.CONBONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsINTBONNull() {
-                return this.IsNull(this.tableRaceTable.INTBONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetINTBONNull() {
-                this[this.tableRaceTable.INTBONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsWISBONNull() {
-                return this.IsNull(this.tableRaceTable.WISBONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetWISBONNull() {
-                this[this.tableRaceTable.WISBONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCHABONNull() {
-                return this.IsNull(this.tableRaceTable.CHABONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCHABONNull() {
-                this[this.tableRaceTable.CHABONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsChoose2Null() {
-                return this.IsNull(this.tableRaceTable.Choose2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetChoose2Null() {
-                this[this.tableRaceTable.Choose2Column] = global::System.Convert.DBNull;
+            public void SetSkill2Null() {
+                this[this.tableBGTable.Skill2Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -943,22 +692,22 @@ namespace Atealag {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class RaceTableRowChangeEvent : global::System.EventArgs {
+        public class BGTableRowChangeEvent : global::System.EventArgs {
             
-            private RaceTableRow eventRow;
+            private BGTableRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaceTableRowChangeEvent(RaceTableRow row, global::System.Data.DataRowAction action) {
+            public BGTableRowChangeEvent(BGTableRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RaceTableRow Row {
+            public BGTableRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -974,7 +723,7 @@ namespace Atealag {
         }
     }
 }
-namespace Atealag.RaceDataDataSetTableAdapters {
+namespace Atealag.BackgroundDataDataSetTableAdapters {
     
     
     /// <summary>
@@ -986,7 +735,7 @@ namespace Atealag.RaceDataDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class RaceTableTableAdapter : global::System.ComponentModel.Component {
+    public partial class BGTableTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -1000,7 +749,7 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public RaceTableTableAdapter() {
+        public BGTableTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1097,94 +846,56 @@ namespace Atealag.RaceDataDataSetTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "RaceTable";
+            tableMapping.DataSetTable = "BGTable";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Race", "Race");
-            tableMapping.ColumnMappings.Add("Subrace", "Subrace");
-            tableMapping.ColumnMappings.Add("STRBON", "STRBON");
-            tableMapping.ColumnMappings.Add("DEXBON", "DEXBON");
-            tableMapping.ColumnMappings.Add("CONBON", "CONBON");
-            tableMapping.ColumnMappings.Add("INTBON", "INTBON");
-            tableMapping.ColumnMappings.Add("WISBON", "WISBON");
-            tableMapping.ColumnMappings.Add("CHABON", "CHABON");
-            tableMapping.ColumnMappings.Add("Choose2", "Choose2");
+            tableMapping.ColumnMappings.Add("Background", "Background");
+            tableMapping.ColumnMappings.Add("Skill1", "Skill1");
+            tableMapping.ColumnMappings.Add("Skill2", "Skill2");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `RaceTable` WHERE ((`ID` = ?) AND ((? = 1 AND `Race` IS NULL) OR (`Race` = ?)) AND ((? = 1 AND `Subrace` IS NULL) OR (`Subrace` = ?)) AND ((? = 1 AND `STRBON` IS NULL) OR (`STRBON` = ?)) AND ((? = 1 AND `DEXBON` IS NULL) OR (`DEXBON` = ?)) AND ((? = 1 AND `CONBON` IS NULL) OR (`CONBON` = ?)) AND ((? = 1 AND `INTBON` IS NULL) OR (`INTBON` = ?)) AND ((? = 1 AND `WISBON` IS NULL) OR (`WISBON` = ?)) AND ((? = 1 AND `CHABON` IS NULL) OR (`CHABON` = ?)) AND ((? = 1 AND `Choose2` IS NULL) OR (`Choose2` = ?)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `BGTable` WHERE ((`ID` = ?) AND ((? = 1 AND `Background` IS NULL) OR " +
+                "(`Background` = ?)) AND ((? = 1 AND `Skill1` IS NULL) OR (`Skill1` = ?)) AND ((?" +
+                " = 1 AND `Skill2` IS NULL) OR (`Skill2` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Race", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Race", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Race", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Race", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Subrace", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Subrace", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Subrace", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Subrace", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_STRBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STRBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_STRBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STRBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DEXBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DEXBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DEXBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DEXBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CONBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CONBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CONBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CONBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_INTBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INTBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_INTBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INTBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_WISBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WISBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_WISBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WISBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CHABON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CHABON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CHABON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CHABON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Choose2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Choose2", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Choose2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Choose2", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Background", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Background", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Background", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Background", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Skill1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill1", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Skill1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill1", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Skill2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill2", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Skill2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill2", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `RaceTable` (`Race`, `Subrace`, `STRBON`, `DEXBON`, `CONBON`, `INTBON" +
-                "`, `WISBON`, `CHABON`, `Choose2`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `BGTable` (`Background`, `Skill1`, `Skill2`) VALUES (?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Race", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Race", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Subrace", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Subrace", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STRBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STRBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DEXBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DEXBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CONBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CONBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INTBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INTBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("WISBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WISBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CHABON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CHABON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Choose2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Choose2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Background", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Background", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Skill1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill1", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Skill2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill2", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `RaceTable` SET `Race` = ?, `Subrace` = ?, `STRBON` = ?, `DEXBON` = ?, `CONBON` = ?, `INTBON` = ?, `WISBON` = ?, `CHABON` = ?, `Choose2` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Race` IS NULL) OR (`Race` = ?)) AND ((? = 1 AND `Subrace` IS NULL) OR (`Subrace` = ?)) AND ((? = 1 AND `STRBON` IS NULL) OR (`STRBON` = ?)) AND ((? = 1 AND `DEXBON` IS NULL) OR (`DEXBON` = ?)) AND ((? = 1 AND `CONBON` IS NULL) OR (`CONBON` = ?)) AND ((? = 1 AND `INTBON` IS NULL) OR (`INTBON` = ?)) AND ((? = 1 AND `WISBON` IS NULL) OR (`WISBON` = ?)) AND ((? = 1 AND `CHABON` IS NULL) OR (`CHABON` = ?)) AND ((? = 1 AND `Choose2` IS NULL) OR (`Choose2` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `BGTable` SET `Background` = ?, `Skill1` = ?, `Skill2` = ? WHERE ((`ID` = " +
+                "?) AND ((? = 1 AND `Background` IS NULL) OR (`Background` = ?)) AND ((? = 1 AND " +
+                "`Skill1` IS NULL) OR (`Skill1` = ?)) AND ((? = 1 AND `Skill2` IS NULL) OR (`Skil" +
+                "l2` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Race", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Race", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Subrace", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Subrace", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STRBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STRBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DEXBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DEXBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CONBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CONBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INTBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INTBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("WISBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WISBON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CHABON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CHABON", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Choose2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Choose2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Background", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Background", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Skill1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill1", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Skill2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill2", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Race", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Race", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Race", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Race", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Subrace", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Subrace", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Subrace", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Subrace", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_STRBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STRBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_STRBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STRBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DEXBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DEXBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DEXBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DEXBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CONBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CONBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CONBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CONBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_INTBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INTBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_INTBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INTBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_WISBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WISBON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_WISBON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WISBON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CHABON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CHABON", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CHABON", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CHABON", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Choose2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Choose2", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Choose2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Choose2", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Background", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Background", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Background", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Background", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Skill1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill1", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Skill1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill1", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Skill2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill2", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Skill2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Skill2", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Atealag.Properties.Settings.Default.RaceDataConnectionString;
+            this._connection.ConnectionString = global::Atealag.Properties.Settings.Default.BackgroundDataConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1193,8 +904,7 @@ namespace Atealag.RaceDataDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Race, Subrace, STRBON, DEXBON, CONBON, INTBON, WISBON, CHABON, Choose2" +
-                " FROM RaceTable";
+            this._commandCollection[0].CommandText = "SELECT ID, Background, Skill1, Skill2 FROM BGTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1202,7 +912,7 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RaceDataDataSet.RaceTableDataTable dataTable) {
+        public virtual int Fill(BackgroundDataDataSet.BGTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1215,9 +925,9 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RaceDataDataSet.RaceTableDataTable GetData() {
+        public virtual BackgroundDataDataSet.BGTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RaceDataDataSet.RaceTableDataTable dataTable = new RaceDataDataSet.RaceTableDataTable();
+            BackgroundDataDataSet.BGTableDataTable dataTable = new BackgroundDataDataSet.BGTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1225,15 +935,15 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RaceDataDataSet.RaceTableDataTable dataTable) {
+        public virtual int Update(BackgroundDataDataSet.BGTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RaceDataDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "RaceTable");
+        public virtual int Update(BackgroundDataDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "BGTable");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1255,79 +965,31 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Race, string Original_Subrace, global::System.Nullable<int> Original_STRBON, global::System.Nullable<int> Original_DEXBON, global::System.Nullable<int> Original_CONBON, global::System.Nullable<int> Original_INTBON, global::System.Nullable<int> Original_WISBON, global::System.Nullable<int> Original_CHABON, global::System.Nullable<int> Original_Choose2) {
+        public virtual int Delete(int Original_ID, string Original_Background, string Original_Skill1, string Original_Skill2) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_Race == null)) {
+            if ((Original_Background == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Race));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Background));
             }
-            if ((Original_Subrace == null)) {
+            if ((Original_Skill1 == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Subrace));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Skill1));
             }
-            if ((Original_STRBON.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_STRBON.Value));
-            }
-            else {
+            if ((Original_Skill2 == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_DEXBON.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_DEXBON.Value));
-            }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CONBON.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_CONBON.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_INTBON.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_INTBON.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_WISBON.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_WISBON.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CHABON.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_CHABON.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Choose2.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_Choose2.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Skill2));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1349,60 +1011,24 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Race, string Subrace, global::System.Nullable<int> STRBON, global::System.Nullable<int> DEXBON, global::System.Nullable<int> CONBON, global::System.Nullable<int> INTBON, global::System.Nullable<int> WISBON, global::System.Nullable<int> CHABON, global::System.Nullable<int> Choose2) {
-            if ((Race == null)) {
+        public virtual int Insert(string Background, string Skill1, string Skill2) {
+            if ((Background == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Race));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Background));
             }
-            if ((Subrace == null)) {
+            if ((Skill1 == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Subrace));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Skill1));
             }
-            if ((STRBON.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(STRBON.Value));
-            }
-            else {
+            if ((Skill2 == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((DEXBON.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(DEXBON.Value));
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((CONBON.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(CONBON.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((INTBON.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(INTBON.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((WISBON.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(WISBON.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((CHABON.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(CHABON.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Choose2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Choose2.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Skill2));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1424,152 +1050,49 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Race, 
-                    string Subrace, 
-                    global::System.Nullable<int> STRBON, 
-                    global::System.Nullable<int> DEXBON, 
-                    global::System.Nullable<int> CONBON, 
-                    global::System.Nullable<int> INTBON, 
-                    global::System.Nullable<int> WISBON, 
-                    global::System.Nullable<int> CHABON, 
-                    global::System.Nullable<int> Choose2, 
-                    int Original_ID, 
-                    string Original_Race, 
-                    string Original_Subrace, 
-                    global::System.Nullable<int> Original_STRBON, 
-                    global::System.Nullable<int> Original_DEXBON, 
-                    global::System.Nullable<int> Original_CONBON, 
-                    global::System.Nullable<int> Original_INTBON, 
-                    global::System.Nullable<int> Original_WISBON, 
-                    global::System.Nullable<int> Original_CHABON, 
-                    global::System.Nullable<int> Original_Choose2) {
-            if ((Race == null)) {
+        public virtual int Update(string Background, string Skill1, string Skill2, int Original_ID, string Original_Background, string Original_Skill1, string Original_Skill2) {
+            if ((Background == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Race));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Background));
             }
-            if ((Subrace == null)) {
+            if ((Skill1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Subrace));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Skill1));
             }
-            if ((STRBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(STRBON.Value));
-            }
-            else {
+            if ((Skill2 == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((DEXBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(DEXBON.Value));
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Skill2));
             }
-            if ((CONBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(CONBON.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((INTBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(INTBON.Value));
-            }
-            else {
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
+            if ((Original_Background == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((WISBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(WISBON.Value));
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Background));
             }
-            if ((CHABON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(CHABON.Value));
-            }
-            else {
+            if ((Original_Skill1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Choose2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Choose2.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Skill1));
+            }
+            if ((Original_Skill2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID));
-            if ((Original_Race == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Race));
-            }
-            if ((Original_Subrace == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Subrace));
-            }
-            if ((Original_STRBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_STRBON.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DEXBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_DEXBON.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CONBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_CONBON.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((Original_INTBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_INTBON.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((Original_WISBON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_WISBON.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            if ((Original_CHABON.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_CHABON.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Choose2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_Choose2.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Skill2));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1600,7 +1123,7 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private RaceTableTableAdapter _raceTableTableAdapter;
+        private BGTableTableAdapter _bGTableTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1622,12 +1145,12 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public RaceTableTableAdapter RaceTableTableAdapter {
+        public BGTableTableAdapter BGTableTableAdapter {
             get {
-                return this._raceTableTableAdapter;
+                return this._bGTableTableAdapter;
             }
             set {
-                this._raceTableTableAdapter = value;
+                this._bGTableTableAdapter = value;
             }
         }
         
@@ -1650,9 +1173,9 @@ namespace Atealag.RaceDataDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._raceTableTableAdapter != null) 
-                            && (this._raceTableTableAdapter.Connection != null))) {
-                    return this._raceTableTableAdapter.Connection;
+                if (((this._bGTableTableAdapter != null) 
+                            && (this._bGTableTableAdapter.Connection != null))) {
+                    return this._bGTableTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1667,7 +1190,7 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._raceTableTableAdapter != null)) {
+                if ((this._bGTableTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1679,14 +1202,14 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(RaceDataDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BackgroundDataDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._raceTableTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RaceTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._bGTableTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.BGTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._raceTableTableAdapter.Update(updatedRows));
+                    result = (result + this._bGTableTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1698,13 +1221,13 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(RaceDataDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BackgroundDataDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._raceTableTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RaceTable.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._bGTableTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.BGTable.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._raceTableTableAdapter.Update(addedRows));
+                    result = (result + this._bGTableTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1716,13 +1239,13 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(RaceDataDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BackgroundDataDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._raceTableTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RaceTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._bGTableTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.BGTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._raceTableTableAdapter.Update(deletedRows));
+                    result = (result + this._bGTableTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1758,15 +1281,15 @@ namespace Atealag.RaceDataDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(RaceDataDataSet dataSet) {
+        public virtual int UpdateAll(BackgroundDataDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._raceTableTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._raceTableTableAdapter.Connection) == false))) {
+            if (((this._bGTableTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._bGTableTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1802,13 +1325,13 @@ namespace Atealag.RaceDataDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._raceTableTableAdapter != null)) {
-                    revertConnections.Add(this._raceTableTableAdapter, this._raceTableTableAdapter.Connection);
-                    this._raceTableTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._raceTableTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._raceTableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._raceTableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._raceTableTableAdapter.Adapter);
+                if ((this._bGTableTableAdapter != null)) {
+                    revertConnections.Add(this._bGTableTableAdapter, this._bGTableTableAdapter.Connection);
+                    this._bGTableTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._bGTableTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._bGTableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._bGTableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._bGTableTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1869,9 +1392,9 @@ namespace Atealag.RaceDataDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._raceTableTableAdapter != null)) {
-                    this._raceTableTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._raceTableTableAdapter]));
-                    this._raceTableTableAdapter.Transaction = null;
+                if ((this._bGTableTableAdapter != null)) {
+                    this._bGTableTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._bGTableTableAdapter]));
+                    this._bGTableTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
